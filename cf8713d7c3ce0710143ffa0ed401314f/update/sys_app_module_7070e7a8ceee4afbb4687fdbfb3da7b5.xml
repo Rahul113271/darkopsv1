@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
+  <sys_app_module action="INSERT_OR_UPDATE">
+    <sys_id>7070e7a8ceee4afbb4687fdbfb3da7b5</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>sys_app_module_7070e7a8ceee4afbb4687fdbfb3da7b5</sys_update_name>
+    <application>3d01de71a94f4c7ba9f499cc0e03044f</application>
+    <link_type>LIST</link_type>
+    <name>x_2145749_qc_dark_store</name>
+    <order>100</order>
+    <title>Dark Stores</title>
+  </sys_app_module>
+</record_update>

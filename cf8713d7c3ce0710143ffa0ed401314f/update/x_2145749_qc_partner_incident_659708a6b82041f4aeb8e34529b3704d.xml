@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_partner_incident">
+  <x_2145749_qc_partner_incident action="INSERT_OR_UPDATE">
+    <sys_id>659708a6b82041f4aeb8e34529b3704d</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_partner_incident_659708a6b82041f4aeb8e34529b3704d</sys_update_name>
+    <dark_store>5bb286ebd6f04b67b1cd971d35bffd25</dark_store>
+    <description>Partner waited 25 minutes at store. Order still being picked when partner arrived. Conveyor outage causing delays.</description>
+    <incident_type>order_not_ready</incident_type>
+    <order_number>ORD-2024-78601</order_number>
+    <partner>09afe1621f484fb5b77d093bf5503dd7</partner>
+    <reported_at>2024-11-18 14:05:00</reported_at>
+    <severity>high</severity>
+    <state>new</state>
+  </x_2145749_qc_partner_incident>
+</record_update>

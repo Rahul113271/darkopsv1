@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_store_issue">
+  <x_2145749_qc_store_issue action="INSERT_OR_UPDATE">
+    <sys_id>9ff6e1f688a643b4b6a1f38fce19d05b</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_store_issue_9ff6e1f688a643b4b6a1f38fce19d05b</sys_update_name>
+    <affects_pulse_score>true</affects_pulse_score>
+    <dark_store>ef9240eb0b27493a8b7c7a7d3f4fe2b4</dark_store>
+    <description>Batch of snack items scanned in but not appearing in inventory system. Investigating potential scanner misconfiguration.</description>
+    <issue_category>inventory_discrepancy</issue_category>
+    <quantity_variance>-24</quantity_variance>
+    <reported_at>2024-11-18 10:15:00</reported_at>
+    <severity>medium</severity>
+    <sku_affected>SKU-SNACK-CHIPS-150,SKU-SNACK-NUTS-200</sku_affected>
+    <state>in_progress</state>
+  </x_2145749_qc_store_issue>
+</record_update>

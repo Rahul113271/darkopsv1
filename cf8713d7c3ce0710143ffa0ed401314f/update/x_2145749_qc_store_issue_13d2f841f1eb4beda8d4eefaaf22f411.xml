@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_store_issue">
+  <x_2145749_qc_store_issue action="INSERT_OR_UPDATE">
+    <sys_id>13d2f841f1eb4beda8d4eefaaf22f411</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_store_issue_13d2f841f1eb4beda8d4eefaaf22f411</sys_update_name>
+    <affects_pulse_score>true</affects_pulse_score>
+    <dark_store>5bb286ebd6f04b67b1cd971d35bffd25</dark_store>
+    <description>Conveyor belt motor burned out. All packing operations moved to manual process. Order fulfillment time doubled.</description>
+    <equipment>2ba94a20527c4b0d926856077c081b01</equipment>
+    <issue_category>equipment_failure</issue_category>
+    <reported_at>2024-11-16 09:10:00</reported_at>
+    <severity>critical</severity>
+    <state>open</state>
+  </x_2145749_qc_store_issue>
+</record_update>

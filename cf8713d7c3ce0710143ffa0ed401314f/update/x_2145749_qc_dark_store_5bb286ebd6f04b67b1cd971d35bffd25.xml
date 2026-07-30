@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_dark_store">
+  <x_2145749_qc_dark_store action="INSERT_OR_UPDATE">
+    <sys_id>5bb286ebd6f04b67b1cd971d35bffd25</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_dark_store_5bb286ebd6f04b67b1cd971d35bffd25</sys_update_name>
+    <address>31-15 Ditmars Blvd, Astoria, NY 11105</address>
+    <city>New York</city>
+    <daily_order_volume>190</daily_order_volume>
+    <pulse_score>41.7</pulse_score>
+    <pulse_score_band>critical</pulse_score_band>
+    <pulse_score_updated>true</pulse_score_updated>
+    <status>active</status>
+    <store_code>DS-QN-001</store_code>
+    <store_name>Astoria Central Store</store_name>
+    <target_delivery_minutes>22</target_delivery_minutes>
+    <zone>068363459eb2476c94240e796f55d8c7</zone>
+  </x_2145749_qc_dark_store>
+</record_update>

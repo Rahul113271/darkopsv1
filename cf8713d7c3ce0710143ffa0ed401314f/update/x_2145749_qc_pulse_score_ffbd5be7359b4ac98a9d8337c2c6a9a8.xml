@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_pulse_score">
+  <x_2145749_qc_pulse_score action="INSERT_OR_UPDATE">
+    <sys_id>ffbd5be7359b4ac98a9d8337c2c6a9a8</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_pulse_score_ffbd5be7359b4ac98a9d8337c2c6a9a8</sys_update_name>
+    <band>at_risk</band>
+    <complaint_severity_score>50</complaint_severity_score>
+    <complaint_volume_score>55</complaint_volume_score>
+    <dark_store>7338f75657af4e6fba955fafdabefc31</dark_store>
+    <equipment_uptime_score>30</equipment_uptime_score>
+    <inventory_accuracy_score>65</inventory_accuracy_score>
+    <open_complaint_count>12</open_complaint_count>
+    <open_store_issue_count>1</open_store_issue_count>
+    <partner_incident_score>52</partner_incident_score>
+    <refund_fraud_score>80</refund_fraud_score>
+    <score>58.1</score>
+    <sla_compliance_score>60</sla_compliance_score>
+    <snapshot_time>2024-11-18 06:00:00</snapshot_time>
+    <zone>34bcccd8602e435bb3bdb8070ce4e017</zone>
+  </x_2145749_qc_pulse_score>
+</record_update>

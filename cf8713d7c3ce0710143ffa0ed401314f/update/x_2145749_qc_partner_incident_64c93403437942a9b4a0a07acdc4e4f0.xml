@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_partner_incident">
+  <x_2145749_qc_partner_incident action="INSERT_OR_UPDATE">
+    <sys_id>64c93403437942a9b4a0a07acdc4e4f0</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_partner_incident_64c93403437942a9b4a0a07acdc4e4f0</sys_update_name>
+    <dark_store>639be30a42824fe582e729005fd9b17b</dark_store>
+    <description>Partner arrived 12 minutes past pickup window. Customer delivery SLA breached by 8 minutes.</description>
+    <incident_type>late_pickup</incident_type>
+    <order_number>ORD-2024-78432</order_number>
+    <partner>96aad0dc70cb48c89ee96e33ce99d32f</partner>
+    <reported_at>2024-11-17 19:45:00</reported_at>
+    <resolution_notes>Partner received warning. Route optimization adjusted for zone.</resolution_notes>
+    <severity>medium</severity>
+    <state>resolved</state>
+  </x_2145749_qc_partner_incident>
+</record_update>

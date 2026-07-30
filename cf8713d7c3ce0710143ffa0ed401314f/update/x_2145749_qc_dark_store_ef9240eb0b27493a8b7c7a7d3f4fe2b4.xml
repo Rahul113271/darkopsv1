@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_dark_store">
+  <x_2145749_qc_dark_store action="INSERT_OR_UPDATE">
+    <sys_id>ef9240eb0b27493a8b7c7a7d3f4fe2b4</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_dark_store_ef9240eb0b27493a8b7c7a7d3f4fe2b4</sys_update_name>
+    <address>85 Broad St, New York, NY 10004</address>
+    <city>New York</city>
+    <daily_order_volume>650</daily_order_volume>
+    <pulse_score>88</pulse_score>
+    <pulse_score_band>healthy</pulse_score_band>
+    <pulse_score_updated>true</pulse_score_updated>
+    <status>active</status>
+    <store_code>DS-NYC-002</store_code>
+    <store_name>FiDi Rapid Fulfillment</store_name>
+    <target_delivery_minutes>12</target_delivery_minutes>
+    <zone>6ba36ebeece144659d891e11fffe1a98</zone>
+  </x_2145749_qc_dark_store>
+</record_update>

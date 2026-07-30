@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_delivery_partner">
+  <x_2145749_qc_delivery_partner action="INSERT_OR_UPDATE">
+    <sys_id>878de939670b469c906c79a50f8f875e</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_delivery_partner_878de939670b469c906c79a50f8f875e</sys_update_name>
+    <home_zone>6ba36ebeece144659d891e11fffe1a98</home_zone>
+    <partner_name>Sophia Chen</partner_name>
+    <phone>+1-646-555-0582</phone>
+    <status>suspended</status>
+    <vehicle_type>van</vehicle_type>
+  </x_2145749_qc_delivery_partner>
+</record_update>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_partner_incident">
+  <x_2145749_qc_partner_incident action="INSERT_OR_UPDATE">
+    <sys_id>ee41b11de25745c89b93d841b327e12f</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_partner_incident_ee41b11de25745c89b93d841b327e12f</sys_update_name>
+    <dark_store>7338f75657af4e6fba955fafdabefc31</dark_store>
+    <description>Water leak from failed refrigeration unit creating slippery floor at loading dock. Partner nearly fell while picking up order.</description>
+    <incident_type>unsafe_store_conditions</incident_type>
+    <order_number>ORD-2024-78295</order_number>
+    <partner>878de939670b469c906c79a50f8f875e</partner>
+    <reported_at>2024-11-17 16:50:00</reported_at>
+    <severity>critical</severity>
+    <state>new</state>
+  </x_2145749_qc_partner_incident>
+</record_update>

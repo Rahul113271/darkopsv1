@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_equipment">
+  <x_2145749_qc_equipment action="INSERT_OR_UPDATE">
+    <sys_id>0bf843987f164fd292b1867311febaca</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_equipment_0bf843987f164fd292b1867311febaca</sys_update_name>
+    <asset_tag>EQ-WB-SC-001</asset_tag>
+    <dark_store>639be30a42824fe582e729005fd9b17b</dark_store>
+    <equipment_type>scanner</equipment_type>
+    <install_date>2023-11-12 09:00:00</install_date>
+    <operational_status>up</operational_status>
+  </x_2145749_qc_equipment>
+</record_update>

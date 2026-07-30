@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_application">
+  <sys_app_application action="INSERT_OR_UPDATE">
+    <sys_id>3d01de71a94f4c7ba9f499cc0e03044f</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>sys_app_application_3d01de71a94f4c7ba9f499cc0e03044f</sys_update_name>
+    <hint>Dark store operations, PulseScore, and fraud management</hint>
+    <title>Quick Commerce Ops</title>
+  </sys_app_application>
+</record_update>

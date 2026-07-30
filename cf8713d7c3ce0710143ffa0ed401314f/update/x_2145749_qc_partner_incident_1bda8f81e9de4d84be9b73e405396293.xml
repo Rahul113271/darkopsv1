@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_2145749_qc_partner_incident">
+  <x_2145749_qc_partner_incident action="INSERT_OR_UPDATE">
+    <sys_id>1bda8f81e9de4d84be9b73e405396293</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>x_2145749_qc_partner_incident_1bda8f81e9de4d84be9b73e405396293</sys_update_name>
+    <dark_store>9977684ab6624329b3e7a6f60bacbfcf</dark_store>
+    <description>Customer received wrong grocery bag. Two orders swapped at packing station. Both customers affected.</description>
+    <incident_type>wrong_items_packed</incident_type>
+    <order_number>ORD-2024-78510</order_number>
+    <partner>fff1cd26cd934c83a19914df7e770758</partner>
+    <reported_at>2024-11-18 12:30:00</reported_at>
+    <severity>high</severity>
+    <state>routed_to_store</state>
+  </x_2145749_qc_partner_incident>
+</record_update>
