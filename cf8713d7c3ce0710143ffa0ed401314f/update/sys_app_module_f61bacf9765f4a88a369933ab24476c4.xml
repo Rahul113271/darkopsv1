@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
+  <sys_app_module action="INSERT_OR_UPDATE">
+    <sys_id>f61bacf9765f4a88a369933ab24476c4</sys_id>
+    <sys_scope display_value="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+    <sys_update_name>sys_app_module_f61bacf9765f4a88a369933ab24476c4</sys_update_name>
+    <application>3d01de71a94f4c7ba9f499cc0e03044f</application>
+    <link_type>DIRECT</link_type>
+    <order>45</order>
+    <title>Executive Analytics Center</title>
+    <url>x_2145749_qc_exec_dashboard.do</url>
+  </sys_app_module>
+</record_update>
