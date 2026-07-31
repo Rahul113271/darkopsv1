@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[// Runs on a 15-minute repeat schedule so ops leadership always has a near-real-time
+// PulseScore per store rather than a once-a-day rollup, enabling live intervention.
+(function () {
+    var calculator = new x_2145749_qc.PulseScoreCalculator();
+    var processed = calculator.calculateForAllActiveStores();
+    gs.info('x_2145749_qc: PulseScore recalculated for ' + processed + ' active dark stores');
+})();
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2145749_qc/qc-ops-platform/0.0.1/src/server/scheduled-scripts/recalculate-pulse-scores.server.js</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:10</sys_created_on>
+        <sys_id>8d315540b0ae4b5b998d0c5234a8f94e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2145749_qc/qc-ops-platform/0.0.1/src/server/scheduled-scripts/recalculate-pulse-scores.server.js</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_module_8d315540b0ae4b5b998d0c5234a8f94e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:10</sys_updated_on>
+    </sys_module>
+</record_update>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function DeliveryPartnerReportingCtrl() {
+    var c = this;
+
+    c.form = {
+        incident_type: '',
+        severity: 'medium',
+        dark_store: '',
+        description: '',
+        order_number: ''
+    };
+    c.submitting = false;
+
+    c.incidentTypes = [
+        { value: 'order_not_ready', label: 'Order Not Ready at Pickup' },
+        { value: 'wrong_items_packed', label: 'Wrong Items Packed' },
+        { value: 'unsafe_store_conditions', label: 'Unsafe Store Conditions' },
+        { value: 'customer_unreachable', label: 'Customer Unreachable / Unavailable' },
+        { value: 'app_navigation_issue', label: 'App / Navigation Issue' },
+        { value: 'harassment_safety', label: 'Harassment or Safety Concern' },
+        { value: 'vehicle_breakdown', label: 'Vehicle Breakdown' },
+        { value: 'other', label: 'Other' }
+    ];
+
+    c.submitIncident = function () {
+        if (!c.form.dark_store || !c.form.incident_type) {
+            return;
+        }
+        c.submitting = true;
+        c.data.action = 'submit_incident';
+        c.data.dark_store = c.form.dark_store;
+        c.data.incident_type = c.form.incident_type;
+        c.data.severity = c.form.severity;
+        c.data.description = c.form.description;
+        c.data.order_number = c.form.order_number;
+
+        c.server.update().then(function (response) {
+            c.submitting = false;
+            c.form = { incident_type: '', severity: 'medium', dark_store: '', description: '', order_number: '' };
+        });
+    };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.qcops-dp-widget {
+    max-width: 480px;
+    margin: 0 auto;
+
+    .panel-heading h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    table.table-condensed td,
+    table.table-condensed th {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Lets delivery partners report operational incidents from the field via Service Portal or Now Mobile.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>qcops-delivery-partner-reporting</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+}]]></link>
+        <name>Delivery Partner Incident Reporting</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_2145749_qc.delivery_partner</roles>
+        <script><![CDATA[(function () {
+    data.darkStores = [];
+    var storeGr = new GlideRecord('x_2145749_qc_dark_store');
+    storeGr.addQuery('status', 'active');
+    storeGr.orderBy('store_name');
+    storeGr.query();
+    while (storeGr.next()) {
+        data.darkStores.push({ value: storeGr.getUniqueValue(), label: storeGr.getValue('store_name') });
+    }
+
+    var partnerGr = new GlideRecord('x_2145749_qc_delivery_partner');
+    partnerGr.addQuery('user', gs.getUserID());
+    partnerGr.query();
+    data.partnerFound = partnerGr.next();
+
+    if (data.partnerFound) {
+        data.partnerSysId = partnerGr.getUniqueValue();
+        data.partnerName = partnerGr.getValue('partner_name');
+
+        if (input && input.action === 'submit_incident') {
+            var newInc = new GlideRecord('x_2145749_qc_partner_incident');
+            newInc.initialize();
+            newInc.setValue('partner', data.partnerSysId);
+            newInc.setValue('dark_store', input.dark_store);
+            newInc.setValue('incident_type', input.incident_type);
+            newInc.setValue('severity', input.severity);
+            newInc.setValue('description', input.description);
+            newInc.setValue('order_number', input.order_number);
+            newInc.setValue('reported_at', new GlideDateTime().getDisplayValue());
+            newInc.insert();
+            data.submitted = true;
+            data.submittedNumber = newInc.getValue('number');
+        }
+
+        var myIncidents = [];
+        var incGr = new GlideRecord('x_2145749_qc_partner_incident');
+        incGr.addQuery('partner', data.partnerSysId);
+        incGr.orderByDesc('sys_created_on');
+        incGr.setLimit(10);
+        incGr.query();
+        while (incGr.next()) {
+            myIncidents.push({
+                number: incGr.getValue('number'),
+                type: incGr.getDisplayValue('incident_type'),
+                severity: incGr.getDisplayValue('severity'),
+                state: incGr.getDisplayValue('state'),
+                created: incGr.getDisplayValue('sys_created_on')
+            });
+        }
+        data.myIncidents = myIncidents;
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:06</sys_created_on>
+        <sys_id>31d6482184954ccfa7cfbe0ae3f4cfde</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Delivery Partner Incident Reporting</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sp_widget_31d6482184954ccfa7cfbe0ae3f4cfde</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:06</sys_updated_on>
+        <template><![CDATA[<div class="qcops-dp-widget panel panel-default">
+    <div class="panel-heading">
+        <h3>Report an Issue</h3>
+    </div>
+    <div class="panel-body" ng-if="!data.partnerFound">
+        <p class="text-danger">We couldn't find a delivery partner profile linked to your account. Please contact ops support.</p>
+    </div>
+    <div class="panel-body" ng-if="data.partnerFound">
+        <p>Reporting as <strong>{{data.partnerName}}</strong></p>
+
+        <div class="alert alert-success" ng-if="data.submitted">
+            Incident <strong>{{data.submittedNumber}}</strong> reported. The store manager has been notified.
+        </div>
+
+        <form ng-submit="c.submitIncident()">
+            <div class="form-group">
+                <label>Dark Store</label>
+                <select class="form-control" ng-model="c.form.dark_store" ng-options="s.value as s.label for s in data.darkStores" required>
+                    <option value="">-- Select store --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Issue Type</label>
+                <select class="form-control" ng-model="c.form.incident_type" ng-options="t.value as t.label for t in c.incidentTypes" required>
+                    <option value="">-- Select issue type --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Severity</label>
+                <select class="form-control" ng-model="c.form.severity">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                    <option value="urgent">Urgent - Safety</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Related Order Number (optional)</label>
+                <input type="text" class="form-control" ng-model="c.form.order_number">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" rows="4" ng-model="c.form.description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" ng-disabled="c.submitting">
+                <span ng-if="!c.submitting">Submit Report</span>
+                <span ng-if="c.submitting">Submitting...</span>
+            </button>
+        </form>
+
+        <hr>
+        <h4>Your Recent Reports</h4>
+        <table class="table table-condensed" ng-if="data.myIncidents.length">
+            <thead>
+                <tr><th>Number</th><th>Type</th><th>Severity</th><th>State</th><th>Reported</th></tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in data.myIncidents">
+                    <td>{{i.number}}</td>
+                    <td>{{i.type}}</td>
+                    <td>{{i.severity}}</td>
+                    <td>{{i.state}}</td>
+                    <td>{{i.created}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p ng-if="!data.myIncidents.length" class="text-muted">No reports yet.</p>
+    </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

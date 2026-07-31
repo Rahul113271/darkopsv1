@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Handles order complaint cases, refunds, and reorders in CSM</description>
+        <elevated_privilege>false</elevated_privilege>
+        <federated_id>v/yl7Z6C+XMDM5KD1I6VJc6OMkLeMcg6OL3kk9SueDI=</federated_id>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_2145749_qc.contact_center_agent</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>contact_center_agent</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:15</sys_created_on>
+        <sys_id>72de84e2c47d476db00baaddf5d460ef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2145749_qc.contact_center_agent</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_user_role_72de84e2c47d476db00baaddf5d460ef</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:15</sys_updated_on>
+    </sys_user_role>
+</record_update>
