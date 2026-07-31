@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[var PulseScoreCalculator = Class.create();
+PulseScoreCalculator.prototype = {
+    initialize: function () {
+        // Weights must sum to 100. Tune here rather than scattering magic numbers below.
+        this.WEIGHTS = {
+            complaint_volume: 20,
+            complaint_severity: 15,
+            sla_compliance: 20,
+            equipment_uptime: 15,
+            inventory_accuracy: 15,
+            partner_incident: 10,
+            refund_fraud: 5
+        };
+        this.LOOKBACK_HOURS = 24;
+    },
+
+    /**
+     * Calculates and persists a PulseScore snapshot for a single dark store, and
+     * caches the latest score + band onto the x_2145749_qc_dark_store record for fast
+     * dashboard/list reads.
+     *
+     * @param {String} storeSysId - sys_id of the x_2145749_qc_dark_store record
+     * @returns {Object} the computed snapshot fields
+     */
+    calculateForStore: function (storeSysId) {
+        var storeGr = new GlideRecord('x_2145749_qc_dark_store');
+        if (!storeGr.get(storeSysId)) {
+            return null;
+        }
+
+        var since = new GlideDateTime();
+        since.addSeconds(-this.LOOKBACK_HOURS * 3600);
+        var dailyVolume = parseInt(storeGr.getValue('daily_order_volume'), 10) || 1;
+
+        var complaintStats = this._complaintStats(storeGr, since, dailyVolume);
+        var slaScore = this._slaComplianceScore(storeGr, since);
+        var equipmentScore = this._equipmentUptimeScore(storeGr);
+        var inventoryScore = this._inventoryAccuracyScore(storeGr, since, dailyVolume);
+        var partnerScore = this._partnerIncidentScore(storeGr, since, dailyVolume);
+        var refundFraudScore = this._refundFraudScore(storeGr, since);
+
+        var w = this.WEIGHTS;
+        var composite =
+            (complaintStats.volumeScore * w.complaint_volume +
+                complaintStats.severityScore * w.complaint_severity +
+                slaScore * w.sla_compliance +
+                equipmentScore * w.equipment_uptime +
+                inventoryScore * w.inventory_accuracy +
+                partnerScore * w.partner_incident +
+                refundFraudScore * w.refund_fraud) / 100;
+
+        composite = Math.max(0, Math.min(100, composite));
+        var band = this._bandFor(composite);
+
+        var breakdown = {
+            weights: w,
+            sub_scores: {
+                complaint_volume: complaintStats.volumeScore,
+                complaint_severity: complaintStats.severityScore,
+                sla_compliance: slaScore,
+                equipment_uptime: equipmentScore,
+                inventory_accuracy: inventoryScore,
+                partner_incident: partnerScore,
+                refund_fraud: refundFraudScore
+            }
+        };
+
+        var snapshotGr = new GlideRecord('x_2145749_qc_pulse_score');
+        snapshotGr.initialize();
+        snapshotGr.setValue('dark_store', storeSysId);
+        snapshotGr.setValue('zone', storeGr.getValue('zone'));
+        snapshotGr.setValue('snapshot_time', new GlideDateTime().getDisplayValue());
+        snapshotGr.setValue('score', composite.toFixed(1));
+        snapshotGr.setValue('band', band);
+        snapshotGr.setValue('complaint_volume_score', complaintStats.volumeScore.toFixed(1));
+        snapshotGr.setValue('complaint_severity_score', complaintStats.severityScore.toFixed(1));
+        snapshotGr.setValue('sla_compliance_score', slaScore.toFixed(1));
+        snapshotGr.setValue('equipment_uptime_score', equipmentScore.toFixed(1));
+        snapshotGr.setValue('inventory_accuracy_score', inventoryScore.toFixed(1));
+        snapshotGr.setValue('partner_incident_score', partnerScore.toFixed(1));
+        snapshotGr.setValue('refund_fraud_score', refundFraudScore.toFixed(1));
+        snapshotGr.setValue('open_complaint_count', complaintStats.openCount);
+        snapshotGr.setValue('open_store_issue_count', this._openStoreIssueCount(storeGr));
+        snapshotGr.setValue('breakdown', JSON.stringify(breakdown));
+        snapshotGr.insert();
+
+        storeGr.setValue('pulse_score', composite.toFixed(1));
+        storeGr.setValue('pulse_score_band', band);
+        storeGr.update();
+
+        return {
+            score: composite,
+            band: band,
+            breakdown: breakdown
+        };
+    },
+
+    /**
+     * Recalculates PulseScore for every active dark store. Intended to be called
+     * from the nightly/periodic scheduled script.
+     */
+    calculateForAllActiveStores: function () {
+        var storeGr = new GlideRecord('x_2145749_qc_dark_store');
+        storeGr.addQuery('status', '!=', 'closed');
+        storeGr.query();
+
+        var processed = 0;
+        while (storeGr.next()) {
+            this.calculateForStore(storeGr.getUniqueValue());
+            processed++;
+        }
+        return processed;
+    },
+
+    // --- 0-100 sub-score helpers, higher is always healthier ---
+
+    _complaintStats: function (storeGr, since, dailyVolume) {
+        var gr = new GlideRecord('sn_customerservice_case');
+        gr.addQuery('x_2145749_qc_dark_store', storeGr.getUniqueValue());
+        gr.addQuery('sys_created_on', '>=', since);
+        gr.query();
+
+        var total = 0;
+        var severityPenalty = 0;
+        var openCount = 0;
+        while (gr.next()) {
+            total++;
+            if (gr.getValue('state') != '3' && gr.getValue('state') != '7') { // not closed/resolved
+                openCount++;
+            }
+            var priority = parseInt(gr.getValue('priority'), 10) || 3;
+            // priority 1 (critical) penalizes far more than priority 4/5
+            severityPenalty += (5 - priority) * 5;
+        }
+
+        var complaintRate = total / dailyVolume; // fraction of orders that generated a complaint
+        var volumeScore = Math.max(0, 100 - (complaintRate * 1000)); // 10% complaint rate -> 0
+        var severityScore = Math.max(0, 100 - severityPenalty);
+
+        return {
+            volumeScore: volumeScore,
+            severityScore: severityScore,
+            openCount: openCount
+        };
+    },
+
+    _slaComplianceScore: function (storeGr, since) {
+        var gr = new GlideRecord('sn_customerservice_case');
+        gr.addQuery('x_2145749_qc_dark_store', storeGr.getUniqueValue());
+        gr.addQuery('sys_created_on', '>=', since);
+        gr.query();
+
+        var total = 0;
+        var breached = 0;
+        while (gr.next()) {
+            total++;
+            var slaDue = gr.getValue('sla_due');
+            if (slaDue) {
+                var due = new GlideDateTime(slaDue);
+                if (due.compareTo(new GlideDateTime()) < 0 && gr.getValue('state') != '3' && gr.getValue('state') != '7') {
+                    breached++;
+                }
+            }
+        }
+        if (total === 0) return 100;
+        return Math.max(0, 100 - ((breached / total) * 100));
+    },
+
+    _equipmentUptimeScore: function (storeGr) {
+        var gr = new GlideRecord('x_2145749_qc_equipment');
+        gr.addQuery('dark_store', storeGr.getUniqueValue());
+        gr.query();
+
+        var total = 0;
+        var down = 0;
+        while (gr.next()) {
+            total++;
+            if (gr.getValue('operational_status') === 'down') down++;
+            else if (gr.getValue('operational_status') === 'degraded') down += 0.5;
+        }
+        if (total === 0) return 100;
+        return Math.max(0, 100 - ((down / total) * 100));
+    },
+
+    _inventoryAccuracyScore: function (storeGr, since, dailyVolume) {
+        var gr = new GlideRecord('x_2145749_qc_store_issue');
+        gr.addQuery('dark_store', storeGr.getUniqueValue());
+        gr.addQuery('issue_category', 'IN', 'inventory_discrepancy,stockout');
+        gr.addQuery('sys_created_on', '>=', since);
+        gr.query();
+        var count = gr.getRowCount();
+        var rate = count / dailyVolume;
+        return Math.max(0, 100 - (rate * 2000));
+    },
+
+    _partnerIncidentScore: function (storeGr, since, dailyVolume) {
+        var gr = new GlideRecord('x_2145749_qc_partner_incident');
+        gr.addQuery('dark_store', storeGr.getUniqueValue());
+        gr.addQuery('sys_created_on', '>=', since);
+        gr.query();
+        var count = gr.getRowCount();
+        var rate = count / dailyVolume;
+        return Math.max(0, 100 - (rate * 1500));
+    },
+
+    _refundFraudScore: function (storeGr, since) {
+        var gr = new GlideRecord('x_2145749_qc_refund_request');
+        gr.addQuery('case.x_2145749_qc_dark_store', storeGr.getUniqueValue());
+        gr.addQuery('sys_created_on', '>=', since);
+        gr.query();
+
+        var total = 0;
+        var flagged = 0;
+        while (gr.next()) {
+            total++;
+            if (gr.getValue('fraud_flagged') == 'true') flagged++;
+        }
+        if (total === 0) return 100;
+        return Math.max(0, 100 - ((flagged / total) * 200));
+    },
+
+    _openStoreIssueCount: function (storeGr) {
+        var gr = new GlideRecord('x_2145749_qc_store_issue');
+        gr.addQuery('dark_store', storeGr.getUniqueValue());
+        gr.addQuery('state', 'IN', 'open,in_progress,pending_fsm_dispatch');
+        gr.query();
+        return gr.getRowCount();
+    },
+
+    _bandFor: function (score) {
+        if (score >= 80) return 'healthy';
+        if (score >= 60) return 'watch';
+        if (score >= 40) return 'at_risk';
+        return 'critical';
+    },
+
+    type: 'PulseScoreCalculator'
+};
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2145749_qc/qc-ops-platform/0.0.1/src/server/script-includes/pulse-score-calculator.server.js</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:09</sys_created_on>
+        <sys_id>4597e249174a462fa113aa37ec22c0fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2145749_qc/qc-ops-platform/0.0.1/src/server/script-includes/pulse-score-calculator.server.js</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_module_4597e249174a462fa113aa37ec22c0fc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:09</sys_updated_on>
+    </sys_module>
+</record_update>

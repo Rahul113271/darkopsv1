@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[(function syncRefundDecisionToCase(current, previous) {
+    if (current.getValue('decision') === previous.getValue('decision')) {
+        return;
+    }
+
+    // Copy-down: auto-approved refunds approve the full requested amount.
+    if (current.getValue('decision') === 'auto_approved' && !current.getValue('amount_approved')) {
+        current.setValue('amount_approved', current.getValue('amount_requested'));
+        current.update();
+    }
+
+    var caseGr = new GlideRecord('sn_customerservice_case');
+    if (!caseGr.get(current.getValue('case'))) {
+        return;
+    }
+
+    var decision = current.getValue('decision');
+    if (decision === 'auto_escalated') {
+        caseGr.setValue('x_2145749_qc_fraud_review_required', current.getValue('fraud_flagged') === 'true');
+        caseGr.work_notes = 'Refund request ' + current.getValue('number') +
+            ' escalated by the Automated Resolution Engine: ' + current.getValue('decision_notes');
+    } else if (decision === 'auto_approved') {
+        caseGr.setValue('x_2145749_qc_auto_resolved', true);
+        var requestType = current.getValue('request_type');
+        caseGr.setValue('x_2145749_qc_resolution_type', requestType === 'reorder' ? 'reorder' : 'full_refund');
+        caseGr.work_notes = 'Refund request ' + current.getValue('number') + ' auto-approved by the Automated Resolution Engine.';
+    } else if (decision === 'manually_approved' || decision === 'manually_denied') {
+        caseGr.work_notes = 'Refund request ' + current.getValue('number') + ' ' + decision.replace('_', ' ') + ' by an agent.';
+    }
+    caseGr.update();
+})(current, previous);
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2145749_qc/qc-ops-platform/0.0.1/src/server/business-rules/sync-refund-decision-to-case.server.js</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:09</sys_created_on>
+        <sys_id>45a003a71a744f5b8904b9da90842cd4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2145749_qc/qc-ops-platform/0.0.1/src/server/business-rules/sync-refund-decision-to-case.server.js</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_module_45a003a71a744f5b8904b9da90842cd4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:09</sys_updated_on>
+    </sys_module>
+</record_update>

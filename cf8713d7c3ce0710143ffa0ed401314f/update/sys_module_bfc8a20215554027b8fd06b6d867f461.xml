@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[function DeliveryPartnerReportingCtrl() {
+    var c = this;
+
+    c.form = {
+        incident_type: '',
+        severity: 'medium',
+        dark_store: '',
+        description: '',
+        order_number: ''
+    };
+    c.submitting = false;
+
+    c.incidentTypes = [
+        { value: 'order_not_ready', label: 'Order Not Ready at Pickup' },
+        { value: 'wrong_items_packed', label: 'Wrong Items Packed' },
+        { value: 'unsafe_store_conditions', label: 'Unsafe Store Conditions' },
+        { value: 'customer_unreachable', label: 'Customer Unreachable / Unavailable' },
+        { value: 'app_navigation_issue', label: 'App / Navigation Issue' },
+        { value: 'harassment_safety', label: 'Harassment or Safety Concern' },
+        { value: 'vehicle_breakdown', label: 'Vehicle Breakdown' },
+        { value: 'other', label: 'Other' }
+    ];
+
+    c.submitIncident = function () {
+        if (!c.form.dark_store || !c.form.incident_type) {
+            return;
+        }
+        c.submitting = true;
+        c.data.action = 'submit_incident';
+        c.data.dark_store = c.form.dark_store;
+        c.data.incident_type = c.form.incident_type;
+        c.data.severity = c.form.severity;
+        c.data.description = c.form.description;
+        c.data.order_number = c.form.order_number;
+
+        c.server.update().then(function (response) {
+            c.submitting = false;
+            c.form = { incident_type: '', severity: 'medium', dark_store: '', description: '', order_number: '' };
+        });
+    };
+}
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2145749_qc/qc-ops-platform/0.0.1/src/server/spwidget/delivery-partner-reporting.client.js</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:10</sys_created_on>
+        <sys_id>bfc8a20215554027b8fd06b6d867f461</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2145749_qc/qc-ops-platform/0.0.1/src/server/spwidget/delivery-partner-reporting.client.js</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_module_bfc8a20215554027b8fd06b6d867f461</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:10</sys_updated_on>
+    </sys_module>
+</record_update>

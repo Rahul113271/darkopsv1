@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[(function routePartnerIncidentToStoreIssue(current, previous) {
+    var routableTypes = ['order_not_ready', 'wrong_items_packed', 'unsafe_store_conditions'];
+    if (routableTypes.indexOf(current.getValue('incident_type')) === -1) {
+        return;
+    }
+
+    var issueGr = new GlideRecord('x_2145749_qc_store_issue');
+    issueGr.initialize();
+    issueGr.setValue('dark_store', current.getValue('dark_store'));
+    issueGr.setValue('issue_category', 'other');
+    issueGr.setValue('severity', current.getValue('severity'));
+    issueGr.setValue('description', current.getValue('description'));
+    issueGr.setValue('source_partner_incident', current.getUniqueValue());
+    issueGr.insert();
+
+    current.setValue('state', 'routed_to_store');
+    current.update();
+})(current, previous);
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2145749_qc/qc-ops-platform/0.0.1/src/server/business-rules/route-partner-incident-to-store-issue.server.js</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:10</sys_created_on>
+        <sys_id>ee9b4d40b4b04c73b26277f8b10abddd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2145749_qc/qc-ops-platform/0.0.1/src/server/business-rules/route-partner-incident-to-store-issue.server.js</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_module_ee9b4d40b4b04c73b26277f8b10abddd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:10</sys_updated_on>
+    </sys_module>
+</record_update>

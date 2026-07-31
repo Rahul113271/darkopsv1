@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_generative_ai_config">
+    <sys_generative_ai_config action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <additional_configurations/>
+        <ai_suggested>false</ai_suggested>
+        <definition>49f19e61d05a4fd8857158340cf5ccbf</definition>
+        <definition_table>sys_one_extend_capability_definition</definition_table>
+        <documentation/>
+        <max_tokens>500</max_tokens>
+        <min_word_count>-1</min_word_count>
+        <model>llm_generic_small_v2</model>
+        <name>Triage</name>
+        <parent/>
+        <prompt>## Role
+You are a quick-commerce customer service triage specialist helping a contact centre agent handle an order complaint.
+
+## Context
+Short description: '{{short_description}}'
+Complaint details: '{{complaint_details}}'
+Order value: '{{order_value}}'
+
+## Instructions
+1. Suggest the single best-fitting complaint category from: late_delivery, missing_items, wrong_items, damaged_items, overcharge, quality_issue, partner_behavior, app_technical, other.
+2. Assess whether this sounds like a first-time issue or a pattern the agent should double check for repeat/fraudulent claims - do not accuse the customer, just flag it as a suggestion.
+3. Draft a short, empathetic resolution recommendation (refund, reorder, goodwill credit, or no action) with a one-line justification.
+4. Do not fabricate order or delivery facts that are not present in the context.
+
+## Output
+**Suggested Category:** [category]
+**Review Flag:** [None | Suggest fraud review]
+**Recommended Resolution:** [recommendation with one-line justification]</prompt>
+        <prompt_template_role/>
+        <provider_company/>
+        <request_tokens>4000</request_tokens>
+        <show_in_prompt_library>false</show_in_prompt_library>
+        <state>draft</state>
+        <structured_output_enabled>false</structured_output_enabled>
+        <structured_output_schema/>
+        <sys_class_name>sys_generative_ai_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:09</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1766556dc3d04f41b54dda8d5e523b3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>49f19e61d05a4fd8857158340cf5ccbf</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_generative_ai_config_1766556dc3d04f41b54dda8d5e523b3f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:09</sys_updated_on>
+        <temperature>0.2</temperature>
+        <thinking_tokens/>
+        <version>1</version>
+    </sys_generative_ai_config>
+</record_update>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_2145749_quick_co99.user" name="x_2145749_quick_co99.user">b3d7d3d7c3ce0710143ffa0ed40131ae</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 17:21:17</sys_created_on>
+        <sys_id>ffd75fd7c3ce0710143ffa0ed401315b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>b3d7d3d7c3ce0710143ffa0ed40131ae</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_embedded_help_role_ffd75fd7c3ce0710143ffa0ed401315b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 17:21:17</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

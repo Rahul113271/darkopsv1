@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_one_extend_capability">
+    <sys_one_extend_capability action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Suggests a category and drafts a resolution recommendation for an order complaint case, for agent review.</description>
+        <external>false</external>
+        <metadata/>
+        <name>Order Complaint Triage Assistant</name>
+        <offglide_enabled>false</offglide_enabled>
+        <short_description/>
+        <sys_class_name>sys_one_extend_capability</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>324b60b075c74ab7816639a79d22890a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Order Complaint Triage Assistant</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_one_extend_capability_324b60b075c74ab7816639a79d22890a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:10</sys_updated_on>
+        <type>skill</type>
+    </sys_one_extend_capability>
+    <sys_translated_text action="delete_multiple" query="documentkey=324b60b075c74ab7816639a79d22890a"/>
+</record_update>

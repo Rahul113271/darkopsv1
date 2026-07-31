@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[(function () {
+    data.darkStores = [];
+    var storeGr = new GlideRecord('x_2145749_qc_dark_store');
+    storeGr.addQuery('status', 'active');
+    storeGr.orderBy('store_name');
+    storeGr.query();
+    while (storeGr.next()) {
+        data.darkStores.push({ value: storeGr.getUniqueValue(), label: storeGr.getValue('store_name') });
+    }
+
+    var partnerGr = new GlideRecord('x_2145749_qc_delivery_partner');
+    partnerGr.addQuery('user', gs.getUserID());
+    partnerGr.query();
+    data.partnerFound = partnerGr.next();
+
+    if (data.partnerFound) {
+        data.partnerSysId = partnerGr.getUniqueValue();
+        data.partnerName = partnerGr.getValue('partner_name');
+
+        if (input && input.action === 'submit_incident') {
+            var newInc = new GlideRecord('x_2145749_qc_partner_incident');
+            newInc.initialize();
+            newInc.setValue('partner', data.partnerSysId);
+            newInc.setValue('dark_store', input.dark_store);
+            newInc.setValue('incident_type', input.incident_type);
+            newInc.setValue('severity', input.severity);
+            newInc.setValue('description', input.description);
+            newInc.setValue('order_number', input.order_number);
+            newInc.setValue('reported_at', new GlideDateTime().getDisplayValue());
+            newInc.insert();
+            data.submitted = true;
+            data.submittedNumber = newInc.getValue('number');
+        }
+
+        var myIncidents = [];
+        var incGr = new GlideRecord('x_2145749_qc_partner_incident');
+        incGr.addQuery('partner', data.partnerSysId);
+        incGr.orderByDesc('sys_created_on');
+        incGr.setLimit(10);
+        incGr.query();
+        while (incGr.next()) {
+            myIncidents.push({
+                number: incGr.getValue('number'),
+                type: incGr.getDisplayValue('incident_type'),
+                severity: incGr.getDisplayValue('severity'),
+                state: incGr.getDisplayValue('state'),
+                created: incGr.getDisplayValue('sys_created_on')
+            });
+        }
+        data.myIncidents = myIncidents;
+    }
+})();
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2145749_qc/qc-ops-platform/0.0.1/src/server/spwidget/delivery-partner-reporting.server.js</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:10</sys_created_on>
+        <sys_id>a23c7a8b28ec44c9940dbbc1010190e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2145749_qc/qc-ops-platform/0.0.1/src/server/spwidget/delivery-partner-reporting.server.js</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_module_a23c7a8b28ec44c9940dbbc1010190e7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:10</sys_updated_on>
+    </sys_module>
+</record_update>
