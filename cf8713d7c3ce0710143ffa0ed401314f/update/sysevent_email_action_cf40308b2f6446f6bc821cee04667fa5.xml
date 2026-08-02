@@ -6,7 +6,7 @@
         <advanced_condition/>
         <affected_field_on_event/>
         <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
-        <collection>x_2145749_qc_refund_request</collection>
+        <collection>task_sla</collection>
         <condition/>
         <content_type>text/html</content_type>
         <default_digest>false</default_digest>
@@ -39,40 +39,46 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<h2>Fraud-Flagged Refund Request Escalated</h2>
-<p>A refund request has been automatically escalated due to fraud detection rules.</p>
-<table style="border-collapse: collapse; width: 100%; max-width: 500px;">
+        <message_html><![CDATA[<h2>⚠️ SLA Breach Early Warning</h2>
+<p>A customer complaint case SLA is at risk of breaching and requires immediate supervisor attention.</p>
+<table style="border-collapse: collapse; width: 100%; max-width: 600px;">
 <tbody>
 <tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Refund Number</td>
-<td style="padding: 8px; border: 1px solid #ddd;">${number}</td>
+<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold; background-color: #f5f5f5;">Case Number</td>
+<td style="padding: 8px; border: 1px solid #ddd;">\${task.number}</td>
 </tr>
 <tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Amount Requested</td>
-<td style="padding: 8px; border: 1px solid #ddd;">$${amount_requested}</td>
+<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold; background-color: #f5f5f5;">Case Description</td>
+<td style="padding: 8px; border: 1px solid #ddd;">\${task.short_description}</td>
 </tr>
 <tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Customer</td>
-<td style="padding: 8px; border: 1px solid #ddd;">${customer}</td>
+<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold; background-color: #f5f5f5;">SLA Definition</td>
+<td style="padding: 8px; border: 1px solid #ddd;">\${sla}</td>
 </tr>
 <tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Risk Score</td>
-<td style="padding: 8px; border: 1px solid #ddd;">${fraud_risk_score}</td>
+<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold; background-color: #f5f5f5;">Elapsed Percentage</td>
+<td style="padding: 8px; border: 1px solid #ddd; color: #d32f2f; font-weight: bold;">\${percentage}%</td>
 </tr>
 <tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Order Number</td>
-<td style="padding: 8px; border: 1px solid #ddd;">${order_number}</td>
+<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold; background-color: #f5f5f5;">Time Remaining</td>
+<td style="padding: 8px; border: 1px solid #ddd; color: #d32f2f; font-weight: bold;">\${time_left}</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold; background-color: #f5f5f5;">Breach Deadline</td>
+<td style="padding: 8px; border: 1px solid #ddd;">\${planned_end_time}</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold; background-color: #f5f5f5;">Assigned To</td>
+<td style="padding: 8px; border: 1px solid #ddd;">\${task.assigned_to}</td>
 </tr>
 </tbody>
 </table>
-<h3>Fraud Rules Triggered</h3>
-<p>${mail_script:QC Fraud Escalation Flags List}</p>
-<p><a style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 4px;" href="${mail_script:QC Fraud Escalation Record Link}"> Open Refund Request </a></p>
-<p style="color: #666; font-size: 12px;">This is an automated alert from the Quick Commerce Ops Fraud Detection Engine. Please review and take appropriate action.</p>
-<p>${mail_script:QC Fraud Escalation Ops Admin Recipients}</p>]]></message_html>
+<p style="margin-top: 16px;"><a style="display: inline-block; padding: 10px 20px; background-color: #d32f2f; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;" href="\${mail_script:QC SLA Warning Task Link}">Open Case Now</a></p>
+<p style="color: #666; font-size: 12px; margin-top: 16px;">This is an automated early warning from the Quick Commerce Ops Platform. The SLA timer has consumed 80%+ of its allotted time and has not yet breached — please intervene before time runs out.</p>
+<p>\${mail_script:QC SLA Warning Ops Admin Recipients}</p>]]></message_html>
         <message_list/>
         <message_text/>
-        <name>QC Fraud Escalation Alert</name>
+        <name>QC SLA Breach Early Warning</name>
         <omit_watermark>false</omit_watermark>
         <order>100</order>
         <push_message_only>false</push_message_only>
@@ -83,23 +89,23 @@
         <send_self>false</send_self>
         <sms_alternate/>
         <style/>
-        <subject>[Fraud Alert] Refund ${number} auto-escalated for manual review</subject>
+        <subject>[SLA Warning] Case \${task.number} - SLA "\${sla}" at \${percentage}% - Breach Imminent</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-08-01 19:30:43</sys_created_on>
+        <sys_created_on>2026-08-02 10:24:45</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>85584280dbdd46c784cbdd3912e44de3</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>QC Fraud Escalation Alert</sys_name>
+        <sys_id>cf40308b2f6446f6bc821cee04667fa5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>QC SLA Breach Early Warning</sys_name>
         <sys_overrides/>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
-        <sys_update_name>sysevent_email_action_85584280dbdd46c784cbdd3912e44de3</sys_update_name>
+        <sys_update_name>sysevent_email_action_cf40308b2f6446f6bc821cee04667fa5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-01 21:16:04</sys_updated_on>
+        <sys_updated_on>2026-08-02 10:24:45</sys_updated_on>
         <sys_version>2</sys_version>
         <template/>
         <type>email</type>
