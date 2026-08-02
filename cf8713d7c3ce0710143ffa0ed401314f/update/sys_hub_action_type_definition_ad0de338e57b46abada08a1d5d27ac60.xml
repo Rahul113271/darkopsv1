@@ -80,139 +80,60 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-08-01 19:48:29</sys_updated_on>
         <value>(function() {
-    // SLA Breach Early Warning Script
-    // Runs every 5 minutes to detect cases nearing SLA breach
-    
-    var ORDER_VALUE_THRESHOLD = 50; // Configurable threshold for high-value orders
-    var BREACH_WARNING_MINUTES = 15;
-    var COMPLAINT_WINDOW_HOURS = 1;
-    var COMPLAINT_THRESHOLD = 3;
-    var AUTO_REFUND_FLOW_ID = '2f0239f19af34f66958b45e0f25b4e00';
+    // SLA Breach Early Warning - Evaluate Cases
+    // Checks open cases nearing SLA breach and sends notifications
 
     gs.info('SLA Breach Early Warning: Starting evaluation');
 
-    // Query open cases (not Resolved=6 or Closed=3)
-    var cases = new GlideRecord('sn_customerservice_case');
-    cases.addQuery('state', 'NOT IN', '3,6');
-    cases.query();
+    // Find active task_sla records approaching breach (&gt;= 75% elapsed)
+    var taskSla = new GlideRecord('task_sla');
+    taskSla.addQuery('active', 'true');
+    taskSla.addQuery('has_breached', 'false');
+    taskSla.addEncodedQuery('percentage&gt;=75');
+    taskSla.query();
 
-    while (cases.next()) {
-        var caseNumber = cases.getValue('number');
-        var caseSysId = cases.getUniqueValue();
+    var notifiedCount = 0;
 
-        // Get SLA task records for this case
-        var slaTask = new GlideRecord('task_sla');
-        slaTask.addQuery('task', caseSysId);
-        slaTask.addQuery('active', 'true');
-        slaTask.query();
+    while (taskSla.next()) {
+        var taskId = taskSla.getValue('task');
+        var percentage = taskSla.getValue('percentage');
 
-        if (!slaTask.hasNext()) {
-            // No active SLA data for this case - check if complaint type should have one
-            var complaintType = cases.getValue('x_2145749_qc_complaint_type');
-            if (complaintType) {
-                gs.error('SLA Breach Early Warning: No SLA data found for case ' + caseNumber + ' with complaint type ' + complaintType + '. Skipping.');
-            }
+        // Get the linked case
+        var caseGr = new GlideRecord('sn_customerservice_case');
+        if (!caseGr.get(taskId)) {
             continue;
         }
 
-        while (slaTask.next()) {
-            var plannedEndTime = slaTask.getValue('planned_end_time');
-            if (!plannedEndTime) {
-                gs.error('SLA Breach Early Warning: SLA planned_end_time missing for case ' + caseNumber + '. Skipping.');
-                continue;
-            }
+        // Only process cases in our scope with complaint_type
+        var complaintType = caseGr.getValue('x_2145749_qc_complaint_type');
+        if (!complaintType) {
+            continue;
+        }
 
-            var now = new GlideDateTime();
-            var endTime = new GlideDateTime(plannedEndTime);
-            var diffMs = endTime.getNumericValue() - now.getNumericValue();
-            var minutesRemaining = Math.floor(diffMs / 60000);
+        var caseNumber = caseGr.getValue('number');
+        var darkStoreSysId = caseGr.getValue('x_2145749_qc_dark_store');
+        var storeName = '';
 
-            gs.info('SLA Breach Early Warning: Case ' + caseNumber + ' has ' + minutesRemaining + ' minutes remaining to SLA breach.');
-
-            // Check if within breach warning window (0-15 minutes)
-            if (minutesRemaining &lt;= BREACH_WARNING_MINUTES &amp;&amp; minutesRemaining &gt; 0) {
-                // Breach risk detected
-                var assignedTo = cases.getValue('assigned_to');
-                var storeSysId = cases.getValue('x_2145749_qc_dark_store');
-                var zoneSysId = cases.getValue('x_2145749_qc_zone');
-
-                // Send notification to assigned agent
-                if (assignedTo) {
-                    var agentUser = new GlideRecord('sys_user');
-                    if (agentUser.get(assignedTo)) {
-                        gs.eventQueue('x_2145749_qc.sla_breach_warning', cases, 
-                            'Case: ' + caseNumber + ', Store: ' + storeSysId + ', Minutes remaining: ' + minutesRemaining,
-                            agentUser.getValue('email'));
-                    }
-                    
-                    // Notify supervisor (manager of assigned agent)
-                    var managerSysId = agentUser.getValue('manager');
-                    if (managerSysId) {
-                        var managerUser = new GlideRecord('sys_user');
-                        if (managerUser.get(managerSysId)) {
-                            gs.eventQueue('x_2145749_qc.sla_breach_warning', cases,
-                                'Case: ' + caseNumber + ', Store: ' + storeSysId + ', Minutes remaining: ' + minutesRemaining,
-                                managerUser.getValue('email'));
-                        }
-                    }
-                }
-
-                // Check if high-value order AND store has 3+ complaints in last hour
-                var orderValue = parseFloat(cases.getValue('x_2145749_qc_order_value') || '0');
-                
-                if (orderValue &gt; ORDER_VALUE_THRESHOLD &amp;&amp; storeSysId) {
-                    // Count complaints for this store in the last hour
-                    var recentComplaints = new GlideRecord('sn_customerservice_case');
-                    recentComplaints.addQuery('x_2145749_qc_dark_store', storeSysId);
-                    var oneHourAgo = new GlideDateTime();
-                    oneHourAgo.addSeconds(-3600);
-                    recentComplaints.addQuery('sys_created_on', '&gt;=', oneHourAgo.getValue());
-                    recentComplaints.query();
-                    var complaintCount = recentComplaints.getRowCount();
-
-                    if (complaintCount &gt;= COMPLAINT_THRESHOLD) {
-                        gs.info('SLA Breach Early Warning: High-value order breach risk with ' + complaintCount + ' store complaints. Flagging case ' + caseNumber + ' for bundled handling.');
-                        
-                        // Flag case for bundled handling
-                        cases.work_notes = 'AUTO: Flagged for bundled handling - high-value order with ' + complaintCount + ' store complaints in last hour. SLA breach in ' + minutesRemaining + ' minutes.';
-                        cases.update();
-
-                        // Trigger the Auto-Approve Low-Risk Refunds flow
-                        try {
-                            sn_fd.FlowAPI.startSubflow(AUTO_REFUND_FLOW_ID, { current: cases });
-                            gs.info('SLA Breach Early Warning: Triggered Auto-Approve Low-Risk Refunds flow for case ' + caseNumber);
-                        } catch (e) {
-                            gs.error('SLA Breach Early Warning: Failed to trigger refund flow for case ' + caseNumber + ': ' + e.message);
-                        }
-                    }
-                }
-            } else if (minutesRemaining &lt;= 0) {
-                // Actual breach - auto-assign to supervisor group for the case zone
-                gs.info('SLA Breach Early Warning: BREACH detected for case ' + caseNumber + '. Auto-assigning to supervisor group.');
-                
-                var caseZone = cases.getValue('x_2145749_qc_zone');
-                if (caseZone) {
-                    // Look up supervisor group for this zone
-                    // Zone supervisor groups are managed via sys_user_group with a reference to the zone
-                    var supervisorGroup = new GlideRecord('sys_user_group');
-                    supervisorGroup.addQuery('x_2145749_qc_zone', caseZone);
-                    supervisorGroup.addQuery('type', 'supervisor');
-                    supervisorGroup.setLimit(1);
-                    supervisorGroup.query();
-                    if (supervisorGroup.next()) {
-                        cases.setValue('assignment_group', supervisorGroup.getUniqueValue());
-                        cases.work_notes = 'AUTO: SLA breached. Case auto-assigned to zone supervisor group (' + supervisorGroup.getValue('name') + ').';
-                        cases.update();
-                    } else {
-                        gs.warn('SLA Breach Early Warning: No supervisor group found for zone ' + caseZone + '. Cannot auto-assign case ' + caseNumber + '.');
-                    }
-                }
+        if (darkStoreSysId) {
+            var storeGr = new GlideRecord('x_2145749_qc_dark_store');
+            if (storeGr.get(darkStoreSysId)) {
+                storeName = storeGr.getValue('store_name');
             }
         }
+
+        // Send notification to ops_leadership
+        gs.eventQueue('x_2145749_qc.sla_breach_warning', caseGr,
+            'Case ' + caseNumber + ' is at ' + percentage + '% of SLA. Category: ' + complaintType + '. Store: ' + storeName,
+            'x_2145749_qc.ops_leadership');
+
+        notifiedCount++;
     }
 
     gs.info('SLA Breach Early Warning: Evaluation complete');
 })();</value>
+    gs.info('SLA Breach Early Warning: Evaluation complete. Notified for ' + notifiedCount + ' cases.');
+})();
+</value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
