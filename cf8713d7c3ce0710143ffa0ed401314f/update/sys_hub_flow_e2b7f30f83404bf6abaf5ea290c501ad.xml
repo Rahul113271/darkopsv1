@@ -2,7 +2,7 @@
     <sys_hub_flow action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
-        <active>true</active>
+        <active>false</active>
         <allow_high_security_roles>false</allow_high_security_roles>
         <annotation/>
         <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,timeFromCreateToActivate=1218978000,viewActivatedIn=naturalLanguage</attributes>
@@ -29,7 +29,7 @@
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
         <show_triggered_flows>false</show_triggered_flows>
-        <status>published</status>
+        <status>draft</status>
         <substatus/>
         <sys_class_name>sys_hub_flow</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -290,6 +290,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-08-01 20:51:27</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAAA71W32vbMBD+V4SeNvCgHR1jgT1s6waBboW13R5KEYp1dsSUUyqdk4bS/33IsVPZcX4Rt0/BJ+Xuu+++093tIyen8xzcED1JTOFq4YeKDzhPuJEjMHzAr+XIAE+4RgKH0lwvpsAHnIJZoJyEMwVTQAVIy7+mY6tTuNCe+OD2LuETiUqSdQs+IFdAwq1T4Pjg9OQk4aWLyh9P+EyaInw/iPenZx8+nn0S96lwkBWohIP7AjyFgNpPjVz8OeTyDw2mys2nTk/pS0p6BnyQSeMhoNZGOcAl5ql0cgIUYD5y6si5hbtJ19NTsg+3vwtkl8i+P1CgT7Hyz36d7CWhO4h+5FnNR2CZJzy7iOJYZGnhHCAxiYpBHZPqmNlwInNYOs6uwEBKoFbsZDc+/vqpvdeYV4aQ7Sp4aVmPbhYxhJq2Y4I2lVVd6pCWK1BYFHXGkchqqC05tczHC2dVv42IdipCEjk9Kgh88CvVLEhK1bV+OkBwf8eA7Aq81zb8EgVKj5bcyNK4XfTMOvbV0pgNg29ZslaK75fFd7GtQtOnCtGi0M8hYmiXQYs1vg1QekSyD4obD471D+OQDpmPAYVfyWHWrGurQ5rWl2mQFqA9JNxfj2TGztkQj28LiYu1rgi+NTKJC5ZaJHigHtU2kum/3NkC1aa4zzfYGwWZLAy97fP5tw62A2jeeCV5h+BCY6zsmKm2vjvOXkblz7i69dePpr9ZVJqWD0pb0fWRP2iR28x2GsVaDVonCyUyI/Mc1OdqPWlP3S13euA+TrMDaRdTTe7nEskLskIqJSJ3q3VrYhWY84jBqi5C47Qgz58ifoXFaHksPIiI+uDv0IFeTpDepnnXs2Vd+WQVHlyPz4VFEDbrHIw6YxUBoNhowWgMLLPG2LnGvMTR78IQitIGc24ZWmLuVeAcPK5D0I6Zvaxeq70axhec2C1Mu4Ta815bei/1vNYDudEKhFme9fHQNVOuHNc1WC/A/uyXPqIsd1ejkds2eFsJ21mLu/9OmdfuMhAAAA==</trigger_inputs>
         <trigger_inputs>H4sIAAAAAAAA/+1XbU/bMBD+K1Y+bVInwcY0jW/bGBISGxKw7QNDkRtfWmuuXewLkCH++855aU2aQICGaRqfWr/E99zd85zPJ1cRWjmZgN3TDrlO4Ch3eyLajqJRpPgYFP095mMFNJYawWqujvM50DT66VjzmV8TMActQGP5aTI1MoF96Wh8cjqKZlwLjsbm0TbaDEZRas3sGGZzxZHOSrlyNGmsABttb25sjKLi3MoIHXjOVebHl/Hrza2377bex2dJbCHNtKCfswzIEqGQjk7Mv/fanEylEhZ0iXDOLVlEb/9qxfMGGGwJQIWdkMMl+lCIhVuB89WMBS4OtMqDLZdO/obi+zJ2B3OURpfRzBzEQYCrb9Kjqbk4hBTIhwR2pS4AVIvKJFwtRhwpy+MMwZF319eLQO1KUFWyXWLlHD8kKM/rhFyP+rDjMNPsQLPPldesiJlbpUvp1h1UuSKvfILIVLT9apOcrHPpaUO70/3ArNEsySy5j4xCzOrAM6whpHszPoHSDh2sIMEgL+k3F46+SOekngTOd2EpNqyCUXmIqCbLYzCctpGnr3RspmOj4wUdlyKq8TfkUk/3EEZn0jttY4MF/45eIi7OPfdFzcIBBPRjCpodASXf+F9ET4J1S2hscNpkbWos+0jzbM+b4gX6QkxfjX4VzlXgBlSVJsLIpcUQqc89q+F2IBsOWB9QdLZl60f16AJwQcSK3YJQ5zep0CgA1WxP/Xdwttv4cwm4rQSkylwQg9aueq7zFdF7U1KTznOWGLJ2icOpZ8yTXxNrqPfqgrHcwV4ISHmm8OWAl7excDuemzv+pno9IqqJoXDDaDblG671FPGSda1mnyXbJdlPRguJZYVvCrZecvd6GN2TH0kAYNHYWZ4JSh8n8OJntrHxRlR9c7PV69zYgzeh6y1gsCUKT8ib6n35UNpccI0uRhNzIeLAh8ULZGYEqJ0gqxVXSDDzDF10HeQ8LjCWL4GBmsai8RiqY2y7O6jZ8fcGRd0OV6SNhtikrd2WTFkVHnp3jHOGUyBQikoWHV3AGrRH9TltYtsxjBaYfRJ062kJPZKWvrBMeKNYlJP36QobpLzD+PMl00/lhVxXJD5RUkCsyrX13zYFMwJorbmsrNcsWqXQQ/hTuXubQWwJwX/BntM/H9chBbkVAAA=</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_create</trigger_type>
@@ -317,6 +318,7 @@
         <sys_updated_on>2026-08-01 20:56:27</sys_updated_on>
         <ui_id>59e38af8-5bd6-4328-b4bf-4fc3f0dab58b</ui_id>
         <updation_source/>
+        <values>H4sIAAAAAAAAA83RwUoDMRAG4FcJOa8LlYq40EORHj148SI2TJN/SyCbpJNktSz77rIVS7UIe/SYyQzzzczrID11kI3MtHNQp0cle3JlCn6o28Xy7n75oA5aMdrijWIcClKWlTQ2RUfHl1nJSbONea2z7SGbllxCJSMxdchg2QwyH+MvyDhWZx9DBzYXtmF4ZFCGUYtaF2b4PI7Xqr/SZntM0KWDz8qaH6CTI12ADLRNNvgVlRwUkiY39d1+x5UPGWm1LjncnH8bETxEYNEFhmiZihFcHJLIbPd7MEwtnsgXcoLRW7yLaaeWYcQO7VREMXLoydXbzfP1/P9ENf/86OJkUF9rHce3T3v+uECkAgAA</values>
         <values>H4sIAAAAAAAA/+1V204bMRD9lZWft6vdJFDIGyJFqlRAhYoXLiuvPZtY8tqLL4E0yr93vJcQBUqDxANIzUvkudhnzpyZvV4SwcmYFHs8zQ6zfTbMhsNBmg4ORlmxPyyyAR9SYIckJopWgJGOFhLy5hCTOZU+GB/zQTba+zo6zO9ZbqD0iuPfvQfrMIoLW0u6uNopmM2E5AYUGV/fxqSmBl9yYMh4ueXaFbekBUgM/RWA/6UOt6hftP3YzI3OWoc2PODZS2MCjw4UB0RSUmkhJhVVnDptFmTsjEeDAcrPlVysI2ZCObyRhNhHK37juwdpiCsBS2PQ+tbHvCOvNZcT6ugl3sycN10om2nBwLakcCipl+5409YGnNdOaNWmNHV22Vr6Sp21nJD1BX2v0OItgoA61BmQd2WUlzP9cNGjPBGq4aRzSs2oXJ+oc0YU3gU8SwISKrwor2hdCzXNa6PnoklGLFUylXhISqkf8FErpiqhLABPkFaanKB90pivqBGhilO8BpNXMbELeyyptU+1IIn5vQ9I2sq6GvKWhpDCjKjdET4whw7uKu4mYgSvKQuyJyUZYCiJjWlYLo+x7Q54niXMG2TIrVbP5+DNYt8BUi/2ix7TNsZO6Vwz37RB8C2pTzpP9H3ypPXs3bQ++kxab8v69FLfWGv/EH06eFVhG+uz0brdED0HJiyiv/FpOuTUO52DRW7CHNz1zlxp5KYNOcKQL+uQcaQVRNpElTYQlYZ6HhkvwUbI6HSK3PMkOqUKa4wMzAU8ROGbIdAeFVCGJKQHCaYyufv28/m0fTh8b5v9HTrTz/6JAMntC63qv3JQ1aGmvG3d1peuc0ZXnXO9Ad5tBWT7afP7vwg+3iK4/QMTo05eEQoAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=59e38af85bd64328b4bf4fc3f0dab58b"/>
