@@ -6,33 +6,31 @@
         <action_template/>
         <active>true</active>
         <annotation/>
-        <attributes/>
-        <authored_on_release_version/>
+        <attributes>{}</attributes>
+        <authored_on_release_version>-1</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category display_value="">x_2145749_qc</category>
-        <compiler_build/>
         <copied_from/>
         <copied_from_name/>
         <description>Evaluates open cases for SLA breach risk. Sends notifications, flags high-value cases for bundled handling, triggers auto-refund flow, and auto-assigns breached cases to zone supervisor groups.</description>
         <flow_priority/>
         <ih_action>false</ih_action>
-        <internal_name/>
-        <label_cache/>
-        <latest_snapshot/>
-        <master_snapshot/>
+        <internal_name>sla_breach_early_warning__evaluate_cases</internal_name>
+        <label_cache>[]</label_cache>
+        <master_snapshot>e6684bc8932647101ff0f40bdd03d628</master_snapshot>
         <master_snapshot_digest/>
         <name>SLA Breach Early Warning - Evaluate Cases</name>
         <natlang/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
-        <state>draft</state>
+        <state>published</state>
         <sys_class_name>sys_hub_action_type_definition</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-08-01 19:48:29</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ad0de338e57b46abada08a1d5d27ac60</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>SLA Breach Early Warning - Evaluate Cases</sys_name>
         <sys_overrides/>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
@@ -40,7 +38,7 @@
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_ad0de338e57b46abada08a1d5d27ac60</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-01 19:48:29</sys_updated_on>
+        <sys_updated_on>2026-08-02 12:22:25</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -214,8 +212,7 @@
     }
 
     gs.info('SLA Breach Early Warning: Evaluation complete');
-})();
-</value>
+})();</value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -572,6 +569,29 @@
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=ad0de338e57b46abada08a1d5d27ac60"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_ad0de338e57b46abada08a1d5d27ac60"/>
     <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_ad0de338e57b46abada08a1d5d27ac60</name>
+        <plural>Don't Treat as Errors</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-01 19:48:29</sys_created_on>
+        <sys_id>2b1e8ec8936e07101ff0f40bdd03d66a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Don't Treat as Error</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_ad0de338e57b46abada08a1d5d27ac60___dont_treat_as_error___en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-01 19:48:29</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
         <element>result</element>
         <help/>
         <hint/>
@@ -582,7 +602,7 @@
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-08-01 19:48:29</sys_created_on>
-        <sys_id>7540e55c0b204d6883b162f533053967</sys_id>
+        <sys_id>6f1e8ec8936e07101ff0f40bdd03d6ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Execution Result</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
@@ -605,7 +625,7 @@
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-08-01 19:48:29</sys_created_on>
-        <sys_id>bf8bd8b9742e493cb1f71a6462c3fa70</sys_id>
+        <sys_id>971e8ec8936e07101ff0f40bdd03d664</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Action Status</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
@@ -617,29 +637,714 @@
         <url/>
         <url_target/>
     </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_ad0de338e57b46abada08a1d5d27ac60"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=ad0de338e57b46abada08a1d5d27ac60^sys_idNOT IN83684bc8932647101ff0f40bdd03d69d"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="SLA Breach Early Warning - Evaluate Cases">ad0de338e57b46abada08a1d5d27ac60</action_id>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_hub_action_plan","id":"83684bc8932647101ff0f40bdd03d69d","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <snapshot>4053eb80932a47101ff0f40bdd03d681</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>83684bc8932647101ff0f40bdd03d69d</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 12:22:25</sys_updated_on>
+    </sys_hub_action_plan>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <annotation/>
+        <attributes>{}</attributes>
+        <authored_on_release_version>-1</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="">x_2145749_qc</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Evaluates open cases for SLA breach risk. Sends notifications, flags high-value cases for bundled handling, triggers auto-refund flow, and auto-assigns breached cases to zone supervisor groups.</description>
+        <flow_priority/>
+        <internal_name>sla_breach_early_warning__evaluate_cases</internal_name>
+        <label_cache>[]</label_cache>
+        <master>true</master>
+        <name>SLA Breach Early Warning - Evaluate Cases</name>
+        <natlang/>
+        <outputs/>
+        <parent_action display_value="SLA Breach Early Warning - Evaluate Cases">ad0de338e57b46abada08a1d5d27ac60</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e6684bc8932647101ff0f40bdd03d628</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 10:24:54</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=e6684bc8932647101ff0f40bdd03d628"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e6684bc8932647101ff0f40bdd03d628"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>e6684bc8932647101ff0f40bdd03d628</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_id>0f684bc8932647101ff0f40bdd03d694</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 10:24:55</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</value>
+        <variable display_value="Action Status">76684bc8932647101ff0f40bdd03d671</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_action_output_e6684bc8932647101ff0f40bdd03d628^id=e6684bc8932647101ff0f40bdd03d628"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=e6684bc8932647101ff0f40bdd03d628^sys_idNOT INb6684bc8932647101ff0f40bdd03d640"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="SLA Breach Early Warning - Evaluate Cases">e6684bc8932647101ff0f40bdd03d628</action>
+        <cid>325c431f-e69b-46f9-a9fb-9d6d89bb47ab</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Evaluate SLA Breach Risk</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:54</sys_created_on>
+        <sys_id>b6684bc8932647101ff0f40bdd03d640</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 12:12:44</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=b6684bc8932647101ff0f40bdd03d640"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>b6684bc8932647101ff0f40bdd03d640</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_id>b6684bc8932647101ff0f40bdd03d665</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 12:12:44</sys_updated_on>
+        <value>(function() {
+    // SLA Breach Early Warning Script
+    // Runs every 5 minutes to detect cases nearing SLA breach
+    
+    var ORDER_VALUE_THRESHOLD = 50; // Configurable threshold for high-value orders
+    var BREACH_WARNING_MINUTES = 15;
+    var COMPLAINT_WINDOW_HOURS = 1;
+    var COMPLAINT_THRESHOLD = 3;
+    var AUTO_REFUND_FLOW_ID = '2f0239f19af34f66958b45e0f25b4e00';
+
+    gs.info('SLA Breach Early Warning: Starting evaluation');
+
+    // Query open cases (not Resolved=6 or Closed=3)
+    var cases = new GlideRecord('sn_customerservice_case');
+    cases.addQuery('state', 'NOT IN', '3,6');
+    cases.query();
+
+    while (cases.next()) {
+        var caseNumber = cases.getValue('number');
+        var caseSysId = cases.getUniqueValue();
+
+        // Get SLA task records for this case
+        var slaTask = new GlideRecord('task_sla');
+        slaTask.addQuery('task', caseSysId);
+        slaTask.addQuery('active', 'true');
+        slaTask.query();
+
+        if (!slaTask.hasNext()) {
+            // No active SLA data for this case - check if complaint type should have one
+            var complaintType = cases.getValue('x_2145749_qc_complaint_type');
+            if (complaintType) {
+                gs.error('SLA Breach Early Warning: No SLA data found for case ' + caseNumber + ' with complaint type ' + complaintType + '. Skipping.');
+            }
+            continue;
+        }
+
+        while (slaTask.next()) {
+            var plannedEndTime = slaTask.getValue('planned_end_time');
+            if (!plannedEndTime) {
+                gs.error('SLA Breach Early Warning: SLA planned_end_time missing for case ' + caseNumber + '. Skipping.');
+                continue;
+            }
+
+            var now = new GlideDateTime();
+            var endTime = new GlideDateTime(plannedEndTime);
+            var diffMs = endTime.getNumericValue() - now.getNumericValue();
+            var minutesRemaining = Math.floor(diffMs / 60000);
+
+            gs.info('SLA Breach Early Warning: Case ' + caseNumber + ' has ' + minutesRemaining + ' minutes remaining to SLA breach.');
+
+            // Check if within breach warning window (0-15 minutes)
+            if (minutesRemaining &lt;= BREACH_WARNING_MINUTES &amp;&amp; minutesRemaining &gt; 0) {
+                // Breach risk detected
+                var assignedTo = cases.getValue('assigned_to');
+                var storeSysId = cases.getValue('x_2145749_qc_dark_store');
+                var zoneSysId = cases.getValue('x_2145749_qc_zone');
+
+                // Send notification to assigned agent
+                if (assignedTo) {
+                    var agentUser = new GlideRecord('sys_user');
+                    if (agentUser.get(assignedTo)) {
+                        gs.eventQueue('x_2145749_qc.sla_breach_warning', cases, 
+                            'Case: ' + caseNumber + ', Store: ' + storeSysId + ', Minutes remaining: ' + minutesRemaining,
+                            agentUser.getValue('email'));
+                    }
+                    
+                    // Notify supervisor (manager of assigned agent)
+                    var managerSysId = agentUser.getValue('manager');
+                    if (managerSysId) {
+                        var managerUser = new GlideRecord('sys_user');
+                        if (managerUser.get(managerSysId)) {
+                            gs.eventQueue('x_2145749_qc.sla_breach_warning', cases,
+                                'Case: ' + caseNumber + ', Store: ' + storeSysId + ', Minutes remaining: ' + minutesRemaining,
+                                managerUser.getValue('email'));
+                        }
+                    }
+                }
+
+                // Check if high-value order AND store has 3+ complaints in last hour
+                var orderValue = parseFloat(cases.getValue('x_2145749_qc_order_value') || '0');
+                
+                if (orderValue &gt; ORDER_VALUE_THRESHOLD &amp;&amp; storeSysId) {
+                    // Count complaints for this store in the last hour
+                    var recentComplaints = new GlideRecord('sn_customerservice_case');
+                    recentComplaints.addQuery('x_2145749_qc_dark_store', storeSysId);
+                    var oneHourAgo = new GlideDateTime();
+                    oneHourAgo.addSeconds(-3600);
+                    recentComplaints.addQuery('sys_created_on', '&gt;=', oneHourAgo.getValue());
+                    recentComplaints.query();
+                    var complaintCount = recentComplaints.getRowCount();
+
+                    if (complaintCount &gt;= COMPLAINT_THRESHOLD) {
+                        gs.info('SLA Breach Early Warning: High-value order breach risk with ' + complaintCount + ' store complaints. Flagging case ' + caseNumber + ' for bundled handling.');
+                        
+                        // Flag case for bundled handling
+                        cases.work_notes = 'AUTO: Flagged for bundled handling - high-value order with ' + complaintCount + ' store complaints in last hour. SLA breach in ' + minutesRemaining + ' minutes.';
+                        cases.update();
+
+                        // Trigger the Auto-Approve Low-Risk Refunds flow
+                        try {
+                            sn_fd.FlowAPI.startSubflow(AUTO_REFUND_FLOW_ID, { current: cases });
+                            gs.info('SLA Breach Early Warning: Triggered Auto-Approve Low-Risk Refunds flow for case ' + caseNumber);
+                        } catch (e) {
+                            gs.error('SLA Breach Early Warning: Failed to trigger refund flow for case ' + caseNumber + ': ' + e.message);
+                        }
+                    }
+                }
+            } else if (minutesRemaining &lt;= 0) {
+                // Actual breach - auto-assign to supervisor group for the case zone
+                gs.info('SLA Breach Early Warning: BREACH detected for case ' + caseNumber + '. Auto-assigning to supervisor group.');
+                
+                var caseZone = cases.getValue('x_2145749_qc_zone');
+                if (caseZone) {
+                    // Look up supervisor group for this zone
+                    // Zone supervisor groups are managed via sys_user_group with a reference to the zone
+                    var supervisorGroup = new GlideRecord('sys_user_group');
+                    supervisorGroup.addQuery('x_2145749_qc_zone', caseZone);
+                    supervisorGroup.addQuery('type', 'supervisor');
+                    supervisorGroup.setLimit(1);
+                    supervisorGroup.query();
+                    if (supervisorGroup.next()) {
+                        cases.setValue('assignment_group', supervisorGroup.getUniqueValue());
+                        cases.work_notes = 'AUTO: SLA breached. Case auto-assigned to zone supervisor group (' + supervisorGroup.getValue('name') + ').';
+                        cases.update();
+                    } else {
+                        gs.warn('SLA Breach Early Warning: No supervisor group found for zone ' + caseZone + '. Cannot auto-assign case ' + caseNumber + '.');
+                    }
+                }
+            }
+        }
+    }
+
+    gs.info('SLA Breach Early Warning: Evaluation complete');
+})();</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_b6684bc8932647101ff0f40bdd03d640^id=b6684bc8932647101ff0f40bdd03d640"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=b6684bc8932647101ff0f40bdd03d640"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=b6684bc8932647101ff0f40bdd03d640"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=b6684bc8932647101ff0f40bdd03d640"/>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=b6684bc8932647101ff0f40bdd03d640^sys_idNOT IN72684bc8932647101ff0f40bdd03d648"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>completed</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>result</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>result</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Evaluate SLA Breach Risk">b6684bc8932647101ff0f40bdd03d640</model>
+        <model_id>b6684bc8932647101ff0f40bdd03d640</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_b6684bc8932647101ff0f40bdd03d640</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:54</sys_created_on>
+        <sys_id>72684bc8932647101ff0f40bdd03d648</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 12:22:23</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=b6684bc8932647101ff0f40bdd03d640"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>result</element>
+        <help/>
+        <hint/>
+        <label>result</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_b6684bc8932647101ff0f40bdd03d640</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:54</sys_created_on>
+        <sys_id>32684bc8932647101ff0f40bdd03d65b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 10:24:54</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_input action="delete_multiple" query="model=e6684bc8932647101ff0f40bdd03d628"/>
+    <sys_hub_action_output action="delete_multiple" query="model=e6684bc8932647101ff0f40bdd03d628^sys_idNOT IN3e684bc8932647101ff0f40bdd03d684,76684bc8932647101ff0f40bdd03d671,fa684bc8932647101ff0f40bdd03d669"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=ad0de338e57b46abada08a1d5d27ac60-action-error,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="SLA Breach Early Warning - Evaluate Cases">e6684bc8932647101ff0f40bdd03d628</model>
+        <model_id>e6684bc8932647101ff0f40bdd03d628</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_e6684bc8932647101ff0f40bdd03d628</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_id>3e684bc8932647101ff0f40bdd03d684</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 12:22:24</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3e684bc8932647101ff0f40bdd03d684"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3e684bc8932647101ff0f40bdd03d684"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=ad0de338e57b46abada08a1d5d27ac60-action-status</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="SLA Breach Early Warning - Evaluate Cases">e6684bc8932647101ff0f40bdd03d628</model>
+        <model_id>e6684bc8932647101ff0f40bdd03d628</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_e6684bc8932647101ff0f40bdd03d628</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_id>76684bc8932647101ff0f40bdd03d671</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 10:24:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=76684bc8932647101ff0f40bdd03d671"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=76684bc8932647101ff0f40bdd03d671"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=ad0de338e57b46abada08a1d5d27ac60-result</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>result</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Execution Result</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="SLA Breach Early Warning - Evaluate Cases">e6684bc8932647101ff0f40bdd03d628</model>
+        <model_id>e6684bc8932647101ff0f40bdd03d628</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_e6684bc8932647101ff0f40bdd03d628</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_id>fa684bc8932647101ff0f40bdd03d669</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 10:24:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=fa684bc8932647101ff0f40bdd03d669"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=fa684bc8932647101ff0f40bdd03d669"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=e6684bc8932647101ff0f40bdd03d628"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=e6684bc8932647101ff0f40bdd03d628^sys_idNOT INc3684bc8932647101ff0f40bdd03d697"/>
+    <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
+        <action_type_id display_value="SLA Breach Early Warning - Evaluate Cases">e6684bc8932647101ff0f40bdd03d628</action_type_id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_id>c3684bc8932647101ff0f40bdd03d697</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 10:24:55</sys_updated_on>
+    </sys_hub_action_status_metadata>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=c3684bc8932647101ff0f40bdd03d697"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_e6684bc8932647101ff0f40bdd03d628"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_e6684bc8932647101ff0f40bdd03d628</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_id>7e684bc8932647101ff0f40bdd03d682</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 10:24:55</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>result</element>
+        <help/>
+        <hint/>
+        <label>Execution Result</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_e6684bc8932647101ff0f40bdd03d628</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_id>b6684bc8932647101ff0f40bdd03d66f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-02 10:24:55</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>__dont_treat_as_error__</element>
         <help/>
         <hint/>
         <label>Don't Treat as Error</label>
         <language>en</language>
-        <name>var__m_sys_hub_action_output_ad0de338e57b46abada08a1d5d27ac60</name>
-        <plural>Don't Treat as Errors</plural>
+        <name>var__m_sys_hub_action_output_e6684bc8932647101ff0f40bdd03d628</name>
+        <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-08-01 19:48:29</sys_created_on>
-        <sys_id>ce76032bc4464d09b015ce7f7545d9d3</sys_id>
+        <sys_created_on>2026-08-02 10:24:55</sys_created_on>
+        <sys_id>ba684bc8932647101ff0f40bdd03d68c</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Don't Treat as Error</sys_name>
+        <sys_name/>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_ad0de338e57b46abada08a1d5d27ac60___dont_treat_as_error___en</sys_update_name>
+        <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-01 19:48:29</sys_updated_on>
+        <sys_updated_on>2026-08-02 10:24:55</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
-    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_ad0de338e57b46abada08a1d5d27ac60"/>
-    <sys_hub_action_plan action="delete_multiple" query="action_id=ad0de338e57b46abada08a1d5d27ac60"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_e6684bc8932647101ff0f40bdd03d628"/>
+    <sys_hub_action_type_definition action="UPDATE">
+        <sys_id>ad0de338e57b46abada08a1d5d27ac60</sys_id>
+        <latest_snapshot>e6684bc8932647101ff0f40bdd03d628</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch2-04-17-2026_04-29-2026_2044.zip</compiler_build>
+    </sys_hub_action_type_definition>
 </record_update>
