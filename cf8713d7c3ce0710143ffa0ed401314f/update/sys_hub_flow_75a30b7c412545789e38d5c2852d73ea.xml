@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes/>
+        <authored_on_release_version/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source>fluent</generation_source>
+        <internal_name/>
+        <label_cache>[{"name":"Created_1.current.request_type","label":"Trigger - Record Created➛x_2145749_qc_refund_request Record➛Request Type","type":"string","base_type":"string","usedInstances":{"db92e4e1-d26d-459b-9ebc-d0aa1bd03ace":["condition"]},"attributes":{}},{"name":"Created_1.current","label":"Trigger - Record Created➛x_2145749_qc_refund_request Record","type":"reference","base_type":"reference","usedInstances":{"e54d5d5f-a06f-4218-87d5-03423286c706":["record"],"5b37fe32-09e8-4b9f-91c8-7134e98852d5":["record"]},"attributes":{}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>Automated Resolution Engine - Escalate High-Value Refunds</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-01 20:44:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>75a30b7c412545789e38d5c2852d73ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Automated Resolution Engine - Escalate High-Value Refunds</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_hub_flow_75a30b7c412545789e38d5c2852d73ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-01 20:44:33</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_variable_value action="delete_multiple" query="document_key=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=75a30b7c412545789e38d5c2852d73ea^sys_idNOT INfad9fff77705483689b1dd7f9f34c3c1"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Automated Resolution Engine - Escalate High-Value Refunds">75a30b7c412545789e38d5c2852d73ea</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-01 20:44:33</sys_created_on>
+        <sys_id>fad9fff77705483689b1dd7f9f34c3c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-01 20:44:33</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAAA71WYWvbMBD9K0KfNvAgHS1jgQ22dYNAt8LabR9KJxTr7Igpp1Q6JzUl/33IsVPbcZqEuP0UIsl37957p9PNAyen0xTcCD1JjOEq9yPFh5xH3MgxGD7k13JsgEdcI4FDaa7zGfAhp7AsUE7DnoIZoAKk1afxxOoYLrQnPry5jfhUopJkXc6H5DKIuHUKHB+eDAYRL0KU8XjE59Jk4f+9eHtyevbu9L24i4WDJEMlHNxl4Ckk1H5mZP77kMPfNJiyNh87PaNPMek58GEijYeAWhvlAFeYZ9LJKVCA+cCpo+YW7iZdy2W0D7c/M2SXyL7eU6BPseJjv0n2itAdRD/wpOIjsMwjnlzU8lhkceYcIDGJikGVk6qcyWgqU1gFTq7AQEyg1uwkv3z933ftvca0XAjVrpMXK5vZTV6HUNF2TNKms8pDHdZyGQqLoqq4ZrIKastOreXjjbPWbyuinY6QRE6PMwIf4ko1D5ZSldbLAwz3ZwLIrsB7bcMvUaD0aMuNLU3aoifWsc+WJmwUYsuCtcJ8Pyy+qa+VaPp0IVoU+jFFHdpl8GKFbwuUHpHsg+KXB8f6h3FIhywmgMKv7TBv6trqkObq8zRIC9AeFu6vRxJjF2yEx7eFxHyjK0JsjUxizmKLBPfUo9vGMv6XOpuh2pb38QR7pSCRmaHXfV7/1sHTAJonXsjeIbnQWHd2nam2vzv2nsflj7i6/dePp79YVJpWF0rb0dWWP+ght53tuJZrPWidzJRIjExTUB+Kb//Kqc2QqncaqI9ng0HHLD74yx50qlPSUVUXq02dFhLJC7JCKiVq4dZPs6lVYM5rbJcaCo2zjDxf1rQQFmsPzcyDqMkU4h06/Itp09vk77rirCuut8yD6/FqsQjCJp1DVCesJAAUG+eMJsASa4xdaEwLHP0+LoIobTDnlqEl5l4EzsGjPSTtmO8r9VpN11h8xunewrTLqD2/gYvohZ83eiA1WoEwq70+LsVmyWXgSoNNAfZnv4hRq3K3Go3anoL3JGE7tbj9DxfvGy1eEAAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=75a30b7c412545789e38d5c2852d73ea^sys_idNOT IN5b37fe3209e84b9f91c87134e98852d5,e54d5d5fa06f421887d503423286c706"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="">f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Automated Resolution Engine - Escalate High-Value Refunds">75a30b7c412545789e38d5c2852d73ea</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>4e01d3b5-9504-4693-b5c4-a28489be3541</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-01 20:44:33</sys_created_on>
+        <sys_id>5b37fe3209e84b9f91c87134e98852d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-01 20:44:33</sys_updated_on>
+        <ui_id>5b37fe32-09e8-4b9f-91c8-7134e98852d5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA73RzUoDMRAH8FcJOa+FSkVc6EGkD+DFi9gwJv9qIJukk8nasuy7y1Yq1SL05HE+mPkl8zzoSB10q4VeA8whaHRPoU7JnbmeL25uF3dmaw1jU6MzjG1FEd1o50sOtH+6qLlY9lnurfgeut1QKGh0JqYOAtbtoGWff0HGsfn2MWxid2IbhgcGCZyZz2xlRpRxPFf91XaxxyVbO0Qx3v0AHRzlBORgffEpLqlKMiiWwrR3fcybmARluToW1Cax6ihWCorRe3y0irpUoyjsLOCKkneoadoV5cyph7Lwwce32Xr1eP7U/wdcflR0edppvj5rHF8+AXODrx16AgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5b37fe3209e84b9f91c87134e98852d5"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="">f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Automated Resolution Engine - Escalate High-Value Refunds">75a30b7c412545789e38d5c2852d73ea</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>db92e4e1-d26d-459b-9ebc-d0aa1bd03ace</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-01 20:38:51</sys_created_on>
+        <sys_id>e54d5d5fa06f421887d503423286c706</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-01 20:38:51</sys_updated_on>
+        <ui_id>e54d5d5f-a06f-4218-87d5-03423286c706</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA83SQUsDMRAF4L8Scl4XKhVxoQcRjx704EVsmCavNZBN0kmytiz732VbLNUi7NFjhhfmyyNvvfTUQjYy08pBHQ6V7MiVcbhT17P5ze38Tm21YqyLN4qxLUhZVtLYFB3tXyeFk2Yb873OtoNs1uQSKhmJqUUGy6aXeR9/QYahOvkYOrA5s/X9A4MyjJrVujDD52G4VP0Vm+wxQZcWPitrfoAOjnQGMtA22eAXVHJQSJrcuHf5PVc+ZKTFCwIbsDgFGkFtKD4L7DRgkhjvX1GMHDoIDeus39TiiXwhJxidxacYi7UMI1ZYB4YYX01Zf1i/EXzcUC8fny/7+KfK6d8DbRxB6lj7MLx/AXJSxXDEAgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e54d5d5fa06f421887d503423286c706"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=75a30b7c412545789e38d5c2852d73ea^sys_idNOT IN4e01d3b595044693b5c4a28489be3541,db92e4e1d26d459b9ebcd0aa1bd03ace"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block/>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Automated Resolution Engine - Escalate High-Value Refunds">75a30b7c412545789e38d5c2852d73ea</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-01 20:38:51</sys_created_on>
+        <sys_id>4e01d3b595044693b5c4a28489be3541</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-01 20:38:51</sys_updated_on>
+        <ui_id>4e01d3b5-9504-4693-b5c4-a28489be3541</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRKkssykxMykkthnBTUpMzizPz80JAYp55IPVQicq8xNzMZGSh8vyi7LSc/HJksUw4uxYAKGKfk3EAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block/>
+        <comment>Check if request type is Reorder</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Automated Resolution Engine - Escalate High-Value Refunds">75a30b7c412545789e38d5c2852d73ea</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-01 20:38:51</sys_created_on>
+        <sys_id>db92e4e1d26d459b9ebcd0aa1bd03ace</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-01 20:38:51</sys_updated_on>
+        <ui_id>db92e4e1-d26d-459b-9ebc-d0aa1bd03ace</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA52PwQoCMQxE/yXnRfC64EE8eRXxIiKxjRrstjVJlaX032VRwbO3mTcTwlRIxXIx3aalKl8i9PtDBw8UxlMgfVtPjpVT3E5sHaf+JxgjDux+0TPJ7RzS85fxV1eIOBD04FL0bJwiTM9CmVitKyE08sf5zBURijYTuhdSO9qYqbXFhpJ4EujAs+aA4+6fW3fl4IU+WzMKDmQk0NfWgTrhbEtn/CDozxiU2qG9AFB1BvAoAQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=75a30b7c412545789e38d5c2852d73ea"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=75a30b7c412545789e38d5c2852d73ea"/>
+</record_update>
