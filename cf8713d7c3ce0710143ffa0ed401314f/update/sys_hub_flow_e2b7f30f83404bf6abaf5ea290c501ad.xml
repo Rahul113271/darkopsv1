@@ -458,6 +458,7 @@
         <sys_updated_on>2026-07-18 18:15:33</sys_updated_on>
     </sys_flow_cat_variable_model>
     <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=ee442793c3424710143ffa0ed4013141"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=62442793c3424710143ffa0ed4013141"/>
     <sys_hub_flow_input action="delete_multiple" query="model=62442793c3424710143ffa0ed4013141^sys_idNOT IN22442793c3424710143ffa0ed4013152,66442793c3424710143ffa0ed4013143"/>
     <sys_hub_flow_input action="INSERT_OR_UPDATE">
         <active>true</active>
