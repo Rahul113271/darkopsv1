@@ -37,7 +37,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e2b7f30f83404bf6abaf5ea290c501ad</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>Automated Resolution Engine - Auto-Escalate Fraud-Flagged Refunds</sys_name>
         <sys_overrides/>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
@@ -45,7 +45,7 @@
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
         <sys_update_name>sys_hub_flow_e2b7f30f83404bf6abaf5ea290c501ad</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-02 12:22:54</sys_updated_on>
+        <sys_updated_on>2026-08-03 18:46:10</sys_updated_on>
         <type>flow</type>
         <updation_source/>
         <version>2</version>
@@ -288,8 +288,6 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-08-02 12:22:49</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
-        <trigger_inputs>H4sIAAAAAAAA/+1X32/TMBD+V6w8gVSkDoYQewPGpEqDSduAhzFFbnxpLVy7s522Yer/vnN+1UuTLdsaQGhPqc+u77u777PPF9eB1XwyAT2SxlIZwVlqRiw4CIJBIOgYBP48p2MBOObSgpZUnKdzQLN15lDSmZtjMAfJQNr8r9FU8QiOucHxxeUgmFHJqFU6DQ6sTmAQxFrNzmE2F9TiXjEVBo1KM9DBwd5wOAiyfQsnuOGCisSNV+Hrvf237/bfh1dRqCFOJMPPVQLoCVFwgzum3zstjqZcMA0yRzinGj1a5/96K/IaGNuQgAI7IoeVdalgVVhe8IVFA2UnUqTekpXhvyH7f2Ig9NJZrIjPpmp5CjEg4giOuMzcFZNCRVRUI2qxpuPEgsFY1usqLUccRFFaE2k+tx8iyxdl+teDLlw4TSQ5keRzESPJMmS2yZET4B5iXGNUrhzoKos8LgvnOIKL42PPq5IkSjRGbwnmk5RZJrZEEI9mdAK5G9xXQGS9IsTfjD/6wo3hcuLF3gIlm9/GIlIfUEmMp0C4bCJKV5noRIZKhhX1NoIp8dekUZo7iKC15K2+bY0D/6o2AsoWjuespFwPYvkxBUnOAEut3NdaV/Idy2Ws7LRO0Vhp8hHtZOQ80Qx8JpyvSr7ybQW2/hQkkRx849AH6upMSrQtwHrD1QUTbq3J7kE9WetLZFVoKjYtbhOhpvXC2lHqLYRtd/6sdk91Qi2RL7sWOJXplr6dJy5R0imJFDpb2d6UMqbRr4lW2D61odisIC8YxDQR9mV/V7LScDec2yv+plAdIjz9fI36yawr1Z/rqNcN5RrdPqszT9UnJRm3+dFd12Y5ZR70kHkgGyIPQNWcaZowLBZF8OxnMhy+YUXrW2/XWhd2YIkfegMY25CF3lhSvP4eS5IlldaEVoWUsdBDXD0ZZoqBOPRqWDADxTBPrAnWXoWxa60edT01fln/0FPX13QpYMviLgRMuu7t+FUSQhU3tkw8JkVy8J0wTomdAmISeBjhzhmqPttMV9A6tENFcILoPwJuN22dQ9LQ2+Xlrp0LufEhnV2Nkfc4f749mtKXKXNLzRPBGYQin9v9NZLxwIPWWLnCe8mZbcI8hi1FuHc5tA0p+A+5cnkDsE8L4TAVAAA=</trigger_inputs>
-        <trigger_inputs>H4sIAAAAAAAAA71W32vbMBD+V4SeNvCgHR1jgT1s6waBboW13R5KEYp1dsSUUyqdk4bS/33IsVPZcX4Rt0/BJ+Xuu+++093tIyen8xzcED1JTOFq4YeKDzhPuJEjMHzAr+XIAE+4RgKH0lwvpsAHnIJZoJyEMwVTQAVIy7+mY6tTuNCe+OD2LuETiUqSdQs+IFdAwq1T4Pjg9OQk4aWLyh9P+EyaInw/iPenZx8+nn0S96lwkBWohIP7AjyFgNpPjVz8OeTyDw2mys2nTk/pS0p6BnyQSeMhoNZGOcAl5ql0cgIUYD5y6si5hbtJ19NTsg+3vwtkl8i+P1CgT7Hyz36d7CWhO4h+5FnNR2CZJzy7iOJYZGnhHCAxiYpBHZPqmNlwInNYOs6uwEBKoFbsZDc+/vqpvdeYV4aQ7Sp4aVmPbhYxhJq2Y4I2lVVd6pCWK1BYFHXGkchqqC05tczHC2dVv42IdipCEjk9Kgh88CvVLEhK1bV+OkBwf8eA7Aq81zb8EgVKj5bcyNK4XfTMOvbV0pgNg29ZslaK75fFd7GtQtOnCtGi0M8hYmiXQYs1vg1QekSyD4obD471D+OQDpmPAYVfyWHWrGurQ5rWl2mQFqA9JNxfj2TGztkQj28LiYu1rgi+NTKJC5ZaJHigHtU2kum/3NkC1aa4zzfYGwWZLAy97fP5tw62A2jeeCV5h+BCY6zsmKm2vjvOXkblz7i69dePpr9ZVJqWD0pb0fWRP2iR28x2GsVaDVonCyUyI/Mc1OdqPWlP3S13euA+TrMDaRdTTe7nEskLskIqJSJ3q3VrYhWY84jBqi5C47Qgz58ifoXFaHksPIiI+uDv0IFeTpDepnnXs2Vd+WQVHlyPz4VFEDbrHIw6YxUBoNhowWgMLLPG2LnGvMTR78IQitIGc24ZWmLuVeAcPK5D0I6Zvaxeq70axhec2C1Mu4Ta815bei/1vNYDudEKhFme9fHQNVOuHNc1WC/A/uyXPqIsd1ejkds2eFsJ21mLu/9OmdfuMhAAAA==</trigger_inputs>
         <trigger_inputs>H4sIAAAAAAAA/+1XbU/bMBD+K1Y+bVInwcY0jW/bGBISGxKw7QNDkRtfWmuuXewLkCH++855aU2aQICGaRqfWr/E99zd85zPJ1cRWjmZgN3TDrlO4Ch3eyLajqJRpPgYFP095mMFNJYawWqujvM50DT66VjzmV8TMActQGP5aTI1MoF96Wh8cjqKZlwLjsbm0TbaDEZRas3sGGZzxZHOSrlyNGmsABttb25sjKLi3MoIHXjOVebHl/Hrza2377bex2dJbCHNtKCfswzIEqGQjk7Mv/fanEylEhZ0iXDOLVlEb/9qxfMGGGwJQIWdkMMl+lCIhVuB89WMBS4OtMqDLZdO/obi+zJ2B3OURpfRzBzEQYCrb9Kjqbk4hBTIhwR2pS4AVIvKJFwtRhwpy+MMwZF319eLQO1KUFWyXWLlHD8kKM/rhFyP+rDjMNPsQLPPldesiJlbpUvp1h1UuSKvfILIVLT9apOcrHPpaUO70/3ArNEsySy5j4xCzOrAM6whpHszPoHSDh2sIMEgL+k3F46+SOekngTOd2EpNqyCUXmIqCbLYzCctpGnr3RspmOj4wUdlyKq8TfkUk/3EEZn0jttY4MF/45eIi7OPfdFzcIBBPRjCpodASXf+F9ET4J1S2hscNpkbWos+0jzbM+b4gX6QkxfjX4VzlXgBlSVJsLIpcUQqc89q+F2IBsOWB9QdLZl60f16AJwQcSK3YJQ5zep0CgA1WxP/Xdwttv4cwm4rQSkylwQg9aueq7zFdF7U1KTznOWGLJ2icOpZ8yTXxNrqPfqgrHcwV4ISHmm8OWAl7excDuemzv+pno9IqqJoXDDaDblG671FPGSda1mnyXbJdlPRguJZYVvCrZecvd6GN2TH0kAYNHYWZ4JSh8n8OJntrHxRlR9c7PV69zYgzeh6y1gsCUKT8ib6n35UNpccI0uRhNzIeLAh8ULZGYEqJ0gqxVXSDDzDF10HeQ8LjCWL4GBmsai8RiqY2y7O6jZ8fcGRd0OV6SNhtikrd2WTFkVHnp3jHOGUyBQikoWHV3AGrRH9TltYtsxjBaYfRJ062kJPZKWvrBMeKNYlJP36QobpLzD+PMl00/lhVxXJD5RUkCsyrX13zYFMwJorbmsrNcsWqXQQ/hTuXubQWwJwX/BntM/H9chBbkVAAA=</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_create</trigger_type>
@@ -317,8 +315,6 @@
         <sys_updated_on>2026-08-02 12:22:49</sys_updated_on>
         <ui_id>59e38af8-5bd6-4328-b4bf-4fc3f0dab58b</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5GfuyhpCxt9Q3RIkwZoMPHCwHLsm9aSYwd/FLqq/33XSRoiQMADDyCtL5XvV845Pje52hDNKiAz4lmhgDaHEVkxFWLwno7z6d7X6QG95dRCGbTAv9sAzmOVkK5WbH35puKaWZztwZLZhvClVMKCJrOr6xGRAruLPZHlB/k+n+STyTjLxt+mebE/KfKxmDDgBzhCsQIUlv6OUPH8HHK/rp+N/Rz2JqdtwlgR8exlIwL3HrQARFIy5WBEKqYF88auyczbgAELTJxpte4rllJ7nEhi7b2Tf/G537JYVwJS49Dm+iPt5GrD5Zx5doGTuQ+2K+VLIzm4VhQBJQvKHw1jbcFZ7aXRbUvDs+s2KlT6tNWE9AN2t4OR4BAE1JFnRN7RKC+W5u58h/JY6kaTLqkMZ6o/Me+tLIKPeDYEFFQ4iFasrqVe0NqalWyaEUuVLhQe0lKZO3yokwudMh6BpygrS48xPm/Cl8zKyOIEx2DzdkTc2h0p5twDFxSR3oaIpGXWcaCtDLGFW1n7Q3zACjq421HvbQscr3rg683mCK/Tg6B5yoNF5n67feroN9h2Ci/ZFvKBbc93KB6j6jwrDA+NoFI8Mu28yyQ/5g+uzd/NtdPP5NqW1qc37eAF9ap9G9e6gX0FcOkQ1Z+QZRPBgjcUHHKOjr7ZJak2yLktOcSSL33JLDEaEmOTylhISsuCSGxQ4BJUarFATUWanDCN2BMLKwl3SXyPS4wnBZSxCWmjcEylN99/Pd2bD4fvtS3Oxi9uMQy2+FiCEu5hi/vL2X15oKojC9pe1qOvT5dMLrtkv8vvtsz5ftb8/q/0x1vp639fDIPibwkAAA==</values>
-        <values>H4sIAAAAAAAAA83RwUoDMRAG4FcJOa8LlYq40EORHj148SI2TJN/SyCbpJNktSz77rIVS7UIe/SYyQzzzczrID11kI3MtHNQp0cle3JlCn6o28Xy7n75oA5aMdrijWIcClKWlTQ2RUfHl1nJSbONea2z7SGbllxCJSMxdchg2QwyH+MvyDhWZx9DBzYXtmF4ZFCGUYtaF2b4PI7Xqr/SZntM0KWDz8qaH6CTI12ADLRNNvgVlRwUkiY39d1+x5UPGWm1LjncnH8bETxEYNEFhmiZihFcHJLIbPd7MEwtnsgXcoLRW7yLaaeWYcQO7VREMXLoydXbzfP1/P9ENf/86OJkUF9rHce3T3v+uECkAgAA</values>
         <values>H4sIAAAAAAAA/+1V204bMRD9lZWft6vdJFDIGyJFqlRAhYoXLiuvPZtY8tqLL4E0yr93vJcQBUqDxANIzUvkudhnzpyZvV4SwcmYFHs8zQ6zfTbMhsNBmg4ORlmxPyyyAR9SYIckJopWgJGOFhLy5hCTOZU+GB/zQTba+zo6zO9ZbqD0iuPfvQfrMIoLW0u6uNopmM2E5AYUGV/fxqSmBl9yYMh4ueXaFbekBUgM/RWA/6UOt6hftP3YzI3OWoc2PODZS2MCjw4UB0RSUmkhJhVVnDptFmTsjEeDAcrPlVysI2ZCObyRhNhHK37juwdpiCsBS2PQ+tbHvCOvNZcT6ugl3sycN10om2nBwLakcCipl+5409YGnNdOaNWmNHV22Vr6Sp21nJD1BX2v0OItgoA61BmQd2WUlzP9cNGjPBGq4aRzSs2oXJ+oc0YU3gU8SwISKrwor2hdCzXNa6PnoklGLFUylXhISqkf8FErpiqhLABPkFaanKB90pivqBGhilO8BpNXMbELeyyptU+1IIn5vQ9I2sq6GvKWhpDCjKjdET4whw7uKu4mYgSvKQuyJyUZYCiJjWlYLo+x7Q54niXMG2TIrVbP5+DNYt8BUi/2ix7TNsZO6Vwz37RB8C2pTzpP9H3ypPXs3bQ++kxab8v69FLfWGv/EH06eFVhG+uz0brdED0HJiyiv/FpOuTUO52DRW7CHNz1zlxp5KYNOcKQL+uQcaQVRNpElTYQlYZ6HhkvwUbI6HSK3PMkOqUKa4wMzAU8ROGbIdAeFVCGJKQHCaYyufv28/m0fTh8b5v9HTrTz/6JAMntC63qv3JQ1aGmvG3d1peuc0ZXnXO9Ad5tBWT7afP7vwg+3iK4/QMTo05eEQoAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=59e38af85bd64328b4bf4fc3f0dab58b"/>
@@ -363,7 +359,7 @@
         <sys_created_on>2026-07-18 18:15:32</sys_created_on>
         <sys_id>a644e393c3424710143ffa0ed40131bd</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Table Name</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
@@ -386,7 +382,7 @@
         <sys_created_on>2026-07-18 18:15:32</sys_created_on>
         <sys_id>d244e393c3424710143ffa0ed40131b2</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Record</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
@@ -719,7 +715,7 @@
         <sys_created_on>2026-07-18 18:15:33</sys_created_on>
         <sys_id>ae442793c3424710143ffa0ed4013158</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Table Name</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
@@ -742,7 +738,7 @@
         <sys_created_on>2026-07-18 18:15:33</sys_created_on>
         <sys_id>ea442793c3424710143ffa0ed401314d</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Record</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
