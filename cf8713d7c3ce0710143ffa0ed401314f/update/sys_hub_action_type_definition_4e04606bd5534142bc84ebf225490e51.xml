@@ -30,7 +30,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4e04606bd5534142bc84ebf225490e51</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>PulseScore Recalculation - Calculate Store Scores</sys_name>
         <sys_overrides/>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
@@ -38,7 +38,7 @@
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_4e04606bd5534142bc84ebf225490e51</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-02 12:22:17</sys_updated_on>
+        <sys_updated_on>2026-08-03 10:01:01</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -601,23 +601,23 @@
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=4e04606bd5534142bc84ebf225490e51"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_4e04606bd5534142bc84ebf225490e51"/>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>__action_status__</element>
+        <element>__dont_treat_as_error__</element>
         <help/>
         <hint/>
-        <label>Action Status</label>
+        <label>Don't Treat as Error</label>
         <language>en</language>
         <name>var__m_sys_hub_action_output_4e04606bd5534142bc84ebf225490e51</name>
-        <plural>Action Status</plural>
+        <plural>Don't Treat as Errors</plural>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-08-01 19:48:28</sys_created_on>
-        <sys_id>261e4ec8936e07101ff0f40bdd03d6cc</sys_id>
+        <sys_id>186c00a0c32a8310f35b3fac05013192</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Action Status</sys_name>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_4e04606bd5534142bc84ebf225490e51___action_status___en</sys_update_name>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_4e04606bd5534142bc84ebf225490e51___dont_treat_as_error___en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-08-01 19:48:28</sys_updated_on>
         <url/>
@@ -634,7 +634,7 @@
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-08-01 19:48:28</sys_created_on>
-        <sys_id>471e8ec8936e07101ff0f40bdd03d620</sys_id>
+        <sys_id>946c00a0c32a8310f35b3fac05013198</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Execution Result</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
@@ -647,23 +647,23 @@
         <url_target/>
     </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>__dont_treat_as_error__</element>
+        <element>__action_status__</element>
         <help/>
         <hint/>
-        <label>Don't Treat as Error</label>
+        <label>Action Status</label>
         <language>en</language>
         <name>var__m_sys_hub_action_output_4e04606bd5534142bc84ebf225490e51</name>
-        <plural>Don't Treat as Errors</plural>
+        <plural>Action Status</plural>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-08-01 19:48:28</sys_created_on>
-        <sys_id>f61e8ec8936e07101ff0f40bdd03d61a</sys_id>
+        <sys_id>c46c00a0c32a8310f35b3fac05013149</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Don't Treat as Error</sys_name>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_4e04606bd5534142bc84ebf225490e51___dont_treat_as_error___en</sys_update_name>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_4e04606bd5534142bc84ebf225490e51___action_status___en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-08-01 19:48:28</sys_updated_on>
         <url/>
@@ -1047,11 +1047,11 @@
         <sys_created_on>2026-08-02 10:24:47</sys_created_on>
         <sys_id>05680bc8932647101ff0f40bdd03d604</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>result</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_step_ext_output_bc68c7c8932647101ff0f40bdd03d6f1_result_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-08-02 10:24:47</sys_updated_on>
         <url/>
@@ -1349,11 +1349,11 @@
         <sys_created_on>2026-08-02 10:24:48</sys_created_on>
         <sys_id>15680bc8932647101ff0f40bdd03d653</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_a468c7c8932647101ff0f40bdd03d6c9___dont_treat_as_error___en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-08-02 10:24:48</sys_updated_on>
         <url/>
@@ -1372,11 +1372,11 @@
         <sys_created_on>2026-08-02 10:24:48</sys_created_on>
         <sys_id>49680bc8932647101ff0f40bdd03d648</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_a468c7c8932647101ff0f40bdd03d6c9___action_status___en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-08-02 10:24:48</sys_updated_on>
         <url/>
@@ -1395,11 +1395,11 @@
         <sys_created_on>2026-08-02 10:24:48</sys_created_on>
         <sys_id>81680bc8932647101ff0f40bdd03d635</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Execution Result</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_a468c7c8932647101ff0f40bdd03d6c9_result_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-08-02 10:24:48</sys_updated_on>
         <url/>
@@ -1409,6 +1409,6 @@
     <sys_hub_action_type_definition action="UPDATE">
         <sys_id>4e04606bd5534142bc84ebf225490e51</sys_id>
         <latest_snapshot>a468c7c8932647101ff0f40bdd03d6c9</latest_snapshot>
-        <compiler_build>glide-australia-02-11-2026__patch2-04-17-2026_04-29-2026_2044.zip</compiler_build>
+        <compiler_build>glide-australia-02-11-2026__patch3-05-25-2026_06-12-2026_1106.zip</compiler_build>
     </sys_hub_action_type_definition>
 </record_update>
