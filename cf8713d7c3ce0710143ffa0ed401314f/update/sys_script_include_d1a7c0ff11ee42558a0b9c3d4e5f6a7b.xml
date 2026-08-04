@@ -278,7 +278,12 @@ DarkOpsData.prototype = {
         return this._countComplaints(function (ga) { ga.addQuery('active', true); });
     },
     execJson: function () {
-        return JSON.stringify(this.build());
+        try {
+            return JSON.stringify(this.build());
+        } catch (e) {
+            gs.error('[DarkOpsData] build() failed, returning empty payload: ' + e);
+            return JSON.stringify({ error: String(e), kpis: null });
+        }
     },
     execB64: function () {
         return GlideStringUtil.base64Encode(this.execJson());

@@ -17,6 +17,21 @@
 <title>Operations Dashboard - DarkOps</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+        <html>
+&lt;g:evaluate var="jvar.b64"&gt;
+  var _b64 = "";
+  try { _b64 = new x_2145749_qc.DarkOpsData().opsB64(); }
+  catch (e) { gs.error("[DarkOps] ops_dashboard eval failed: " + e); _b64 = ""; }
+  _b64;
+&lt;/g:evaluate&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;title&gt;Operations Dashboard - DarkOps&lt;/title&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;&lt;link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;
+&lt;style&gt;
 /* ===== DarkOps design system (ported from Lovable) ===== */
 :root{
   --radius:0.5rem;
