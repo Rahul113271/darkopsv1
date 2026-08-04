@@ -531,11 +531,7 @@ DarkOpsData.prototype = {
 
     // ===================== FRAUD =====================
     _decisionTone: function (v) {
-        // Support both legacy seed values ('approved'/'denied') and proper values
-        if (v == 'manually_denied' || v == 'denied') return 'critical';
-        if (v == 'auto_escalated') return 'warning';
-        if (v == 'auto_approved' || v == 'manually_approved' || v == 'approved') return 'healthy';
-        return 'neutral';
+        return (v == 'manually_denied') ? 'critical' : (v == 'auto_escalated') ? 'warning' : (v == 'auto_approved' || v == 'manually_approved') ? 'healthy' : 'neutral';
     },
     fraudData: function () {
         var flaggedBase = function (ga) { ga.addQuery('fraud_flagged', true); };
