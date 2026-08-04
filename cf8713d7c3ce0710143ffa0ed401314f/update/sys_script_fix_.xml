@@ -394,14 +394,34 @@
 
             // Mix: 60% resolved, 25% in_progress, 15% new
             var stateVal;
+            var isResolved;
             if (cs < 60) {
                 stateVal = '3'; // Resolved
+                isResolved = true;
             } else if (cs < 85) {
                 stateVal = '2'; // In Progress
+                isResolved = false;
             } else {
                 stateVal = '1'; // New
+                isResolved = false;
             }
             caseGr.setValue('state', stateVal);
+            // active=true for open cases, false for resolved - critical for open complaint counts
+            caseGr.setValue('active', !isResolved);
+            // opened_at is required for trend and resolution time calculations
+            var openedAt = new GlideDateTime();
+            openedAt.addDaysLocalTime(-1 * (Math.floor(Math.random() * 29) + 1));
+            caseGr.setValue('opened_at', openedAt);
+            if (isResolved) {
+                // closed_at must be AFTER opened_at for valid resolution time
+                var closedAt = new GlideDateTime(openedAt.getValue());
+                closedAt.addDaysLocalTime(Math.floor(Math.random() * 3) + 1);
+                caseGr.setValue('closed_at', closedAt);
+            }
+            // escalation flag for some open cases
+            caseGr.setValue('escalation', (cs % 7 === 0) ? 1 : 0);
+            // SLA - some cases breach SLA
+            caseGr.setValue('made_sla', (cs % 5 !== 0));
             caseGr.setValue('priority', String(1 + (cs % 4)));
             caseGr.setValue('x_2145749_qc_dark_store', storeSysIds[cs % storeSysIds.length]);
             caseGr.setValue('x_2145749_qc_auto_resolved', cs % 5 === 0 ? 'true' : 'false');
@@ -423,6 +443,18 @@
         var refundDecisions = ['approved', 'approved', 'approved', 'denied', 'pending'];
         var refundCount = 30;
 
+        // Decision values must match DarkOpsData._decisionTone() expectations:
+        // 'manually_approved', 'auto_approved', 'manually_denied', 'auto_escalated', 'pending'
+        var refundDecisionValues = ['manually_approved', 'manually_approved', 'manually_approved', 'manually_denied', 'pending'];
+        var fraudReasonRules = [
+            'High refund frequency',
+            'Refund amount exceeds order value',
+            'Multiple refunds same delivery zone',
+            'Repeated missing-item claims',
+            'Suspicious claim pattern detected',
+            'New account high-value refund'
+        ];
+        var fraudRefundSysIds = [];
         for (var r = 0; r < refundCount; r++) {
             var refGr = new GlideRecord('x_2145749_qc_refund_request');
             refGr.initialize();
@@ -430,13 +462,15 @@
             refGr.setValue('request_type', refundTypes[r % refundTypes.length]);
             var amtReq = 100 + Math.floor(Math.random() * 1900);
             refGr.setValue('amount_requested', amtReq);
-            var decision = refundDecisions[r % refundDecisions.length];
-            var amtApproved = decision === 'approved' ? Math.floor(amtReq * (0.5 + Math.random() * 0.5)) : 0;
+            var decision = refundDecisionValues[r % refundDecisionValues.length];
+            var amtApproved = (decision === 'manually_approved' || decision === 'auto_approved') ? Math.floor(amtReq * (0.5 + Math.random() * 0.5)) : 0;
             refGr.setValue('amount_approved', amtApproved);
-            refGr.setValue('decision', decision);
+            // For fraud-flagged refunds, keep decision 'pending' so they show in review queue
             var isFraud = r % 5 === 0;
-            refGr.setValue('fraud_flagged', isFraud ? 'true' : 'false');
-            refGr.setValue('fraud_risk_score', isFraud ? (60 + Math.floor(Math.random() * 40)) : Math.floor(Math.random() * 30));
+            refGr.setValue('decision', isFraud ? 'pending' : decision);
+            // BUG FIX: Use boolean true/false NOT strings - GlideAggregate queries use boolean comparison
+            refGr.setValue('fraud_flagged', isFraud);
+            refGr.setValue('fraud_risk_score', isFraud ? (65 + Math.floor(Math.random() * 35)) : Math.floor(Math.random() * 25));
             refGr.setValue('customer', currentUserId);
             refGr.setValue('case', caseSysIds[r % caseSysIds.length]);
             var claimTs = new GlideDateTime();
@@ -445,11 +479,24 @@
             var orderTs = new GlideDateTime();
             orderTs.addDaysLocalTime(-1 * (Math.floor(Math.random() * 30) + 1));
             refGr.setValue('order_timestamp', orderTs);
-            var notes = decision === 'approved' ? 'Verified claim, refund processed' : (decision === 'denied' ? 'Claim does not match delivery records' : 'Under review');
+            var notes = isFraud ? 'AI flagged for review' : (decision === 'manually_approved' ? 'Verified claim, refund processed' : (decision === 'manually_denied' ? 'Claim does not match delivery records' : 'Under review'));
             refGr.setValue('decision_notes', notes);
-            refGr.insert();
+            var refSysId = refGr.insert();
+            if (isFraud) fraudRefundSysIds.push({ id: refSysId.toString(), r: r });
         }
         gs.info('Created ' + refundCount + ' refund requests');
+
+        // Create fraud_flag child records so dashboard can show reason text
+        for (var ff = 0; ff < fraudRefundSysIds.length; ff++) {
+            var ffGr = new GlideRecord('x_2145749_qc_fraud_flag');
+            ffGr.initialize();
+            ffGr.setValue('refund_request', fraudRefundSysIds[ff].id);
+            ffGr.setValue('rule_name', fraudReasonRules[ff % fraudReasonRules.length]);
+            ffGr.setValue('details', 'AI model flagged this refund request for manual review based on behavioral pattern analysis.');
+            ffGr.setValue('risk_weight', 0.3 + (ff % 7) * 0.1);
+            ffGr.insert();
+        }
+        gs.info('Created ' + fraudRefundSysIds.length + ' fraud flag records');
 
         // ============================================================
         // STEP 9: Create Pulse Scores (one per store)
