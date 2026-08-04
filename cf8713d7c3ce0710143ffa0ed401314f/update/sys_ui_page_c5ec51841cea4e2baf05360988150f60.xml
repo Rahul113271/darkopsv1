@@ -7,8 +7,10 @@
         <endpoint>x_2145749_qc_exec_dashboard.do</endpoint>
         <html>
 &lt;g:evaluate var="jvar.dopB64"&gt;
-  var _dop = new x_2145749_qc.DarkOpsData();
-  _dop.execB64();
+  var _b64 = "";
+  try { _b64 = new x_2145749_qc.DarkOpsData().execB64(); }
+  catch (e) { gs.error("[DarkOps] exec_dashboard eval failed: " + e); _b64 = ""; }
+  _b64;
 &lt;/g:evaluate&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;

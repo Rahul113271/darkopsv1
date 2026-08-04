@@ -7,7 +7,10 @@
         <endpoint>x_2145749_qc_fraud_dashboard.do</endpoint>
         <html>
 &lt;g:evaluate var="jvar.b64"&gt;
-  new x_2145749_qc.DarkOpsData().fraudB64();
+  var _b64 = "";
+  try { _b64 = new x_2145749_qc.DarkOpsData().fraudB64(); }
+  catch (e) { gs.error("[DarkOps] fraud_dashboard eval failed: " + e); _b64 = ""; }
+  _b64;
 &lt;/g:evaluate&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;

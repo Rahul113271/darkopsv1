@@ -7,8 +7,12 @@
         <endpoint>x_2145749_qc_dark_store_dashboard.do</endpoint>
         <html>
 &lt;g:evaluate var="jvar.b64"&gt;
-  var _sid = RP.getParameterValue('sysparm_store');
-  new x_2145749_qc.DarkOpsData().storeB64(_sid);
+  var _b64 = "";
+  try {
+    var _sid = RP.getParameterValue('sysparm_store');
+    _b64 = new x_2145749_qc.DarkOpsData().storeB64(_sid);
+  } catch (e) { gs.error("[DarkOps] dark_store_dashboard eval failed: " + e); _b64 = ""; }
+  _b64;
 &lt;/g:evaluate&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
