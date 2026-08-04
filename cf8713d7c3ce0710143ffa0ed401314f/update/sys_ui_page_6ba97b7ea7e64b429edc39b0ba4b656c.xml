@@ -5,18 +5,18 @@
         <description/>
         <direct>true</direct>
         <endpoint>x_2145749_qc_fraud_dashboard.do</endpoint>
-        <html>
-&lt;g:evaluate var="jvar.b64"&gt;
+        <html><![CDATA[
+<g:evaluate var="jvar.b64">
   new x_2145749_qc.DarkOpsData().fraudB64();
-&lt;/g:evaluate&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-&lt;meta charset="utf-8"&gt;
-&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-&lt;title&gt;Fraud and AI Dashboard - DarkOps&lt;/title&gt;
-&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;&lt;link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;
-&lt;style&gt;
+</g:evaluate>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fraud and AI Dashboard - DarkOps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
 /* ===== DarkOps design system (ported from Lovable) ===== */
 :root{
   --radius:0.5rem;
@@ -121,8 +121,8 @@ h1.page{font-size:19px;font-weight:600}
 
 /* ---- lists ---- */
 .list{list-style:none;margin:0;padding:0}
-.list&gt;li{border-top:1px solid color-mix(in oklch,var(--border) 70%,transparent)}
-.list&gt;li:first-child{border-top:0}
+.list>li{border-top:1px solid color-mix(in oklch,var(--border) 70%,transparent)}
+.list>li:first-child{border-top:0}
 .li{display:flex;align-items:center;gap:12px;padding:12px 20px;transition:.15s}
 .li:hover{background:color-mix(in oklch,var(--accent) 50%,transparent)}
 .li .grow{min-width:0;flex:1}
@@ -165,9 +165,9 @@ table.tbl tbody tr:hover{background:color-mix(in oklch,var(--accent) 40%,transpa
 
 /* ---- mini progress ---- */
 .prog{height:6px;border-radius:9999px;background:var(--panel);overflow:hidden}
-.prog&gt;i{display:block;height:100%;border-radius:9999px;background:var(--primary)}
+.prog>i{display:block;height:100%;border-radius:9999px;background:var(--primary)}
 .confbar{height:6px;width:64px;border-radius:9999px;background:var(--panel);overflow:hidden}
-.confbar&gt;i{display:block;height:100%;border-radius:9999px}
+.confbar>i{display:block;height:100%;border-radius:9999px}
 
 /* ---- heatmap ---- */
 .heat{display:grid;grid-template-columns:1fr;gap:8px 32px}
@@ -206,57 +206,57 @@ table.tbl tbody tr:hover{background:color-mix(in oklch,var(--accent) 40%,transpa
 .col2{grid-column:span 2}
 @media(max-width:1100px){.g5,.g7,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3,.g2{grid-template-columns:1fr}.col2{grid-column:auto}}
 @media(max-width:640px){.g5,.g7,.g4,.g2{grid-template-columns:1fr}}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header class="topbar"&gt;&lt;div class="topbar-inner"&gt;
-  &lt;a class="brand" href="x_2145749_qc_home.do"&gt;&lt;span class="logo"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="name"&gt;Dark&lt;b&gt;Ops&lt;/b&gt;&lt;/span&gt;&lt;span class="tag"&gt;Operational Intelligence&lt;/span&gt;&lt;/a&gt;
-  &lt;nav class="nav"&gt;
-    &lt;a class="a" href="x_2145749_qc_exec_dashboard.do"&gt;Executive&lt;/a&gt;
-    &lt;a class="a" href="x_2145749_qc_ops_dashboard.do"&gt;Operations&lt;/a&gt;
-    &lt;a class="a" href="x_2145749_qc_dark_store_dashboard.do"&gt;Dark Store&lt;/a&gt;
-    &lt;a class="a active" href="x_2145749_qc_fraud_dashboard.do"&gt;Fraud&lt;/a&gt;
-  &lt;/nav&gt;
-  &lt;div class="topbar-right"&gt;
-    &lt;div class="search"&gt;&lt;svg class="i sm" viewBox="0 0 24 24"&gt;&lt;circle cx="11" cy="11" r="8"/&gt;&lt;line x1="21" y1="21" x2="16.65" y2="16.65"/&gt;&lt;/svg&gt;&lt;input id="dopsSearch" placeholder="Search store ID e.g. 1462..." aria-label="Search stores"&gt;&lt;/div&gt;
-    &lt;button class="iconbtn" aria-label="alerts"&gt;&lt;svg class="i" viewBox="0 0 24 24"&gt;&lt;path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/&gt;&lt;path d="M13.73 21a2 2 0 0 1-3.46 0"/&gt;&lt;/svg&gt;&lt;/button&gt;
-    &lt;button class="pillbtn"&gt;&lt;svg class="i sm" viewBox="0 0 24 24"&gt;&lt;rect x="3" y="4" width="18" height="18" rx="2"/&gt;&lt;line x1="16" y1="2" x2="16" y2="6"/&gt;&lt;line x1="8" y1="2" x2="8" y2="6"/&gt;&lt;line x1="3" y1="10" x2="21" y2="10"/&gt;&lt;/svg&gt;Last 30 days&lt;svg class="i sm" viewBox="0 0 24 24"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;&lt;/button&gt;
-    &lt;span class="avatar"&gt;AK&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;&lt;/header&gt;
-&lt;main&gt;
-&lt;nav style="display:flex;align-items:center;gap:6px;font-size:11.5px;margin-bottom:16px" class="muted"&gt;
-  &lt;a href="x_2145749_qc_exec_dashboard.do" style="color:var(--muted-foreground)"&gt;Executive&lt;/a&gt;
-  &lt;svg class="i sm" viewBox="0 0 24 24"&gt;&lt;polyline points="9 18 15 12 9 6"/&gt;&lt;/svg&gt;
-  &lt;span style="color:var(--foreground)"&gt;Risk &amp;amp; Trust review queue&lt;/span&gt;
-&lt;/nav&gt;
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="x_2145749_qc_home.do"><span class="logo"><span></span></span><span class="name">Dark<b>Ops</b></span><span class="tag">Operational Intelligence</span></a>
+  <nav class="nav">
+    <a class="a" href="x_2145749_qc_exec_dashboard.do">Executive</a>
+    <a class="a" href="x_2145749_qc_ops_dashboard.do">Operations</a>
+    <a class="a" href="x_2145749_qc_dark_store_dashboard.do">Dark Store</a>
+    <a class="a active" href="x_2145749_qc_fraud_dashboard.do">Fraud</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="search"><svg class="i sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input id="dopsSearch" placeholder="Search store ID e.g. 1462..." aria-label="Search stores"></div>
+    <button class="iconbtn" aria-label="alerts"><svg class="i" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>
+    <button class="pillbtn"><svg class="i sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Last 30 days<svg class="i sm" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+    <span class="avatar">AK</span>
+  </div>
+</div></header>
+<main>
+<nav style="display:flex;align-items:center;gap:6px;font-size:11.5px;margin-bottom:16px" class="muted">
+  <a href="x_2145749_qc_exec_dashboard.do" style="color:var(--muted-foreground)">Executive</a>
+  <svg class="i sm" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  <span style="color:var(--foreground)">Risk &amp; Trust review queue</span>
+</nav>
 
-&lt;div class="row mb5"&gt;
-  &lt;div&gt;
-    &lt;h1 class="page"&gt;Fraud &amp;amp; AI review&lt;/h1&gt;
-    &lt;p class="sub" id="fraudSub"&gt;AI-flagged refund requests awaiting a decision&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;span class="live"&gt;&lt;span class="blip"&gt;&lt;/span&gt;LIVE&lt;/span&gt;
-&lt;/div&gt;
+<div class="row mb5">
+  <div>
+    <h1 class="page">Fraud &amp; AI review</h1>
+    <p class="sub" id="fraudSub">AI-flagged refund requests awaiting a decision</p>
+  </div>
+  <span class="live"><span class="blip"></span>LIVE</span>
+</div>
 
-&lt;div class="grid g4" id="fraudKpis"&gt;&lt;/div&gt;
+<div class="grid g4" id="fraudKpis"></div>
 
-&lt;div class="panel mt4"&gt;
-  &lt;div class="panel-head"&gt;
-    &lt;div&gt;&lt;div class="panel-title"&gt;AI-flagged refund requests&lt;/div&gt;&lt;div class="panel-sub"&gt;Model confidence and the flag rule. Decide: approve, escalate or deny.&lt;/div&gt;&lt;/div&gt;
-    &lt;span class="chip neutral" id="fraudCountChip"&gt;&amp;mdash;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class="tbl-wrap"&gt;
-    &lt;table class="tbl"&gt;
-      &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Request&lt;/th&gt;&lt;th&gt;Customer&lt;/th&gt;&lt;th&gt;AI confidence&lt;/th&gt;&lt;th&gt;Reason for flag&lt;/th&gt;&lt;th&gt;Refund&lt;/th&gt;&lt;th&gt;Decision&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-      &lt;tbody id="fraudBody"&gt;&lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+<div class="panel mt4">
+  <div class="panel-head">
+    <div><div class="panel-title">AI-flagged refund requests</div><div class="panel-sub">Model confidence and the flag rule. Decide: approve, escalate or deny.</div></div>
+    <span class="chip neutral" id="fraudCountChip">&mdash;</span>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Request</th><th>Customer</th><th>AI confidence</th><th>Reason for flag</th><th>Refund</th><th>Decision</th></tr></thead>
+      <tbody id="fraudBody"></tbody>
+    </table>
+  </div>
+</div>
 
-&lt;/main&gt;
-&lt;script&gt;var DARKOPS;try{DARKOPS=JSON.parse(atob("${jvar.b64}"));}catch(e){DARKOPS=null;}&lt;/script&gt;
-&lt;script&gt;
+</main>
+<script>var DARKOPS;try{DARKOPS=JSON.parse(atob("${jvar.b64}"));}catch(e){DARKOPS=null;}</script>
+<script>
 /* DarkOps shared interactivity: tooltips, interactive charts, deep-links, search */
 window.DarkOps = (function () {
   var _tt;
@@ -267,15 +267,15 @@ window.DarkOps = (function () {
   function showTip(html, x, y) { var e = tt(); e.innerHTML = html; e.style.opacity = "1"; move(x, y); }
   function move(x, y) {
     var e = tt(), w = e.offsetWidth, h = e.offsetHeight, nx = x + 14, ny = y + 14;
-    if (nx + w &gt; window.innerWidth) nx = x - w - 14;
-    if (ny + h &gt; window.innerHeight) ny = y - h - 14;
+    if (nx + w > window.innerWidth) nx = x - w - 14;
+    if (ny + h > window.innerHeight) ny = y - h - 14;
     e.style.left = nx + "px"; e.style.top = ny + "px";
   }
   function hideTip() { if (_tt) _tt.style.opacity = "0"; }
   function nf(n) { n = Number(n); return isNaN(n) ? "0" : n.toLocaleString("en-IN"); }
-  function pulseTone(p) { return p &gt;= 80 ? "healthy" : p &gt;= 60 ? "warning" : "critical"; }
+  function pulseTone(p) { return p >= 80 ? "healthy" : p >= 60 ? "warning" : "critical"; }
   function storeHref(id) { return "x_2145749_qc_dark_store_dashboard.do" + (id ? ("?sysparm_store=" + encodeURIComponent(id)) : ""); }
-  function sw(c) { return '&lt;span class="sw" style="background:' + c + '"&gt;&lt;/span&gt;'; }
+  function sw(c) { return '<span class="sw" style="background:' + c + '"></span>'; }
 
   // ---- area / line chart with crosshair tooltip ----
   function trendArea(container, rows, opts) {
@@ -285,23 +285,23 @@ window.DarkOps = (function () {
       { key: "resolved", name: "Complaints resolved", color: "var(--healthy)" }
     ];
     var n = rows.length, x0 = 42, x1 = 748, y0 = 22, y1 = 232;
-    if (!n) { container.innerHTML = '&lt;p class="muted" style="text-align:center;padding:40px"&gt;No data in range.&lt;/p&gt;'; return; }
+    if (!n) { container.innerHTML = '<p class="muted" style="text-align:center;padding:40px">No data in range.</p>'; return; }
     var mx = 1; rows.forEach(function (t) { series.forEach(function (s) { mx = Math.max(mx, Number(t[s.key]) || 0); }); });
-    function X(i) { return x0 + (n &lt;= 1 ? 0 : i * (x1 - x0) / (n - 1)); }
+    function X(i) { return x0 + (n <= 1 ? 0 : i * (x1 - x0) / (n - 1)); }
     function Y(v) { return y0 + (mx - v) * (y1 - y0) / mx; }
-    var grid = [232, 180, 127, 74, 22].map(function (y) { return '&lt;line class="gridln" x1="42" y1="' + y + '" x2="748" y2="' + y + '"/&gt;'; }).join("");
-    var defs = '&lt;defs&gt;&lt;linearGradient id="dopsG" x1="0" y1="0" x2="0" y2="1"&gt;&lt;stop offset="0%" stop-color="var(--accent-blue)" stop-opacity="0.35"/&gt;&lt;stop offset="100%" stop-color="var(--accent-blue)" stop-opacity="0"/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;';
+    var grid = [232, 180, 127, 74, 22].map(function (y) { return '<line class="gridln" x1="42" y1="' + y + '" x2="748" y2="' + y + '"/>'; }).join("");
+    var defs = '<defs><linearGradient id="dopsG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--accent-blue)" stop-opacity="0.35"/><stop offset="100%" stop-color="var(--accent-blue)" stop-opacity="0"/></linearGradient></defs>';
     var paths = "", dots = "";
     series.forEach(function (s, si) {
       var pts = ""; rows.forEach(function (t, i) { pts += X(i).toFixed(1) + "," + Y(Number(t[s.key]) || 0).toFixed(1) + " "; });
-      if (s.fill) { paths += '&lt;polygon fill="url(#dopsG)" points="' + pts + X(n - 1).toFixed(1) + "," + y1 + " " + X(0).toFixed(1) + "," + y1 + '"/&gt;'; }
-      paths += '&lt;polyline fill="none" stroke="' + s.color + '" stroke-width="2" points="' + pts + '"/&gt;';
-      dots += '&lt;circle class="dot-' + si + '" r="3.5" fill="' + s.color + '" style="opacity:0"/&gt;';
+      if (s.fill) { paths += '<polygon fill="url(#dopsG)" points="' + pts + X(n - 1).toFixed(1) + "," + y1 + " " + X(0).toFixed(1) + "," + y1 + '"/>'; }
+      paths += '<polyline fill="none" stroke="' + s.color + '" stroke-width="2" points="' + pts + '"/>';
+      dots += '<circle class="dot-' + si + '" r="3.5" fill="' + s.color + '" style="opacity:0"/>';
     });
-    var svg = '&lt;svg class="chart" viewBox="0 0 760 270" preserveAspectRatio="none" style="height:' + (opts.height || 296) + 'px"&gt;' +
-      defs + grid + paths + '&lt;line class="crosshair" x1="0" y1="22" x2="0" y2="232" style="opacity:0"/&gt;' + dots +
-      '&lt;rect class="hitrect" x="42" y="22" width="706" height="210"/&gt;&lt;/svg&gt;';
-    var legend = '&lt;div class="legend" style="margin-top:10px;justify-content:center"&gt;' + series.map(function (s) { return "&lt;span&gt;" + sw(s.color) + s.name + "&lt;/span&gt;"; }).join("") + "&lt;/div&gt;";
+    var svg = '<svg class="chart" viewBox="0 0 760 270" preserveAspectRatio="none" style="height:' + (opts.height || 296) + 'px">' +
+      defs + grid + paths + '<line class="crosshair" x1="0" y1="22" x2="0" y2="232" style="opacity:0"/>' + dots +
+      '<rect class="hitrect" x="42" y="22" width="706" height="210"/></svg>';
+    var legend = '<div class="legend" style="margin-top:10px;justify-content:center">' + series.map(function (s) { return "<span>" + sw(s.color) + s.name + "</span>"; }).join("") + "</div>";
     container.innerHTML = svg + legend;
     var svgEl = container.querySelector("svg");
     var crossEl = svgEl.querySelector(".crosshair");
@@ -310,11 +310,11 @@ window.DarkOps = (function () {
     svgEl.addEventListener("mousemove", function (e) {
       var rect = svgEl.getBoundingClientRect();
       var df = ((e.clientX - rect.left) / rect.width - x0f) / (x1f - x0f);
-      var i = Math.round(df * (n - 1)); if (i &lt; 0) i = 0; if (i &gt; n - 1) i = n - 1;
+      var i = Math.round(df * (n - 1)); if (i < 0) i = 0; if (i > n - 1) i = n - 1;
       var vx = X(i); crossEl.setAttribute("x1", vx); crossEl.setAttribute("x2", vx); crossEl.style.opacity = "1";
       var body = "";
-      series.forEach(function (s, si) { var v = Number(rows[i][s.key]) || 0; dotEls[si].setAttribute("cx", vx); dotEls[si].setAttribute("cy", Y(v)); dotEls[si].style.opacity = "1"; body += '&lt;div class="r"&gt;' + sw(s.color) + s.name + ": " + nf(v) + "&lt;/div&gt;"; });
-      showTip('&lt;div class="l"&gt;' + (rows[i].label || ("#" + i)) + "&lt;/div&gt;" + body, e.clientX, e.clientY);
+      series.forEach(function (s, si) { var v = Number(rows[i][s.key]) || 0; dotEls[si].setAttribute("cx", vx); dotEls[si].setAttribute("cy", Y(v)); dotEls[si].style.opacity = "1"; body += '<div class="r">' + sw(s.color) + s.name + ": " + nf(v) + "</div>"; });
+      showTip('<div class="l">' + (rows[i].label || ("#" + i)) + "</div>" + body, e.clientX, e.clientY);
     });
     svgEl.addEventListener("mouseleave", function () { crossEl.style.opacity = "0"; dotEls.forEach(function (d) { d.style.opacity = "0"; }); hideTip(); });
   }
@@ -322,15 +322,15 @@ window.DarkOps = (function () {
   // ---- vertical bars ----
   function vbars(container, items, opts) {
     opts = opts || {};
-    if (!items.length) { container.innerHTML = '&lt;p class="muted"&gt;No data.&lt;/p&gt;'; return; }
+    if (!items.length) { container.innerHTML = '<p class="muted">No data.</p>'; return; }
     var mx = opts.max || 1; items.forEach(function (it) { mx = Math.max(mx, Number(it.value) || 0); });
     container.innerHTML = items.map(function (it, i) {
       var h = Math.round((Number(it.value) || 0) / mx * 100);
-      return '&lt;div class="col" data-i="' + i + '"&gt;&lt;div class="stack"&gt;&lt;div class="bar" style="height:' + h + '%;background:' + (it.color || "var(--accent-blue)") + '"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="cap"&gt;' + (it.cap || it.label) + "&lt;/div&gt;&lt;/div&gt;";
+      return '<div class="col" data-i="' + i + '"><div class="stack"><div class="bar" style="height:' + h + '%;background:' + (it.color || "var(--accent-blue)") + '"></div></div><div class="cap">' + (it.cap || it.label) + "</div></div>";
     }).join("");
     container.querySelectorAll(".col").forEach(function (col) {
       var it = items[+col.getAttribute("data-i")];
-      col.addEventListener("mousemove", function (e) { showTip('&lt;div class="l"&gt;' + it.label + '&lt;/div&gt;&lt;div class="r"&gt;' + (opts.label || "Value") + ": " + nf(it.value) + (opts.unit || "") + "&lt;/div&gt;", e.clientX, e.clientY); });
+      col.addEventListener("mousemove", function (e) { showTip('<div class="l">' + it.label + '</div><div class="r">' + (opts.label || "Value") + ": " + nf(it.value) + (opts.unit || "") + "</div>", e.clientX, e.clientY); });
       col.addEventListener("mouseleave", hideTip);
     });
   }
@@ -341,11 +341,11 @@ window.DarkOps = (function () {
     var mx = 1; groups.forEach(function (g) { mx = Math.max(mx, Number(g.a) || 0, Number(g.b) || 0); });
     container.innerHTML = groups.map(function (g, i) {
       var ha = Math.round((Number(g.a) || 0) / mx * 100), hb = Math.round((Number(g.b) || 0) / mx * 100);
-      return '&lt;div class="col" data-i="' + i + '"&gt;&lt;div class="stack"&gt;&lt;div class="bar" style="height:' + ha + '%;background:' + (opts.aColor || "var(--panel)") + ';max-width:12px"&gt;&lt;/div&gt;&lt;div class="bar" style="height:' + hb + '%;background:' + (opts.bColor || "var(--accent-blue)") + ';max-width:12px"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="cap"&gt;' + (g.cap || g.label) + "&lt;/div&gt;&lt;/div&gt;";
+      return '<div class="col" data-i="' + i + '"><div class="stack"><div class="bar" style="height:' + ha + '%;background:' + (opts.aColor || "var(--panel)") + ';max-width:12px"></div><div class="bar" style="height:' + hb + '%;background:' + (opts.bColor || "var(--accent-blue)") + ';max-width:12px"></div></div><div class="cap">' + (g.cap || g.label) + "</div></div>";
     }).join("");
     container.querySelectorAll(".col").forEach(function (col) {
       var g = groups[+col.getAttribute("data-i")];
-      col.addEventListener("mousemove", function (e) { showTip('&lt;div class="l"&gt;' + g.label + "&lt;/div&gt;&lt;div class=\"r\"&gt;" + sw(opts.aColor || "var(--panel)") + (opts.aName || "A") + ": " + nf(g.a) + "&lt;/div&gt;&lt;div class=\"r\"&gt;" + sw(opts.bColor || "var(--accent-blue)") + (opts.bName || "B") + ": " + nf(g.b) + "&lt;/div&gt;", e.clientX, e.clientY); });
+      col.addEventListener("mousemove", function (e) { showTip('<div class="l">' + g.label + "</div><div class=\"r\">" + sw(opts.aColor || "var(--panel)") + (opts.aName || "A") + ": " + nf(g.a) + "</div><div class=\"r\">" + sw(opts.bColor || "var(--accent-blue)") + (opts.bName || "B") + ": " + nf(g.b) + "</div>", e.clientX, e.clientY); });
       col.addEventListener("mouseleave", hideTip);
     });
   }
@@ -354,20 +354,20 @@ window.DarkOps = (function () {
   function hbars(container, items, opts) {
     opts = opts || {};
     var mx = opts.max || 1; items.forEach(function (it) { mx = Math.max(mx, Number(it.value) || 0); });
-    container.innerHTML = '&lt;div class="hbars" style="margin-top:6px"&gt;' + items.map(function (it, i) {
+    container.innerHTML = '<div class="hbars" style="margin-top:6px">' + items.map(function (it, i) {
       var w = Math.round((Number(it.value) || 0) / mx * 100);
-      return '&lt;div class="hbar" data-i="' + i + '"&gt;&lt;span class="muted"&gt;' + it.label + '&lt;/span&gt;&lt;div class="track"&gt;&lt;div class="fill" style="width:' + w + '%;background:' + (it.color || "var(--accent-blue)") + '"&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class="num"&gt;' + nf(it.value) + "&lt;/span&gt;&lt;/div&gt;";
-    }).join("") + "&lt;/div&gt;";
+      return '<div class="hbar" data-i="' + i + '"><span class="muted">' + it.label + '</span><div class="track"><div class="fill" style="width:' + w + '%;background:' + (it.color || "var(--accent-blue)") + '"></div></div><span class="num">' + nf(it.value) + "</span></div>";
+    }).join("") + "</div>";
     container.querySelectorAll(".hbar").forEach(function (h) {
       var it = items[+h.getAttribute("data-i")];
-      h.addEventListener("mousemove", function (e) { showTip('&lt;div class="l"&gt;' + it.label + '&lt;/div&gt;&lt;div class="r"&gt;' + nf(it.value) + "&lt;/div&gt;", e.clientX, e.clientY); });
+      h.addEventListener("mousemove", function (e) { showTip('<div class="l">' + it.label + '</div><div class="r">' + nf(it.value) + "</div>", e.clientX, e.clientY); });
       h.addEventListener("mouseleave", hideTip);
     });
   }
 
   // ---- donut ----
   function slice(cx, cy, R, r, a1, a2) {
-    var large = (a2 - a1) &gt; Math.PI ? 1 : 0;
+    var large = (a2 - a1) > Math.PI ? 1 : 0;
     return "M" + (cx + R * Math.cos(a1)) + " " + (cy + R * Math.sin(a1)) +
       " A" + R + " " + R + " 0 " + large + " 1 " + (cx + R * Math.cos(a2)) + " " + (cy + R * Math.sin(a2)) +
       " L" + (cx + r * Math.cos(a2)) + " " + (cy + r * Math.sin(a2)) +
@@ -377,13 +377,13 @@ window.DarkOps = (function () {
     opts = opts || {};
     var size = opts.size || 168, cx = size / 2, cy = size / 2, R = opts.r || 70, r = opts.inner || 46;
     var total = 0; segs.forEach(function (s) { total += Number(s.value) || 0; });
-    if (!total) { container.innerHTML = '&lt;p class="muted"&gt;No data.&lt;/p&gt;'; return; }
+    if (!total) { container.innerHTML = '<p class="muted">No data.</p>'; return; }
     var a = -Math.PI / 2, paths = "";
-    segs.forEach(function (s, i) { var a2 = a + (Number(s.value) || 0) / total * 2 * Math.PI; paths += '&lt;path d="' + slice(cx, cy, R, r, a, a2) + '" fill="' + s.color + '" data-i="' + i + '" stroke="var(--card)" stroke-width="1.5" style="cursor:pointer"/&gt;'; a = a2; });
-    container.innerHTML = '&lt;svg width="' + size + '" height="' + size + '" viewBox="0 0 ' + size + " " + size + '"&gt;' + paths + "&lt;/svg&gt;";
+    segs.forEach(function (s, i) { var a2 = a + (Number(s.value) || 0) / total * 2 * Math.PI; paths += '<path d="' + slice(cx, cy, R, r, a, a2) + '" fill="' + s.color + '" data-i="' + i + '" stroke="var(--card)" stroke-width="1.5" style="cursor:pointer"/>'; a = a2; });
+    container.innerHTML = '<svg width="' + size + '" height="' + size + '" viewBox="0 0 ' + size + " " + size + '">' + paths + "</svg>";
     container.querySelectorAll("path").forEach(function (p) {
       var s = segs[+p.getAttribute("data-i")];
-      p.addEventListener("mousemove", function (e) { showTip('&lt;div class="l"&gt;' + s.name + "&lt;/div&gt;&lt;div class=\"r\"&gt;" + sw(s.color) + nf(s.value) + " (" + Math.round(s.value / total * 100) + "%)&lt;/div&gt;", e.clientX, e.clientY); });
+      p.addEventListener("mousemove", function (e) { showTip('<div class="l">' + s.name + "</div><div class=\"r\">" + sw(s.color) + nf(s.value) + " (" + Math.round(s.value / total * 100) + "%)</div>", e.clientX, e.clientY); });
       p.addEventListener("mouseleave", hideTip);
     });
   }
@@ -395,9 +395,9 @@ window.DarkOps = (function () {
       if (e.key !== "Enter") return;
       var q = (input.value || "").trim().toLowerCase(); if (!q) return;
       var digits = q.replace(/\D/g, ""), m = null, i;
-      for (i = 0; i &lt; stores.length; i++) if ((stores[i].code || "").toLowerCase() === q) { m = stores[i]; break; }
-      if (!m &amp;&amp; digits) for (i = 0; i &lt; stores.length; i++) if ((stores[i].code || "").toLowerCase().indexOf(digits) &gt;= 0) { m = stores[i]; break; }
-      if (!m) for (i = 0; i &lt; stores.length; i++) if ((stores[i].name || "").toLowerCase().indexOf(q) &gt;= 0) { m = stores[i]; break; }
+      for (i = 0; i < stores.length; i++) if ((stores[i].code || "").toLowerCase() === q) { m = stores[i]; break; }
+      if (!m && digits) for (i = 0; i < stores.length; i++) if ((stores[i].code || "").toLowerCase().indexOf(digits) >= 0) { m = stores[i]; break; }
+      if (!m) for (i = 0; i < stores.length; i++) if ((stores[i].name || "").toLowerCase().indexOf(q) >= 0) { m = stores[i]; break; }
       if (m) window.location.href = storeHref(m.id);
     });
   }
@@ -408,8 +408,8 @@ window.DarkOps = (function () {
   };
 })();
 
-&lt;/script&gt;
-&lt;script&gt;
+</script>
+<script>
 (function () {
   var DO = window.DarkOps;
   var nf = DO.nf, storeHref = DO.storeHref;
@@ -418,10 +418,10 @@ window.DarkOps = (function () {
   function money(n) { return RS + nf(n); }
   function kpi(o) {
     var toneCls = o.tone ? " t-" + o.tone : "";
-    return '&lt;div class="kpi"&gt;&lt;p class="label"&gt;' + o.label + '&lt;/p&gt;&lt;div class="val"&gt;&lt;span class="n num' + toneCls + '"&gt;' + o.value + "&lt;/span&gt;" + (o.unit ? '&lt;span class="u"&gt;' + o.unit + "&lt;/span&gt;" : "") + '&lt;/div&gt;&lt;div class="foot"&gt;&lt;span class="hint"&gt;' + (o.hint || "") + "&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;";
+    return '<div class="kpi"><p class="label">' + o.label + '</p><div class="val"><span class="n num' + toneCls + '">' + o.value + "</span>" + (o.unit ? '<span class="u">' + o.unit + "</span>" : "") + '</div><div class="foot"><span class="hint">' + (o.hint || "") + "</span></div></div>";
   }
-  var CHK = '&lt;svg class="i sm" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"/&gt;&lt;/svg&gt;';
-  var X = '&lt;svg class="i sm" viewBox="0 0 24 24"&gt;&lt;line x1="18" y1="6" x2="6" y2="18"/&gt;&lt;line x1="6" y1="6" x2="18" y2="18"/&gt;&lt;/svg&gt;';
+  var CHK = '<svg class="i sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+  var X = '<svg class="i sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
 
   try {
     var D = window.DARKOPS;
@@ -440,20 +440,20 @@ window.DarkOps = (function () {
     var rows = D.rows || [];
     el("fraudBody").innerHTML = rows.map(function (r, idx) {
       var barCol = r.confTone === "critical" ? "var(--critical)" : r.confTone === "warning" ? "var(--warning)" : "var(--healthy)";
-      var storeCell = r.storeId ? '&lt;a href="' + storeHref(r.storeId) + '" class="num t-primary" style="font-size:11px"&gt;' + (r.storeName || "store") + "&lt;/a&gt;" : "";
+      var storeCell = r.storeId ? '<a href="' + storeHref(r.storeId) + '" class="num t-primary" style="font-size:11px">' + (r.storeName || "store") + "</a>" : "";
       var actions = r.pending
-        ? '&lt;div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px" data-actions="' + idx + '"&gt;' +
-            '&lt;button class="chip healthy" style="cursor:pointer" data-dec="Approved" data-tone="healthy"&gt;' + CHK + 'Approve&lt;/button&gt;' +
-            '&lt;button class="chip warning" style="cursor:pointer" data-dec="Escalated" data-tone="warning"&gt;Escalate&lt;/button&gt;' +
-            '&lt;button class="chip critical" style="cursor:pointer" data-dec="Denied" data-tone="critical"&gt;' + X + 'Deny&lt;/button&gt;&lt;/div&gt;'
+        ? '<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px" data-actions="' + idx + '">' +
+            '<button class="chip healthy" style="cursor:pointer" data-dec="Approved" data-tone="healthy">' + CHK + 'Approve</button>' +
+            '<button class="chip warning" style="cursor:pointer" data-dec="Escalated" data-tone="warning">Escalate</button>' +
+            '<button class="chip critical" style="cursor:pointer" data-dec="Denied" data-tone="critical">' + X + 'Deny</button></div>'
         : "";
-      return '&lt;tr&gt;&lt;td&gt;&lt;span class="num" style="display:block"&gt;' + (r.number || "") + "&lt;/span&gt;" + storeCell + "&lt;/td&gt;" +
-        '&lt;td&gt;&lt;span style="display:block"&gt;' + (r.customer || "—") + "&lt;/span&gt;&lt;/td&gt;" +
-        '&lt;td&gt;&lt;div style="display:flex;align-items:center;gap:8px"&gt;&lt;span class="chip ' + r.confTone + '"&gt;&lt;span class="num"&gt;' + r.confidence + '%&lt;/span&gt;&lt;/span&gt;&lt;div class="confbar"&gt;&lt;i style="width:' + r.confidence + '%;background:' + barCol + '"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;' +
-        '&lt;td class="muted" style="max-width:22rem"&gt;' + (r.reason || "—") + "&lt;/td&gt;" +
-        '&lt;td class="num"&gt;' + money(r.amount) + "&lt;/td&gt;" +
-        '&lt;td&gt;&lt;span class="chip ' + r.decisionTone + '" data-chip="' + idx + '"&gt;' + (r.decision || "Pending") + "&lt;/span&gt;" + actions + "&lt;/td&gt;&lt;/tr&gt;";
-    }).join("") || '&lt;tr&gt;&lt;td colspan="6" class="muted" style="padding:20px"&gt;No flagged refund requests.&lt;/td&gt;&lt;/tr&gt;';
+      return '<tr><td><span class="num" style="display:block">' + (r.number || "") + "</span>" + storeCell + "</td>" +
+        '<td><span style="display:block">' + (r.customer || "—") + "</span></td>" +
+        '<td><div style="display:flex;align-items:center;gap:8px"><span class="chip ' + r.confTone + '"><span class="num">' + r.confidence + '%</span></span><div class="confbar"><i style="width:' + r.confidence + '%;background:' + barCol + '"></i></div></div></td>' +
+        '<td class="muted" style="max-width:22rem">' + (r.reason || "—") + "</td>" +
+        '<td class="num">' + money(r.amount) + "</td>" +
+        '<td><span class="chip ' + r.decisionTone + '" data-chip="' + idx + '">' + (r.decision || "Pending") + "</span>" + actions + "</td></tr>";
+    }).join("") || '<tr><td colspan="6" class="muted" style="padding:20px">No flagged refund requests.</td></tr>';
 
     // decision buttons (client-side; visual only)
     el("fraudBody").querySelectorAll("[data-actions]").forEach(function (box) {
@@ -463,21 +463,21 @@ window.DarkOps = (function () {
           var chipEl = el("fraudBody").querySelector('[data-chip="' + idx + '"]');
           chipEl.className = "chip " + btn.getAttribute("data-tone");
           chipEl.textContent = btn.getAttribute("data-dec");
-          box.parentNode.insertAdjacentHTML("beforeend", '&lt;span class="s muted" style="display:block;margin-top:4px"&gt;decided by you · just now&lt;/span&gt;');
+          box.parentNode.insertAdjacentHTML("beforeend", '<span class="s muted" style="display:block;margin-top:4px">decided by you · just now</span>');
           box.remove();
         });
       });
     });
   } catch (e) {
     var g = el("fraudKpis");
-    if (g) g.innerHTML = '&lt;div class="kpi" style="grid-column:1/-1"&gt;&lt;p class="label t-critical"&gt;Could not load fraud data&lt;/p&gt;&lt;div class="foot"&gt;&lt;span class="hint"&gt;' + (e &amp;&amp; e.message ? e.message : "error") + "&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;";
+    if (g) g.innerHTML = '<div class="kpi" style="grid-column:1/-1"><p class="label t-critical">Could not load fraud data</p><div class="foot"><span class="hint">' + (e && e.message ? e.message : "error") + "</span></div></div>";
   }
 })();
 
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</script>
+</body>
 </html>
+]]></html>
         <name>fraud_dashboard</name>
         <processing_script/>
         <sys_class_name>sys_ui_page</sys_class_name>
