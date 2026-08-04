@@ -3,7 +3,6 @@
         <access>public</access>
         <acls/>
         <active>true</active>
-        <allow_high_security_roles>false</allow_high_security_roles>
         <annotation/>
         <attributes>timeFromCreateToActivate=52604000</attributes>
         <authored_on_release_version/>
@@ -45,7 +44,7 @@
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
         <sys_update_name>sys_hub_flow_6adc24bf94de46349308d774f7ff75d9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-03 18:12:43</sys_updated_on>
+        <sys_updated_on>2026-08-04 09:25:36</sys_updated_on>
         <type>flow</type>
         <updation_source/>
         <version>2</version>
@@ -231,7 +230,6 @@
         <access>public</access>
         <acls/>
         <active>true</active>
-        <allow_high_security_roles>false</allow_high_security_roles>
         <annotation/>
         <attributes/>
         <authored_on_release_version>-1</authored_on_release_version>

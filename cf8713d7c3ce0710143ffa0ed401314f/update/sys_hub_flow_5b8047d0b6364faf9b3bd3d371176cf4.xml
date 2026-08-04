@@ -3,7 +3,6 @@
         <access>public</access>
         <acls/>
         <active>false</active>
-        <allow_high_security_roles>false</allow_high_security_roles>
         <annotation/>
         <attributes/>
         <authored_on_release_version/>

@@ -3,7 +3,6 @@
         <access>public</access>
         <acls/>
         <active>false</active>
-        <allow_high_security_roles>false</allow_high_security_roles>
         <annotation/>
         <attributes>timeFromCreateToActivate=1274840000</attributes>
         <authored_on_release_version/>
@@ -45,7 +44,7 @@
         <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
         <sys_update_name>sys_hub_flow_2f0239f19af34f66958b45e0f25b4e00</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-03 18:12:42</sys_updated_on>
+        <sys_updated_on>2026-08-04 09:25:34</sys_updated_on>
         <type>flow</type>
         <updation_source/>
         <version>2</version>
@@ -148,7 +147,6 @@
         <order>101</order>
         <primary>false</primary>
         <read_only>false</read_only>
-        <read_only_option/>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -233,7 +231,6 @@
         <order>100</order>
         <primary>false</primary>
         <read_only>false</read_only>
-        <read_only_option/>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -324,29 +321,6 @@
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=2f0239f19af34f66958b45e0f25b4e00"/>
     <sys_hub_flow_variable action="delete_multiple" query="model=2f0239f19af34f66958b45e0f25b4e00"/>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>current</element>
-        <help/>
-        <hint/>
-        <label>Record</label>
-        <language>en</language>
-        <name>var__m_sys_hub_flow_input_2f0239f19af34f66958b45e0f25b4e00</name>
-        <plural/>
-        <sys_class_name>sys_documentation</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-07-18 18:15:28</sys_created_on>
-        <sys_id>7afc75e8c3a6c310f35b3fac050131ae</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Record</sys_name>
-        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
-        <sys_policy/>
-        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_2f0239f19af34f66958b45e0f25b4e00_current_en</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-07-18 18:15:28</sys_updated_on>
-        <url/>
-        <url_target/>
-    </sys_documentation>
-    <sys_documentation action="INSERT_OR_UPDATE">
         <element>table_name</element>
         <help/>
         <hint/>
@@ -357,7 +331,7 @@
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-07-18 18:15:28</sys_created_on>
-        <sys_id>b2fc75e8c3a6c310f35b3fac050131c1</sys_id>
+        <sys_id>a3dd89b893aa0f1093e0313efaba1098</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Table Name</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
@@ -369,13 +343,35 @@
         <url/>
         <url_target/>
     </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_2f0239f19af34f66958b45e0f25b4e00</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:28</sys_created_on>
+        <sys_id>ebdd89b893aa0f1093e0313efaba1085</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Record</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_2f0239f19af34f66958b45e0f25b4e00_current_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:28</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_2f0239f19af34f66958b45e0f25b4e00"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_2f0239f19af34f66958b45e0f25b4e00"/>
     <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
         <active>true</active>
-        <allow_high_security_roles>false</allow_high_security_roles>
         <annotation/>
         <attributes>timeFromCreateToActivate=23000</attributes>
         <authored_on_release_version>-1</authored_on_release_version>
@@ -480,7 +476,6 @@
         <order>100</order>
         <primary>false</primary>
         <read_only>false</read_only>
-        <read_only_option/>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -565,7 +560,6 @@
         <order>101</order>
         <primary>false</primary>
         <read_only>false</read_only>
-        <read_only_option/>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -666,7 +660,7 @@
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-07-18 18:15:29</sys_created_on>
-        <sys_id>03fc75e8c3a6c310f35b3fac050131c7</sys_id>
+        <sys_id>afdd89b893aa0f1093e0313efaba109d</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Record</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
@@ -689,7 +683,7 @@
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-07-18 18:15:29</sys_created_on>
-        <sys_id>0ffc75e8c3a6c310f35b3fac050131e5</sys_id>
+        <sys_id>afdd89b893aa0f1093e0313efaba10a3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Table Name</sys_name>
         <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
