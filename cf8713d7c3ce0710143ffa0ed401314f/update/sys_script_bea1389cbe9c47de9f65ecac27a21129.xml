@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2145749_qc_partner_incident</collection>
+        <condition>incident_typeINorder_not_ready,wrong_items_packed,unsafe_store_conditions</condition>
+        <description>Creates a Dark Store Operational Issue from store-relevant delivery partner incidents so managers see them without the contact centre being the go-between.</description>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Route Partner Incident to Dark Store Ope</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function routePartnerIncidentToStoreIssue(current, previous) {
+    var routableTypes = ['order_not_ready', 'wrong_items_packed', 'unsafe_store_conditions'];
+    if (routableTypes.indexOf(current.getValue('incident_type')) === -1) {
+        return;
+    }
+
+    var issueGr = new GlideRecord('x_2145749_qc_store_issue');
+    issueGr.initialize();
+    issueGr.setValue('dark_store', current.getValue('dark_store'));
+    issueGr.setValue('issue_category', 'other');
+    issueGr.setValue('severity', current.getValue('severity'));
+    issueGr.setValue('description', current.getValue('description'));
+    issueGr.setValue('source_partner_incident', current.getUniqueValue());
+    issueGr.insert();
+
+    current.setValue('state', 'routed_to_store');
+    current.update();
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bea1389cbe9c47de9f65ecac27a21129</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Route Partner Incident to Dark Store Ope</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_script_bea1389cbe9c47de9f65ecac27a21129</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:10</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=bea1389cbe9c47de9f65ecac27a21129"/>
+</record_update>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[var FraudDetectionEngine = Class.create();
+FraudDetectionEngine.prototype = {
+    initialize: function () {
+        // Configurable thresholds - move to sys_properties if admins need to tune without a build
+        this.REPEAT_CLAIM_WINDOW_DAYS = 30;
+        this.REPEAT_CLAIM_THRESHOLD = 3;          // >= this many prior claims in window = flag
+        this.VELOCITY_WINDOW_HOURS = 24;
+        this.VELOCITY_THRESHOLD = 2;               // >= this many claims in window = flag
+        this.NEW_CUSTOMER_DAYS = 30;
+        this.HIGH_VALUE_THRESHOLD = 1500;           // currency units
+        this.TIMESTAMP_MISMATCH_MINUTES = 5;        // claim filed within N minutes of order placement is suspicious
+    },
+
+    /**
+     * Evaluates a single x_2145749_qc_refund_request record against all rule-based fraud
+     * checks. Writes x_2145749_qc_fraud_flag child records for every rule that fires and
+     * returns an aggregate risk score (0-100) plus a boolean flagged indicator.
+     *
+     * @param {GlideRecord} refundGr - the x_2145749_qc_refund_request GlideRecord (current)
+     * @returns {Object} { riskScore: Number, flagged: Boolean, flags: Array }
+     */
+    evaluate: function (refundGr) {
+        var flags = [];
+
+        var repeatClaim = this._checkRepeatClaims(refundGr);
+        if (repeatClaim) flags.push(repeatClaim);
+
+        var velocity = this._checkVelocity(refundGr);
+        if (velocity) flags.push(velocity);
+
+        var timestampMismatch = this._checkTimestampMismatch(refundGr);
+        if (timestampMismatch) flags.push(timestampMismatch);
+
+        var highValueNew = this._checkHighValueNewCustomer(refundGr);
+        if (highValueNew) flags.push(highValueNew);
+
+        var riskScore = 0;
+        for (var i = 0; i < flags.length; i++) {
+            riskScore += flags[i].weight;
+        }
+        if (riskScore > 100) riskScore = 100;
+
+        this._persistFlags(refundGr, flags);
+
+        return {
+            riskScore: riskScore,
+            flagged: flags.length > 0,
+            flags: flags
+        };
+    },
+
+    _checkRepeatClaims: function (refundGr) {
+        var since = new GlideDateTime();
+        since.addDaysUTC(-this.REPEAT_CLAIM_WINDOW_DAYS);
+
+        var gr = new GlideRecord('x_2145749_qc_refund_request');
+        gr.addQuery('customer', refundGr.getValue('customer'));
+        gr.addQuery('sys_created_on', '>=', since);
+        gr.addQuery('sys_id', '!=', refundGr.getUniqueValue());
+        gr.query();
+        var count = gr.getRowCount();
+
+        if (count >= this.REPEAT_CLAIM_THRESHOLD) {
+            return {
+                rule_name: 'repeat_claim_customer',
+                details: 'Customer has ' + count + ' other refund claims in the last ' +
+                    this.REPEAT_CLAIM_WINDOW_DAYS + ' days (threshold: ' + this.REPEAT_CLAIM_THRESHOLD + ').',
+                weight: 35
+            };
+        }
+        return null;
+    },
+
+    _checkVelocity: function (refundGr) {
+        var since = new GlideDateTime();
+        since.addSeconds(-this.VELOCITY_WINDOW_HOURS * 3600);
+
+        var gr = new GlideRecord('x_2145749_qc_refund_request');
+        gr.addQuery('customer', refundGr.getValue('customer'));
+        gr.addQuery('sys_created_on', '>=', since);
+        gr.addQuery('sys_id', '!=', refundGr.getUniqueValue());
+        gr.query();
+        var count = gr.getRowCount();
+
+        if (count >= this.VELOCITY_THRESHOLD) {
+            return {
+                rule_name: 'velocity_threshold',
+                details: 'Customer filed ' + (count + 1) + ' claims within ' +
+                    this.VELOCITY_WINDOW_HOURS + ' hours (threshold: ' + this.VELOCITY_THRESHOLD + ').',
+                weight: 25
+            };
+        }
+        return null;
+    },
+
+    _checkTimestampMismatch: function (refundGr) {
+        var orderTs = refundGr.getValue('order_timestamp');
+        var claimTs = refundGr.getValue('claim_timestamp');
+        if (!orderTs || !claimTs) return null;
+
+        var orderGdt = new GlideDateTime(orderTs);
+        var claimGdt = new GlideDateTime(claimTs);
+
+        // Claim filed before the order was even placed, or implausibly soon after -
+        // both are strong signals of a scripted / bulk-fraud claim rather than a genuine
+        // post-delivery complaint.
+        var diffSeconds = GlideDateTime.subtract(orderGdt, claimGdt).getNumericValue() / 1000;
+        var claimedBeforeOrder = claimGdt.compareTo(orderGdt) < 0;
+        var tooSoonAfter = !claimedBeforeOrder && Math.abs(diffSeconds) < (this.TIMESTAMP_MISMATCH_MINUTES * 60);
+
+        if (claimedBeforeOrder || tooSoonAfter) {
+            return {
+                rule_name: 'timestamp_mismatch',
+                details: claimedBeforeOrder
+                    ? 'Claim timestamp is earlier than the order timestamp.'
+                    : 'Claim filed within ' + this.TIMESTAMP_MISMATCH_MINUTES + ' minutes of order placement, before delivery could plausibly have occurred.',
+                weight: 30
+            };
+        }
+        return null;
+    },
+
+    _checkHighValueNewCustomer: function (refundGr) {
+        var amount = parseFloat(refundGr.getValue('amount_requested')) || 0;
+        if (amount < this.HIGH_VALUE_THRESHOLD) return null;
+
+        var userGr = new GlideRecord('sys_user');
+        if (!userGr.get(refundGr.getValue('customer'))) return null;
+
+        var created = new GlideDateTime(userGr.getValue('sys_created_on'));
+        var ageDays = GlideDateTime.subtract(created, new GlideDateTime()).getNumericValue() / (1000 * 3600 * 24);
+
+        if (ageDays <= this.NEW_CUSTOMER_DAYS) {
+            return {
+                rule_name: 'high_value_new_customer',
+                details: 'Customer account is ' + Math.round(ageDays) + ' days old and is claiming ' +
+                    amount + ', above the ' + this.HIGH_VALUE_THRESHOLD + ' high-value threshold.',
+                weight: 20
+            };
+        }
+        return null;
+    },
+
+    _persistFlags: function (refundGr, flags) {
+        for (var i = 0; i < flags.length; i++) {
+            var flagGr = new GlideRecord('x_2145749_qc_fraud_flag');
+            flagGr.initialize();
+            flagGr.setValue('refund_request', refundGr.getUniqueValue());
+            flagGr.setValue('rule_name', flags[i].rule_name);
+            flagGr.setValue('details', flags[i].details);
+            flagGr.setValue('risk_weight', flags[i].weight);
+            flagGr.insert();
+        }
+    },
+
+    type: 'FraudDetectionEngine'
+};
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2145749_qc/qc-ops-platform/0.0.1/src/server/script-includes/fraud-detection-engine.server.js</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:09</sys_created_on>
+        <sys_id>0730f1276d544baca12b5152df966435</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2145749_qc/qc-ops-platform/0.0.1/src/server/script-includes/fraud-detection-engine.server.js</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_module_0730f1276d544baca12b5152df966435</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:09</sys_updated_on>
+    </sys_module>
+</record_update>

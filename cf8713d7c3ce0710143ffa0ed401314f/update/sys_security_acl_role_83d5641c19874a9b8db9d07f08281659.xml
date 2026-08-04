@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:14</sys_created_on>
+        <sys_id>83d5641c19874a9b8db9d07f08281659</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2145749_qc_refund_request.</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_security_acl display_value="x_2145749_qc_refund_request">243ec0bd23b74133829a9e6a6288f8d1</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_83d5641c19874a9b8db9d07f08281659</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:14</sys_updated_on>
+        <sys_user_role display_value="x_2145749_qc.ops_leadership" name="x_2145749_qc.ops_leadership">3289627e6c1f46409aa7848fca2b6f49</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

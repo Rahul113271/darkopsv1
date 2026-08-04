@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_nowassist_skill_config">
+    <sn_nowassist_skill_config action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <description><![CDATA[Suggests a category and drafts a resolution recommendation for an order complaint case, for agent review.]]></description>
+        <edited_in_nask>false</edited_in_nask>
+        <in_product_active>false</in_product_active>
+        <in_product_roles/>
+        <internal_name>order_complaint_triage_assistant.2142a5f074b445788d60e151abfe3ee5</internal_name>
+        <is_template>false</is_template>
+        <name>Order Complaint Triage Assistant</name>
+        <nap_skill_applicability display_value="Order Complaint Triage Assistant">2b42329cae044a919ee128885ecfc036</nap_skill_applicability>
+        <order/>
+        <parent/>
+        <skill_family display_value="Other">a5efaf1c93764210aa5730f16489186d</skill_family>
+        <skill_id>324b60b075c74ab7816639a79d22890a</skill_id>
+        <skill_table>sys_one_extend_capability</skill_table>
+        <state>0</state>
+        <success_message/>
+        <sys_class_name>sn_nowassist_skill_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>2142a5f074b445788d60e151abfe3ee5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Order Complaint Triage Assistant</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sn_nowassist_skill_config_2142a5f074b445788d60e151abfe3ee5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:06</sys_updated_on>
+    </sn_nowassist_skill_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=2142a5f074b445788d60e151abfe3ee5"/>
+</record_update>

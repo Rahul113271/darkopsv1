@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>timeFromCreateToActivate=18000</attributes>
+        <authored_on_release_version/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source>fluent</generation_source>
+        <internal_name>delivery_partner_incident__urgent_safety_escalation</internal_name>
+        <label_cache>[]</label_cache>
+        <master_snapshot>5d442393c3424710143ffa0ed4013165</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Delivery Partner Incident - Urgent Safety Escalation</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>19442393c3424710143ffa0ed4013196</remote_trigger_id>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:09</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0c8e603fb8004b21aa53092862dd18c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Delivery Partner Incident - Urgent Safety Escalation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_hub_flow_0c8e603fb8004b21aa53092862dd18c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-03 10:01:05</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_variable_value action="delete_multiple" query="document_key=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_2145749_qc_partner_incident">severity=urgent<item endquery="false" field="severity" goto="false" newquery="false" operator="=" or="false" value="urgent"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>19442393c3424710143ffa0ed4013196</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:28</sys_updated_on>
+        <table>x_2145749_qc_partner_incident</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>0c8e603fb8004b21aa53092862dd18c1</identifier>
+        <identifier_type>flow</identifier_type>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:28</sys_created_on>
+        <sys_id>15442393c3424710143ffa0ed4013197</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:28</sys_updated_on>
+        <trigger display_value="">19442393c3424710143ffa0ed4013196</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=0c8e603fb8004b21aa53092862dd18c1^sys_idNOT IN15442393c3424710143ffa0ed4013197"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=0c8e603fb8004b21aa53092862dd18c1^sys_idNOT IN4944ef53c3424710143ffa0ed40131ed,85442393c3424710143ffa0ed4013119"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,timeFromCreateToActivate=23000,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Delivery Partner Incident - Urgent Safety Escalation">0c8e603fb8004b21aa53092862dd18c1</model>
+        <model_id>0c8e603fb8004b21aa53092862dd18c1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_0c8e603fb8004b21aa53092862dd18c1</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:27</sys_created_on>
+        <sys_id>4944ef53c3424710143ffa0ed40131ed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4944ef53c3424710143ffa0ed40131ed"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Delivery Partner Incident - Urgent Safety Escalation">0c8e603fb8004b21aa53092862dd18c1</model>
+        <model_id>0c8e603fb8004b21aa53092862dd18c1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_0c8e603fb8004b21aa53092862dd18c1</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:27</sys_created_on>
+        <sys_id>85442393c3424710143ffa0ed4013119</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=85442393c3424710143ffa0ed4013119"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=0c8e603fb8004b21aa53092862dd18c1^sys_idNOT IN561983df36304a6c8c7d97dd65c781e2"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Delivery Partner Incident - Urgent Safety Escalation">0c8e603fb8004b21aa53092862dd18c1</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:09</sys_created_on>
+        <sys_id>561983df36304a6c8c7d97dd65c781e2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/+1X32/TMBD+V6w8gVSkDoYQewPGpEqDSWzAw5giN760Fq7d2Ze2Ydr/zjk/Wi9Nt25rAKE9tT47vu/uvs8+n19FaOVoBHagHXKdwGnuBiI6iKJepPgQFP0940MFNJYawWquzvIpkBm9OdZ84ucETEEL0Fh+moyNTOBYOhqfX/SiCdeCo7F5dIA2g16UWjM5g8lUcaS9Uq4cGY0VYKODvX6/FxX7Vk5owxlXmR8v4pd7+6/f7L+NL5N4yi1qsLHUiSx8Ew7paM/825bLk7FUwoIuUdIC8ooew9Va9A1A2JKECj+hhwX6dIhlaEECKosFLk60yoMlCyd/QfF95iAOUlqtSE/HZv4FUiDECRxJXbirJpVJuFqOOFJdhxmCo1iur5eJOZKgqvK6xMopvktQzuoSXPe24cOXTLMTzT5WMbIiQ26dICUJ7iDHFUUFl5kPqIg8rUvneUKL0+PAq9EsySxFj4zyyeosM6wRpIMJH0HphvZVkGBQhPSrC0efpHNSj4LYN0Ap5texqDwEVBPjMRAu2oiyrVRspmOj4yX1VqKp8TfEUZu3EMHGkm/0jQ0O/KvaiLiYeZ6LmnIdiOX7GDQ7BSq18b+IvuQ7lsvQ4LhJ0dRY9p7sbOA98QJ8IZzPRr8IbRW27hSkiRxy5TAE6uvMarQbgHWGaxtMtLVluwf1aK3PiVWxW7JpdpMIDa1X1i2lvoGwm50/qT1QnTJz4suuBc51vqZv70lqknTOEkPOFtiZUoY8+TmyJtNiE4rVCvZMQMozhc+7u5KNhdvh3FzxN4XqEdHpF2o0TGZTqeHclnpdUa7V7ZM6y1R9MFpILI/upjbrKXevx8w92ZAEAGouOJiBlZj/yPr9VyKzo9aHzIZVW/AjDLoFBrbE3xk/qrffQ+kx5xpdjCbmQsQB4uVjYWIEqMOgehUnSAbTDF10HdSW+tXlc66jlq/oHDrq99quA2pW/FVASbedHbxGQ2zS1mZJpqxKDr0QhjnDMRAmRccQ7Vyg6rLB9AVtQjs0jCaY/SPgdtPQeSQtXV1Z7sahUBrv09M1GHmH86d7oy19hTLX1DxSUkCsyrndXyAFDwJorZWrvNecWSfMQ9hShXubQ2xJwX/IlYvfR+B0sy4VAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=0c8e603fb8004b21aa53092862dd18c1^sys_idNOT INa2cd6de799714aada149804c18c79123"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Log">5bc1bcc6531003003bf1d9109ec587d4</action_type>
+        <action_type_parent display_value="">5bc1bcc6531003003bf1d9109ec587d4</action_type_parent>
+        <attributes>timeFromCreateToActivate=23000</attributes>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Delivery Partner Incident - Urgent Safety Escalation">0c8e603fb8004b21aa53092862dd18c1</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:09</sys_created_on>
+        <sys_id>a2cd6de799714aada149804c18c79123</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <ui_id>a2cd6de7-9971-4aad-a149-804c18c79123</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VUTW/bMAz9K4LOSRAnzbrmNvRjGNAPoN26Q1EEtEQnAmTJk+S0btD/PipWEncttgXoTgN84fOTyEc98m7FDZTIp1zb+UzjEjXv8SXoOmLonHUUS+UrDc1tgk8TXIGjswEdn664WCgtHRo+vbvvcSWJN8lFlgvxYTLOhsMxfXmRyaNseIRi8vFQHtIVGnLKOOXnKfMbxYSmipBYWCUwxefp2PEGtE7GMoY9jo8BjUTKX4D22OMlGAnBumaLOAR5ZfQOWCgT6DYeyY9ePVG+g2HkFUiKBLb/tuEs9aOFixMIcBNcLULtErUt1lMvVluJ/T67tAZZv9/pcKf0596O+8UUtsNSbZiYWZf5HZxRZt4hPxCyI4+65M3D/fq+iTt+ppeTWECtw/H+CrK/VjDaR8F4DwUHUUHb/KsqKEtu5Fn0DOR68zRW16W5bH3Gt3pvXxaa0JOXxk+iak8WwCraLPommai4WdiH641HzpRZV5R+aitAbyMIwam8DrG/K44aS7poVkJVUSNmlbNLtT5MxZaDuaZgUGj7QEm9mpsBiChtQK6GwRnhJ2v4FpyKMi/oGjr83OO+8ccavN+JJQvPftSxklZ60jBbN2p9RDhVhU+UYImp3Nj+zliW6D3MsfMG364/n15+ZR4KDA1TRqh4J3NYWRdQsrxhwCRqutI1jJZGMOhYnzlLHWDBsqdoKk1Dic4vVMVUWaJUEFA3g9fb51+n+9NWG41/t9Vw0tlqF9tevdnAtNk8mWHt/+5mu9mAm+F6t802mkzeZ7W9tSxej99e0/f/Ddf9T7+/8GCCBwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a2cd6de799714aada149804c18c79123"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0c8e603fb8004b21aa53092862dd18c1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:27</sys_created_on>
+        <sys_id>246c40a0c32a8310f35b3fac050131a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Table Name</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_0c8e603fb8004b21aa53092862dd18c1_table_name_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0c8e603fb8004b21aa53092862dd18c1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:27</sys_created_on>
+        <sys_id>a06c40a0c32a8310f35b3fac050131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Record</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_0c8e603fb8004b21aa53092862dd18c1_current_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_0c8e603fb8004b21aa53092862dd18c1"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>timeFromCreateToActivate=23000</attributes>
+        <authored_on_release_version>-1</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>delivery_partner_incident__urgent_safety_escalation</internal_name>
+        <label_cache>[]</label_cache>
+        <master>true</master>
+        <name>Delivery Partner Incident - Urgent Safety Escalation</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Delivery Partner Incident - Urgent Safety Escalation">0c8e603fb8004b21aa53092862dd18c1</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5d442393c3424710143ffa0ed4013165</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=5d442393c3424710143ffa0ed4013165"/>
+    <sys_variable_value action="delete_multiple" query="document_key=5d442393c3424710143ffa0ed4013165"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=5d442393c3424710143ffa0ed4013165"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=5d442393c3424710143ffa0ed4013165^sys_idNOT INd9442393c3424710143ffa0ed4013166"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>5d442393c3424710143ffa0ed4013165</id>
+        <name>Delivery Partner Incident - Urgent Safety Escalation</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:27</sys_created_on>
+        <sys_id>d9442393c3424710143ffa0ed4013166</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=d9442393c3424710143ffa0ed4013166"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=5d442393c3424710143ffa0ed4013165^sys_idNOT IN1d442393c3424710143ffa0ed4013176,51442393c3424710143ffa0ed4013168"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Delivery Partner Incident - Urgent Safety Escalation">5d442393c3424710143ffa0ed4013165</model>
+        <model_id>5d442393c3424710143ffa0ed4013165</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_5d442393c3424710143ffa0ed4013165</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:27</sys_created_on>
+        <sys_id>1d442393c3424710143ffa0ed4013176</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1d442393c3424710143ffa0ed4013176"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,timeFromCreateToActivate=23000,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Delivery Partner Incident - Urgent Safety Escalation">5d442393c3424710143ffa0ed4013165</model>
+        <model_id>5d442393c3424710143ffa0ed4013165</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_5d442393c3424710143ffa0ed4013165</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:27</sys_created_on>
+        <sys_id>51442393c3424710143ffa0ed4013168</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=51442393c3424710143ffa0ed4013168"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=5d442393c3424710143ffa0ed4013165"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5d442393c3424710143ffa0ed4013165"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=5d442393c3424710143ffa0ed4013165^sys_idNOT IN59442393c3424710143ffa0ed401318b"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Delivery Partner Incident - Urgent Safety Escalation">5d442393c3424710143ffa0ed4013165</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:28</sys_created_on>
+        <sys_id>59442393c3424710143ffa0ed401318b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:28</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/+1X32/TMBD+V6w8gVSkDoYQewPGpEqDSWzAw5giN760Fq7d2Ze2Ydr/zjk/Wi9Nt25rAKE9tT47vu/uvs8+n19FaOVoBHagHXKdwGnuBiI6iKJepPgQFP0940MFNJYawWquzvIpkBm9OdZ84ucETEEL0Fh+moyNTOBYOhqfX/SiCdeCo7F5dIA2g16UWjM5g8lUcaS9Uq4cGY0VYKODvX6/FxX7Vk5owxlXmR8v4pd7+6/f7L+NL5N4yi1qsLHUiSx8Ew7paM/825bLk7FUwoIuUdIC8ooew9Va9A1A2JKECj+hhwX6dIhlaEECKosFLk60yoMlCyd/QfF95iAOUlqtSE/HZv4FUiDECRxJXbirJpVJuFqOOFJdhxmCo1iur5eJOZKgqvK6xMopvktQzuoSXPe24cOXTLMTzT5WMbIiQ26dICUJ7iDHFUUFl5kPqIg8rUvneUKL0+PAq9EsySxFj4zyyeosM6wRpIMJH0HphvZVkGBQhPSrC0efpHNSj4LYN0Ap5texqDwEVBPjMRAu2oiyrVRspmOj4yX1VqKp8TfEUZu3EMHGkm/0jQ0O/KvaiLiYeZ6LmnIdiOX7GDQ7BSq18b+IvuQ7lsvQ4LhJ0dRY9p7sbOA98QJ8IZzPRr8IbRW27hSkiRxy5TAE6uvMarQbgHWGaxtMtLVluwf1aK3PiVWxW7JpdpMIDa1X1i2lvoGwm50/qT1QnTJz4suuBc51vqZv70lqknTOEkPOFtiZUoY8+TmyJtNiE4rVCvZMQMozhc+7u5KNhdvh3FzxN4XqEdHpF2o0TGZTqeHclnpdUa7V7ZM6y1R9MFpILI/upjbrKXevx8w92ZAEAGouOJiBlZj/yPr9VyKzo9aHzIZVW/AjDLoFBrbE3xk/qrffQ+kx5xpdjCbmQsQB4uVjYWIEqMOgehUnSAbTDF10HdSW+tXlc66jlq/oHDrq99quA2pW/FVASbedHbxGQ2zS1mZJpqxKDr0QhjnDMRAmRccQ7Vyg6rLB9AVtQjs0jCaY/SPgdtPQeSQtXV1Z7sahUBrv09M1GHmH86d7oy19hTLX1DxSUkCsyrndXyAFDwJorZWrvNecWSfMQ9hShXubQ2xJwX/IlYvfR+B0sy4VAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=5d442393c3424710143ffa0ed4013165^sys_idNOT IN95442393c3424710143ffa0ed4013189"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Log">5bc1bcc6531003003bf1d9109ec587d4</action_type>
+        <action_type_parent display_value="Log">0e0ae8c2531003003bf1d9109ec587c8</action_type_parent>
+        <attributes>timeFromCreateToActivate=23000</attributes>
+        <comment/>
+        <compiled_snapshot>5bc1bcc6531003003bf1d9109ec587d4</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Delivery Partner Incident - Urgent Safety Escalation">5d442393c3424710143ffa0ed4013165</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:28</sys_created_on>
+        <sys_id>95442393c3424710143ffa0ed4013189</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:28</sys_updated_on>
+        <ui_id>a2cd6de7-9971-4aad-a149-804c18c79123</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VUTW/bMAz9K4LOSRAnzbrmNvRjGNAPoN26Q1EEtEQnAmTJk+S0btD/PipWEncttgXoTgN84fOTyEc98m7FDZTIp1zb+UzjEjXv8SXoOmLonHUUS+UrDc1tgk8TXIGjswEdn664WCgtHRo+vbvvcSWJN8lFlgvxYTLOhsMxfXmRyaNseIRi8vFQHtIVGnLKOOXnKfMbxYSmipBYWCUwxefp2PEGtE7GMoY9jo8BjUTKX4D22OMlGAnBumaLOAR5ZfQOWCgT6DYeyY9ePVG+g2HkFUiKBLb/tuEs9aOFixMIcBNcLULtErUt1lMvVluJ/T67tAZZv9/pcKf0596O+8UUtsNSbZiYWZf5HZxRZt4hPxCyI4+65M3D/fq+iTt+ppeTWECtw/H+CrK/VjDaR8F4DwUHUUHb/KsqKEtu5Fn0DOR68zRW16W5bH3Gt3pvXxaa0JOXxk+iak8WwCraLPommai4WdiH641HzpRZV5R+aitAbyMIwam8DrG/K44aS7poVkJVUSNmlbNLtT5MxZaDuaZgUGj7QEm9mpsBiChtQK6GwRnhJ2v4FpyKMi/oGjr83OO+8ccavN+JJQvPftSxklZ60jBbN2p9RDhVhU+UYImp3Nj+zliW6D3MsfMG364/n15+ZR4KDA1TRqh4J3NYWRdQsrxhwCRqutI1jJZGMOhYnzlLHWDBsqdoKk1Dic4vVMVUWaJUEFA3g9fb51+n+9NWG41/t9Vw0tlqF9tevdnAtNk8mWHt/+5mu9mAm+F6t802mkzeZ7W9tSxej99e0/f/Ddf9T7+/8GCCBwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=95442393c3424710143ffa0ed4013189"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=5d442393c3424710143ffa0ed4013165"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=5d442393c3424710143ffa0ed4013165"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=5d442393c3424710143ffa0ed4013165"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=5d442393c3424710143ffa0ed4013165"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_5d442393c3424710143ffa0ed4013165</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:27</sys_created_on>
+        <sys_id>646c40a0c32a8310f35b3fac050131ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Record</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_5d442393c3424710143ffa0ed4013165_current_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:27</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_5d442393c3424710143ffa0ed4013165</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:28</sys_created_on>
+        <sys_id>e86c40a0c32a8310f35b3fac050131f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Table Name</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_5d442393c3424710143ffa0ed4013165_table_name_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:28</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_5d442393c3424710143ffa0ed4013165"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_5d442393c3424710143ffa0ed4013165"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>0c8e603fb8004b21aa53092862dd18c1</sys_id>
+        <latest_snapshot>5d442393c3424710143ffa0ed4013165</latest_snapshot>
+        <compiler_build/>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=0c8e603fb8004b21aa53092862dd18c1^sys_idNOT IN1d442393c3424710143ffa0ed4013197"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan/>
+        <plan_id>0c8e603fb8004b21aa53092862dd18c1</plan_id>
+        <snapshot>5d442393c3424710143ffa0ed4013165</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1d442393c3424710143ffa0ed4013197</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:28</sys_updated_on>
+        <trigger display_value="">19442393c3424710143ffa0ed4013196</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=0c8e603fb8004b21aa53092862dd18c1"/>
+</record_update>

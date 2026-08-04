@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_form_action">
+    <sys_ux_form_action action="INSERT_OR_UPDATE">
+        <action_type>ui_action</action_type>
+        <active>true</active>
+        <declarative_action/>
+        <description/>
+        <name>Order Complaint Triage Assistant</name>
+        <specificity/>
+        <sys_class_name>sys_ux_form_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-18 18:15:15</sys_created_on>
+        <sys_id>22400a355bb543529b00e6dc7f7cd20f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Order Complaint Triage Assistant</sys_name>
+        <sys_package display_value="Quick Commerce Ops Platform" source="x_2145749_qc">cf8713d7c3ce0710143ffa0ed401314f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Quick Commerce Ops Platform">cf8713d7c3ce0710143ffa0ed401314f</sys_scope>
+        <sys_update_name>sys_ux_form_action_22400a355bb543529b00e6dc7f7cd20f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-18 18:15:15</sys_updated_on>
+        <table>sn_customerservice_case</table>
+        <ui_action display_value="Order Complaint Triage Assistant">5f096098dbdd469ea2dfe66cd14dc1a5</ui_action>
+    </sys_ux_form_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=22400a355bb543529b00e6dc7f7cd20f"/>
+</record_update>
