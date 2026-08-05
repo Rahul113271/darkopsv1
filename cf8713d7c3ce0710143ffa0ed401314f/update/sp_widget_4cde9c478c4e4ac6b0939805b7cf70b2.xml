@@ -89,8 +89,7 @@
 ]]></client_script>
         <controller_as>c</controller_as>
         <css>.qcops-store-ops .panel-heading h3 { margin: 0 0 10px; }
-.qcops-store-ops .nav-tabs { margin-top: 10px; }
-</css>
+.qcops-store-ops .nav-tabs { margin-top: 10px; }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description>Lets dark store managers log operational issues and report equipment breakdowns.</description>
