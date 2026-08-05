@@ -5,15 +5,15 @@
         <description/>
         <direct>true</direct>
         <endpoint>x_2145749_qc_home.do</endpoint>
-        <html>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-&lt;meta charset="utf-8"&gt;
-&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-&lt;title&gt;DarkOps - Operational Intelligence&lt;/title&gt;
-&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;&lt;link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;
-&lt;style&gt;
+        <html><![CDATA[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DarkOps - Operational Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
 /* ===== DarkOps design system (ported from Lovable) ===== */
 :root{
   --radius:0.5rem;
@@ -118,8 +118,8 @@ h1.page{font-size:19px;font-weight:600}
 
 /* ---- lists ---- */
 .list{list-style:none;margin:0;padding:0}
-.list&gt;li{border-top:1px solid color-mix(in oklch,var(--border) 70%,transparent)}
-.list&gt;li:first-child{border-top:0}
+.list>li{border-top:1px solid color-mix(in oklch,var(--border) 70%,transparent)}
+.list>li:first-child{border-top:0}
 .li{display:flex;align-items:center;gap:12px;padding:12px 20px;transition:.15s}
 .li:hover{background:color-mix(in oklch,var(--accent) 50%,transparent)}
 .li .grow{min-width:0;flex:1}
@@ -162,9 +162,9 @@ table.tbl tbody tr:hover{background:color-mix(in oklch,var(--accent) 40%,transpa
 
 /* ---- mini progress ---- */
 .prog{height:6px;border-radius:9999px;background:var(--panel);overflow:hidden}
-.prog&gt;i{display:block;height:100%;border-radius:9999px;background:var(--primary)}
+.prog>i{display:block;height:100%;border-radius:9999px;background:var(--primary)}
 .confbar{height:6px;width:64px;border-radius:9999px;background:var(--panel);overflow:hidden}
-.confbar&gt;i{display:block;height:100%;border-radius:9999px}
+.confbar>i{display:block;height:100%;border-radius:9999px}
 
 /* ---- heatmap ---- */
 .heat{display:grid;grid-template-columns:1fr;gap:8px 32px}
@@ -191,72 +191,72 @@ table.tbl tbody tr:hover{background:color-mix(in oklch,var(--accent) 40%,transpa
 .col2{grid-column:span 2}
 @media(max-width:1100px){.g5,.g7,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3,.g2{grid-template-columns:1fr}.col2{grid-column:auto}}
 @media(max-width:640px){.g5,.g7,.g4,.g2{grid-template-columns:1fr}}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header class="topbar"&gt;&lt;div class="topbar-inner"&gt;
-  &lt;a class="brand" href="x_2145749_qc_home.do"&gt;&lt;span class="logo"&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="name"&gt;Dark&lt;b&gt;Ops&lt;/b&gt;&lt;/span&gt;&lt;span class="tag"&gt;Operational Intelligence&lt;/span&gt;&lt;/a&gt;
-  &lt;nav class="nav"&gt;
-    &lt;a class="a" href="x_2145749_qc_exec_dashboard.do"&gt;Executive&lt;/a&gt;
-    &lt;a class="a" href="x_2145749_qc_ops_dashboard.do"&gt;Operations&lt;/a&gt;
-    &lt;a class="a" href="x_2145749_qc_dark_store_dashboard.do"&gt;Dark Store&lt;/a&gt;
-    &lt;a class="a" href="x_2145749_qc_fraud_dashboard.do"&gt;Fraud&lt;/a&gt;
-  &lt;/nav&gt;
-  &lt;div class="topbar-right"&gt;
-    &lt;div class="search"&gt;&lt;svg class="i sm" viewBox="0 0 24 24"&gt;&lt;circle cx="11" cy="11" r="8"/&gt;&lt;line x1="21" y1="21" x2="16.65" y2="16.65"/&gt;&lt;/svg&gt;&lt;input placeholder="Search store ID e.g. 1462..." aria-label="Search stores"&gt;&lt;/div&gt;
-    &lt;button class="iconbtn" aria-label="5 new alerts"&gt;&lt;svg class="i" viewBox="0 0 24 24"&gt;&lt;path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/&gt;&lt;path d="M13.73 21a2 2 0 0 1-3.46 0"/&gt;&lt;/svg&gt;&lt;span class="dot num"&gt;5&lt;/span&gt;&lt;/button&gt;
-    &lt;button class="pillbtn"&gt;&lt;svg class="i sm" viewBox="0 0 24 24"&gt;&lt;rect x="3" y="4" width="18" height="18" rx="2"/&gt;&lt;line x1="16" y1="2" x2="16" y2="6"/&gt;&lt;line x1="8" y1="2" x2="8" y2="6"/&gt;&lt;line x1="3" y1="10" x2="21" y2="10"/&gt;&lt;/svg&gt;Last 30 days&lt;svg class="i sm" viewBox="0 0 24 24"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;&lt;/button&gt;
-    &lt;span class="avatar"&gt;AK&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;&lt;/header&gt;
-&lt;main&gt;
-&lt;div style="max-width:1100px;margin:0 auto"&gt;
-  &lt;div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:8px 0 4px"&gt;
-    &lt;span class="live"&gt;&lt;span class="blip"&gt;&lt;/span&gt;LIVE&lt;/span&gt;
-    &lt;span class="chip neutral"&gt;Operational Intelligence&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;h1 style="font-size:30px;font-weight:600;margin-top:12px"&gt;DarkOps control center&lt;/h1&gt;
-  &lt;p class="sub" style="font-size:14px;max-width:640px"&gt;Real-time health across 200 dark stores in 15 cities. Jump into the view you need &amp;mdash; leadership overview, the live operations queue, a single store, or the AI fraud review desk.&lt;/p&gt;
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="x_2145749_qc_home.do"><span class="logo"><span></span></span><span class="name">Dark<b>Ops</b></span><span class="tag">Operational Intelligence</span></a>
+  <nav class="nav">
+    <a class="a" href="x_2145749_qc_exec_dashboard.do">Executive</a>
+    <a class="a" href="x_2145749_qc_ops_dashboard.do">Operations</a>
+    <a class="a" href="x_2145749_qc_dark_store_dashboard.do">Dark Store</a>
+    <a class="a" href="x_2145749_qc_fraud_dashboard.do">Fraud</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="search"><svg class="i sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input placeholder="Search store ID e.g. 1462..." aria-label="Search stores"></div>
+    <button class="iconbtn" aria-label="5 new alerts"><svg class="i" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="dot num">5</span></button>
+    <button class="pillbtn"><svg class="i sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Last 30 days<svg class="i sm" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+    <span class="avatar">AK</span>
+  </div>
+</div></header>
+<main>
+<div style="max-width:1100px;margin:0 auto">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:8px 0 4px">
+    <span class="live"><span class="blip"></span>LIVE</span>
+    <span class="chip neutral">Operational Intelligence</span>
+  </div>
+  <h1 style="font-size:30px;font-weight:600;margin-top:12px">DarkOps control center</h1>
+  <p class="sub" style="font-size:14px;max-width:640px">Real-time health across 200 dark stores in 15 cities. Jump into the view you need &mdash; leadership overview, the live operations queue, a single store, or the AI fraud review desk.</p>
 
-  &lt;div class="grid g4 mt5"&gt;
-    &lt;div class="kpi"&gt;&lt;p class="label"&gt;Network PulseScore&lt;/p&gt;&lt;div class="val"&gt;&lt;span class="n num t-warning"&gt;78&lt;/span&gt;&lt;span class="u"&gt;/100&lt;/span&gt;&lt;/div&gt;&lt;div class="foot"&gt;&lt;span class="hint"&gt;headline metric&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class="kpi"&gt;&lt;p class="label"&gt;Open complaints&lt;/p&gt;&lt;div class="val"&gt;&lt;span class="n num"&gt;8,214&lt;/span&gt;&lt;/div&gt;&lt;div class="foot"&gt;&lt;span class="hint"&gt;last 24h&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class="kpi"&gt;&lt;p class="label"&gt;SLA compliance&lt;/p&gt;&lt;div class="val"&gt;&lt;span class="n num t-warning"&gt;91.4&lt;/span&gt;&lt;span class="u"&gt;%&lt;/span&gt;&lt;/div&gt;&lt;div class="foot"&gt;&lt;span class="hint"&gt;target 95%&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class="kpi urgent"&gt;&lt;p class="label"&gt;Critical stores&lt;/p&gt;&lt;div class="val"&gt;&lt;span class="n num t-critical"&gt;14&lt;/span&gt;&lt;span class="u"&gt;of 200&lt;/span&gt;&lt;/div&gt;&lt;div class="foot"&gt;&lt;span class="hint"&gt;need intervention&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-  &lt;/div&gt;
+  <div class="grid g4 mt5">
+    <div class="kpi"><p class="label">Network PulseScore</p><div class="val"><span class="n num t-warning">78</span><span class="u">/100</span></div><div class="foot"><span class="hint">headline metric</span></div></div>
+    <div class="kpi"><p class="label">Open complaints</p><div class="val"><span class="n num">8,214</span></div><div class="foot"><span class="hint">last 24h</span></div></div>
+    <div class="kpi"><p class="label">SLA compliance</p><div class="val"><span class="n num t-warning">91.4</span><span class="u">%</span></div><div class="foot"><span class="hint">target 95%</span></div></div>
+    <div class="kpi urgent"><p class="label">Critical stores</p><div class="val"><span class="n num t-critical">14</span><span class="u">of 200</span></div><div class="foot"><span class="hint">need intervention</span></div></div>
+  </div>
 
-  &lt;div class="grid g2 mt4"&gt;
-    &lt;a class="panel" href="x_2145749_qc_exec_dashboard.do" style="text-decoration:none"&gt;
-      &lt;div class="panel-body" style="display:flex;gap:16px;align-items:flex-start"&gt;
-        &lt;span class="brandtile" style="width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:8px;background:color-mix(in oklch,var(--primary) 15%,transparent);box-shadow:0 0 0 1px color-mix(in oklch,var(--primary) 30%,transparent)"&gt;&lt;svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px;color:var(--primary)"&gt;&lt;path d="M3 3v18h18"/&gt;&lt;path d="m19 9-5 5-4-4-3 3"/&gt;&lt;/svg&gt;&lt;/span&gt;
-        &lt;span style="flex:1"&gt;&lt;span style="display:flex;align-items:center;gap:8px"&gt;&lt;span style="font-size:15px;font-weight:600"&gt;Executive overview&lt;/span&gt;&lt;svg class="i" viewBox="0 0 24 24"&gt;&lt;polyline points="9 18 15 12 9 6"/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span class="panel-sub" style="display:block"&gt;Company-wide dark store health: complaints, SLA, PulseScore, red alerts and the store heatmap.&lt;/span&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/a&gt;
-    &lt;a class="panel" href="x_2145749_qc_ops_dashboard.do" style="text-decoration:none"&gt;
-      &lt;div class="panel-body" style="display:flex;gap:16px;align-items:flex-start"&gt;
-        &lt;span style="width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:8px;background:color-mix(in oklch,var(--accent-blue) 15%,transparent);box-shadow:0 0 0 1px color-mix(in oklch,var(--accent-blue) 30%,transparent)"&gt;&lt;svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px;color:var(--accent-blue)"&gt;&lt;line x1="8" y1="6" x2="21" y2="6"/&gt;&lt;line x1="8" y1="12" x2="21" y2="12"/&gt;&lt;line x1="8" y1="18" x2="21" y2="18"/&gt;&lt;line x1="3" y1="6" x2="3.01" y2="6"/&gt;&lt;line x1="3" y1="12" x2="3.01" y2="12"/&gt;&lt;line x1="3" y1="18" x2="3.01" y2="18"/&gt;&lt;/svg&gt;&lt;/span&gt;
-        &lt;span style="flex:1"&gt;&lt;span style="display:flex;align-items:center;gap:8px"&gt;&lt;span style="font-size:15px;font-weight:600"&gt;Operations queue&lt;/span&gt;&lt;svg class="i" viewBox="0 0 24 24"&gt;&lt;polyline points="9 18 15 12 9 6"/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span class="panel-sub" style="display:block"&gt;Pending &amp;amp; escalated cases, SLA breaches, agent capacity and the live complaint assignment queue.&lt;/span&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/a&gt;
-    &lt;a class="panel" href="x_2145749_qc_dark_store_dashboard.do" style="text-decoration:none"&gt;
-      &lt;div class="panel-body" style="display:flex;gap:16px;align-items:flex-start"&gt;
-        &lt;span style="width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:8px;background:color-mix(in oklch,var(--warning) 15%,transparent);box-shadow:0 0 0 1px color-mix(in oklch,var(--warning) 30%,transparent)"&gt;&lt;svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px;color:var(--warning)"&gt;&lt;path d="M3 9 12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/&gt;&lt;path d="M9 22V12h6v10"/&gt;&lt;/svg&gt;&lt;/span&gt;
-        &lt;span style="flex:1"&gt;&lt;span style="display:flex;align-items:center;gap:8px"&gt;&lt;span style="font-size:15px;font-weight:600"&gt;Dark store view&lt;/span&gt;&lt;svg class="i" viewBox="0 0 24 24"&gt;&lt;polyline points="9 18 15 12 9 6"/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span class="panel-sub" style="display:block"&gt;A single store: PulseScore breakdown, equipment failures, inventory, work orders and complaints.&lt;/span&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/a&gt;
-    &lt;a class="panel" href="x_2145749_qc_fraud_dashboard.do" style="text-decoration:none"&gt;
-      &lt;div class="panel-body" style="display:flex;gap:16px;align-items:flex-start"&gt;
-        &lt;span style="width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:8px;background:color-mix(in oklch,var(--critical) 15%,transparent);box-shadow:0 0 0 1px color-mix(in oklch,var(--critical) 30%,transparent)"&gt;&lt;svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px;color:var(--critical)"&gt;&lt;path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/&gt;&lt;path d="M12 8v4"/&gt;&lt;path d="M12 16h.01"/&gt;&lt;/svg&gt;&lt;/span&gt;
-        &lt;span style="flex:1"&gt;&lt;span style="display:flex;align-items:center;gap:8px"&gt;&lt;span style="font-size:15px;font-weight:600"&gt;Fraud &amp;amp; AI review&lt;/span&gt;&lt;svg class="i" viewBox="0 0 24 24"&gt;&lt;polyline points="9 18 15 12 9 6"/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span class="panel-sub" style="display:block"&gt;AI-flagged complaints with model confidence, flag reasons and approve / escalate / deny decisions.&lt;/span&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="grid g2 mt4">
+    <a class="panel" href="x_2145749_qc_exec_dashboard.do" style="text-decoration:none">
+      <div class="panel-body" style="display:flex;gap:16px;align-items:flex-start">
+        <span class="brandtile" style="width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:8px;background:color-mix(in oklch,var(--primary) 15%,transparent);box-shadow:0 0 0 1px color-mix(in oklch,var(--primary) 30%,transparent)"><svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px;color:var(--primary)"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
+        <span style="flex:1"><span style="display:flex;align-items:center;gap:8px"><span style="font-size:15px;font-weight:600">Executive overview</span><svg class="i" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span><span class="panel-sub" style="display:block">Company-wide dark store health: complaints, SLA, PulseScore, red alerts and the store heatmap.</span></span>
+      </div>
+    </a>
+    <a class="panel" href="x_2145749_qc_ops_dashboard.do" style="text-decoration:none">
+      <div class="panel-body" style="display:flex;gap:16px;align-items:flex-start">
+        <span style="width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:8px;background:color-mix(in oklch,var(--accent-blue) 15%,transparent);box-shadow:0 0 0 1px color-mix(in oklch,var(--accent-blue) 30%,transparent)"><svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px;color:var(--accent-blue)"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
+        <span style="flex:1"><span style="display:flex;align-items:center;gap:8px"><span style="font-size:15px;font-weight:600">Operations queue</span><svg class="i" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span><span class="panel-sub" style="display:block">Pending &amp; escalated cases, SLA breaches, agent capacity and the live complaint assignment queue.</span></span>
+      </div>
+    </a>
+    <a class="panel" href="x_2145749_qc_dark_store_dashboard.do" style="text-decoration:none">
+      <div class="panel-body" style="display:flex;gap:16px;align-items:flex-start">
+        <span style="width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:8px;background:color-mix(in oklch,var(--warning) 15%,transparent);box-shadow:0 0 0 1px color-mix(in oklch,var(--warning) 30%,transparent)"><svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px;color:var(--warning)"><path d="M3 9 12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+        <span style="flex:1"><span style="display:flex;align-items:center;gap:8px"><span style="font-size:15px;font-weight:600">Dark store view</span><svg class="i" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span><span class="panel-sub" style="display:block">A single store: PulseScore breakdown, equipment failures, inventory, work orders and complaints.</span></span>
+      </div>
+    </a>
+    <a class="panel" href="x_2145749_qc_fraud_dashboard.do" style="text-decoration:none">
+      <div class="panel-body" style="display:flex;gap:16px;align-items:flex-start">
+        <span style="width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:8px;background:color-mix(in oklch,var(--critical) 15%,transparent);box-shadow:0 0 0 1px color-mix(in oklch,var(--critical) 30%,transparent)"><svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px;color:var(--critical)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></span>
+        <span style="flex:1"><span style="display:flex;align-items:center;gap:8px"><span style="font-size:15px;font-weight:600">Fraud &amp; AI review</span><svg class="i" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span><span class="panel-sub" style="display:block">AI-flagged complaints with model confidence, flag reasons and approve / escalate / deny decisions.</span></span>
+      </div>
+    </a>
+  </div>
+</div>
 
-&lt;/main&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</main>
+</body>
 </html>
+]]></html>
         <name>home</name>
         <processing_script/>
         <sys_class_name>sys_ui_page</sys_class_name>
