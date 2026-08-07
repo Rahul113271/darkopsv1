@@ -396,7 +396,6 @@
         <requires_authentication>true</requires_authentication>
         <requires_snc_internal_role>true</requires_snc_internal_role>
         <short_description>Returns all aggregated metrics for the executive dashboard in a single response</short_description>
-        <support_trailing_slash>false</support_trailing_slash>
         <sys_class_name>sys_ws_operation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-08-03 11:39:25</sys_created_on>
